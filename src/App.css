@@ -1,38 +1,134 @@
-.App {
+/* Basics setup*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --mainDark: rgb(2, 2, 34);
+  --mainText: #1f7974;
+  --mainAccent: #04d9ff;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 4px 5px 3px 0px #1f79758e;
+  --lightShadowTop: -4px -5px 3px 0px #1f79758e;
+  --darkShadow: 4px 10px 5px 0px #1f7975f3;
+}
+body {
+  padding-top: 66px;
+  color: var(--mainText);
+  background: var(--mainDark);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  z-index: -1;
+}
+/* Headings*/
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+h4 {
+  font-size: 1.2em;
+  line-height: 1.25;
+  margin-bottom: 1.25em;
+}
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+/* Buttons*/
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainAccent);
+  background: var(--mainDark);
+  padding: 0.8rem 1.2rem;
+  border: 3px solid var(--mainAccent);
+  transition: 0.2s;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.btn-primary:hover {
+  background: var(--mainText);
+  color: var(--mainAccent);
+  border-color: var(--mainAccent);
+  box-shadow: 0 0 10px var(--mainAccent), 0 0 40px var(--mainAccent),
+    0 0 80px var(--mainAccent);
+}
+/* Button animation*/
+
+.order {
+  position: relative;
+  align-items: center !important;
+  margin: 0 2rem;
+  line-height: 75px;
   text-align: center;
+  opacity: 1;
+  border-radius: 50%;
+  -webkit-animation: bounce 0.3s infinite alternate;
+  -moz-animation: bounce 0.3s infinite alternate;
+  animation: bounce 0.3s infinite alternate;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@-webkit-keyframes bounce {
   to {
-    transform: rotate(360deg);
+    -webkit-transform: scale(1.2);
+  }
+}
+@-moz-keyframes bounce {
+  to {
+    -moz-transform: scale(1.2);
+  }
+}
+@keyframes bounce {
+  to {
+    transform: scale(1.2);
+  }
+}
+@media (max-width: 636px) {
+  .btn-primary {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 430px) {
+  .btn-primary {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.5rem;
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+    border: 3px solid var(--mainAccent);
   }
 }
