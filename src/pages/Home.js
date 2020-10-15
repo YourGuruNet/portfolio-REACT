@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "../components/Banner";
 import StyledHero from "../components/StyledHero";
 import img1 from "../images/background-home.jpg";
-import Typical from "react-typical";
+import ReactTypingEffect from "react-typing-effect";
 import { PortfolioConsumer } from "../Context";
 import { motion } from "framer-motion";
 
@@ -28,19 +28,21 @@ export default function Home() {
         {(value) => (
           <StyledHero img={img1}>
             <Banner title="My name is Arvis iljins">
-              <Typical
-                className="text-typed"
-                steps={[
-                  "I'm Latvian Web Developer",
-                  2000,
-                  "Working as a Freelancer",
-                  2000,
-                  "I'm here to create your web world",
-                  2000,
-                ]}
-                loop={1}
-                wrapper="p"
-              />
+              <div style={{ minHeight: "5rem" }}>
+                <ReactTypingEffect
+                  text={[
+                    "I'm Latvian Web Developer",
+                    "Working as a Freelancer",
+                    "I'm here to create your web world",
+                  ]}
+                  cursorRenderer={(cursor) => <h3>{cursor}</h3>}
+                  displayTextRenderer={(text) => <h3>{text}</h3>}
+                  speed={100}
+                  eraseSpeed={50}
+                  eraseDelay={700}
+                  typingDelay={1000}
+                />
+              </div>
               <button
                 className="btn-primary"
                 onClick={() => {

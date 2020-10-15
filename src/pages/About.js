@@ -96,7 +96,7 @@ export default class About extends Component {
               <div className="column">
                 <h6 className="uppercase">Business high-school Turiba</h6>
                 <p>Javascript Programming language </p>
-                <p style={{ marginBottom: "2rem", fontSize: "0.8rem" }}>
+                <p className="school">
                   160 hours, 6 month intensive course. JavaScript Fundamentals
                   and basic object-oriented concepts using the latest JavaScript
                   syntax. Basics of jQuery, React and different most popular
@@ -106,7 +106,7 @@ export default class About extends Component {
               <div className="column">
                 <h6 className="uppercase">Riga coding school</h6>
                 <p>C# Programming language </p>
-                <p style={{ marginBottom: "2rem", fontSize: "0.8rem" }}>
+                <p className="school">
                   60 hours, 9 weeks intensive course. C# and .NET programming
                   environment, OOP, SQL and working with databases, more complex
                   WEB service development XML, SOAP.
@@ -261,16 +261,6 @@ const Content = styled.div`
     margin-bottom: 0.2rem;
   }
 
-  /* Responsive columns */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
-  /**************************************************** */
   .containerTab {
     width: 80%;
 
@@ -333,5 +323,62 @@ const Content = styled.div`
   }
   .uppercase {
     text-transform: uppercase;
+  }
+  .school {
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+  }
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .container {
+      left: 10%;
+      right: 10%;
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .SkillColumn {
+      width: 40%;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .container {
+      left: 5%;
+      right: 5%;
+      width: 90%;
+    }
+    .SkillColumn {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .SkillColumn {
+      font-size: 0.6rem;
+    }
+    .methods-list {
+      grid-column-gap: 0.1rem;
+      grid-row-gap: 0.2rem;
+      font-size: 0.6rem;
+    }
+    .school {
+      margin-bottom: 0.5rem;
+      font-size: 0.6rem;
+    }
+    .column {
+      padding: 0;
+    }
+    .row {
+      margin: 0.5rem 0.5rem 0 0.5rem;
+    }
+    p {
+      font-size: 0.6rem;
+    }
   }
 `;
