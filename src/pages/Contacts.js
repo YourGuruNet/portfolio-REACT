@@ -189,4 +189,9 @@ const Form = styled.form`
   span {
     margin: 0 5px 0 15px;
   }
+  @media screen and (max-width: 300px) {
+    .bottomContainer {
+      width: 200px;
+    }
+  }
 `;
