@@ -16,18 +16,18 @@ function App() {
   const location = useLocation();
   return (
     <React.Fragment>
+      <FeaturedPortfolio />
+      <Contacts />
       <Navbar />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={Home} />
           <Route path="/portfolios/" component={Portfolios} />
           <Route path="/portfolio/:slug" component={SinglePortfolio} />
-          <Route path="/contacts" component={Contacts} />
           <Route path="/about" component={About} />
           <Route component={Error} />
         </Switch>
       </AnimatePresence>
-      <FeaturedPortfolio />
       <Footer />
     </React.Fragment>
   );

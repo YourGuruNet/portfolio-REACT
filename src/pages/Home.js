@@ -31,7 +31,7 @@ export default function Home() {
               <Typical
                 className="text-typed"
                 steps={[
-                  "I'm Latvian Web Designer",
+                  "I'm Latvian Web Developer",
                   2000,
                   "Working as a Freelancer",
                   2000,

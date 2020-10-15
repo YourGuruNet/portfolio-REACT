@@ -8,13 +8,13 @@ export default function PortfolioContainer() {
   return (
     <PortfolioConsumer>
       {(value) => {
-        const { loading, sortedPortfolio, portfolio } = value;
+        const { loading, sortedPortfolio, portfolios } = value;
         if (loading) {
           return <Loading />;
         }
         return (
           <React.Fragment>
-            <PortfolioFilter portfolio={portfolio} />
+            <PortfolioFilter portfolio={portfolios} />
             <PortfolioList portfolio={sortedPortfolio} />
           </React.Fragment>
         );

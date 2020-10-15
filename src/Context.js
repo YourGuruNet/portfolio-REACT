@@ -5,13 +5,14 @@ const PortfolioContext = React.createContext();
 class PortfolioProvider extends Component {
   state = {
     portfolios: [],
-    type: "all",
+    sortedPortfolio: [],
+    featuredPortfolio: [],
     modalPortfolioOpen: false,
     modalContactOpen: false,
     modalAboutOpen: false,
-    sortedPortfolio: [],
-    featuredPortfolio: [],
     loading: true,
+    type: "all",
+    method: "all",
   };
   //getData
 
@@ -37,7 +38,7 @@ class PortfolioProvider extends Component {
     });
     return tempItems;
   }
-  //Open methods
+  //Open featured portfolio methods
   openPortfolioModal = () => {
     this.setState(() => {
       return { modalPortfolioOpen: true };
@@ -51,13 +52,54 @@ class PortfolioProvider extends Component {
     });
   };
   //End of open methods
-  //
+
+  // Open contact page model
+  openContactModal = () => {
+    this.setState(() => {
+      return { modalContactOpen: true };
+    });
+  };
+  closeContactModal = () => {
+    this.setState(() => {
+      return { modalContactOpen: false };
+    });
+  };
+  // Open contact page model end
+
   getPortfolio = (slug) => {
-    let temPortfolios = [...this.state.portfolios];
-    const portfolio = temPortfolios.find(
+    let tempPortfolios = [...this.state.portfolios];
+    const portfolio = tempPortfolios.find(
       (portfolio) => portfolio.slug === slug
     );
     return portfolio;
+  };
+  handleChange = (event) => {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = event.target.name;
+    this.setState(
+      {
+        [name]: value,
+      },
+      this.filterPortfolios
+    );
+  };
+  filterPortfolios = () => {
+    let { portfolios, type, method } = this.state;
+    let tempPortfolios = [...portfolios];
+    if (type !== "all") {
+      tempPortfolios = tempPortfolios.filter(
+        (portfolio) => portfolio.type === type
+      );
+    }
+    if (method !== "all") {
+      tempPortfolios = tempPortfolios.filter(
+        (portfolio) => portfolio.method === method
+      );
+    }
+    this.setState({
+      sortedPortfolio: tempPortfolios,
+    });
   };
   render() {
     return (
@@ -67,6 +109,9 @@ class PortfolioProvider extends Component {
           getPortfolio: this.getPortfolio,
           openPortfolioModal: this.openPortfolioModal,
           closePortfolioModal: this.closePortfolioModal,
+          openContactModal: this.openContactModal,
+          closeContactModal: this.closeContactModal,
+          handleChange: this.handleChange,
         }}
       >
         {this.props.children}

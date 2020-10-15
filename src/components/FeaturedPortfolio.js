@@ -85,11 +85,12 @@ const CloseSection = styled.div`
   height: 100%;
   position: absolute;
   top: 0;
-  z-index: 999999;
+  z-index: 99999;
 `;
 const Section = styled.div`
+  position: fixed;
   padding: 0 0;
-  z-index: 99999;
+  z-index: 2;
   width: 90%;
   height: 60%;
   left: 5%;
@@ -101,7 +102,9 @@ const Section = styled.div`
   align-items: center;
   justify-content: center;
   background: var(--mainDark);
-  border: solid 0.01rem var(--mainText);
+  box-shadow: 0 0 40px -10px var(--mainAccent);
+  border-radius: 12px;
+  z-index: 999999;
   .row-title {
     margin-top: 0.5rem;
     justify-content: center;

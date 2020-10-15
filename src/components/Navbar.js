@@ -45,7 +45,7 @@ export default class Navbar extends Component {
                 </li>
                 <li>
                   <Link
-                    to=""
+                    to="#"
                     onClick={() => {
                       value.openPortfolioModal();
                     }}
@@ -54,19 +54,26 @@ export default class Navbar extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contacts">Contacts</Link>
+                  <Link
+                    to="#"
+                    onClick={() => {
+                      value.openContactModal();
+                    }}
+                  >
+                    Contacts
+                  </Link>
                 </li>
                 <li>
                   <Link to="/about">About</Link>
                 </li>
                 <li className="nav-links-p">
                   <p>
-                    <span className="info">
+                    <span className="info info-hide">
                       <i className="far fa-envelope" title="Email" />{" "}
                       info@yourgurunet.com
                     </span>
                     &nbsp;
-                    <span className="info">
+                    <span className="info info-hide">
                       <i className="fas fa-phone-alt" title="Phone" />{" "}
                       +37127150201
                     </span>
@@ -88,7 +95,7 @@ const NavbarComponent = styled.nav`
   width: 100%;
   background-color: var(--mainDark);
   box-shadow: var(--lightShadow);
-  z-index: 99999;
+  z-index: 9999;
 
   .nav-center {
     padding: 0.7rem;
@@ -173,15 +180,21 @@ const NavbarComponent = styled.nav`
       margin: 0 auto;
       display: flex;
       padding: 0.7rem;
+      padding-left: 0rem;
     }
     .nav-links {
       height: auto;
       display: flex;
-      margin-left: 4rem;
+      margin-left: 2rem;
     }
     .nav-links a {
       margin: 1.5rem 0 1rem 1rem;
       padding: 0.5rem 0;
+    }
+  }
+  @media screen and (max-width: 339px) {
+    .info-hide {
+      display: none;
     }
   }
 `;
