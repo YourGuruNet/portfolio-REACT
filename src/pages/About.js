@@ -378,7 +378,7 @@ const Content = styled.div`
       margin: 0.5rem 0.5rem 0 0.5rem;
     }
     p {
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
   }
 `;
