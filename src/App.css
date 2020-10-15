@@ -140,3 +140,45 @@ h6 {
     transform: scale(1.2);
   }
 }
+/* Button for carts*/
+.btn-cart {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainAccent);
+  background: var(--mainDark);
+  padding: 0.8rem 1.2rem;
+  border: 3px solid var(--mainAccent);
+  transition: 0.2s;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.btn-cart:hover {
+  background: var(--mainText);
+  color: var(--mainAccent);
+  border-color: var(--mainAccent);
+  box-shadow: 0 0 10px var(--mainAccent), 0 0 40px var(--mainAccent),
+    0 0 80px var(--mainAccent);
+}
+@media (max-width: 636px) {
+  .btn-cart {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.7rem;
+  }
+}
+@media (max-width: 430px) {
+  .btn-cart {
+    padding: 0.4rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    border: 3px solid var(--mainAccent);
+  }
+}

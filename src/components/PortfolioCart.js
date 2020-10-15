@@ -13,7 +13,7 @@ export default function SinglePortfolio({ portfolios }) {
         <div className="logo-top">
           <img src={logo} alt="logo" className="logo" />
         </div>
-        <Link to={`/portfolio/${slug}`} className="btn-primary portfolio-link">
+        <Link to={`/portfolio/${slug}`} className="btn-cart portfolio-link">
           {/* root is our path to exact portfolio wee click */}
           {type}
         </Link>
