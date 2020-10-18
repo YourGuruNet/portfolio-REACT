@@ -197,7 +197,7 @@ const Section = styled.section`
 
   @media (max-width: 514px) {
     .portfolio-images {
-      width: 60vw;
+      width: 90vw;
       grid-row-gap: 1rem;
       grid-column-gap: 30px;
       grid-template-columns: 90%;

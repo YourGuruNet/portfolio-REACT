@@ -24,10 +24,10 @@ const BannerContainer = styled.div`
   letter-spacing: var(--mainSpacing);
   font-family: "Bebas Neue", cursive;
   h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 300;
   }
   .text-typed {
