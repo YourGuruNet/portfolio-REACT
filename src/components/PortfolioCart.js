@@ -1,25 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { PortfolioConsumer } from "../Context";
 
 export default function SinglePortfolio({ portfolios }) {
   //console.log(room) use to see what props we can get!
   const { type, images, logo, slug } = portfolios;
 
   return (
-    <Cart>
-      <CartContainer>
-        <img src={images[0]} alt="portfolio" />
-        {/*Us || to set default img */}
-        <div className="logo-top">
-          <img src={logo} alt="logo" className="logo" />
-        </div>
-        <Link to={`/portfolio/${slug}`} className="btn-cart portfolio-link">
-          {/* root is our path to exact portfolio wee click */}
-          {type}
-        </Link>
-      </CartContainer>
-    </Cart>
+    <PortfolioConsumer>
+      {(value) => {
+        const { modalPortfolioOpen } = value;
+        if (!modalPortfolioOpen) {
+          return null;
+        } else {
+          return (
+            <Cart>
+              <CartContainer>
+                <img src={images[0]} alt="portfolio" />
+                {/*Us || to set default img */}
+                <div className="logo-top">
+                  <img src={logo} alt="logo" className="logo" />
+                </div>
+                <Link
+                  to={`/portfolio/${slug}`}
+                  className="btn-cart portfolio-link"
+                  onClick={() => {
+                    value.closePortfolioModal();
+                  }}
+                >
+                  {/* root is our path to exact portfolio wee click */}
+                  {type}
+                </Link>
+              </CartContainer>
+            </Cart>
+          );
+        }
+      }}
+    </PortfolioConsumer>
   );
 }
 
