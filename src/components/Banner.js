@@ -41,12 +41,13 @@ const BannerContainer = styled.div`
     h1 {
       font-size: 3rem;
     }
-    .text-typed {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
     p {
       font-size: 2rem;
+      font-weight: 300;
+    }
+    -typed {
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
   }
   @media screen and (min-width: 992px) {
@@ -57,7 +58,8 @@ const BannerContainer = styled.div`
       font-size: 4rem;
     }
     p {
-      font-size: rem;
+      font-size: 2rem;
+      font-weight: 300;
     }
   }
   .arrow-button {
