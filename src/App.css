@@ -11,7 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 :root {
-  --mainDark: rgb(2, 2, 34);
+  --mainDark: rgb(2, 2, 19);
   --mainText: #1f7974;
   --secondaryText: #63807d;
   --mainAccent: #04d9ff;

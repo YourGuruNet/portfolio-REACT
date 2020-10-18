@@ -102,7 +102,7 @@ const Section = styled.div`
   align-items: center;
   justify-content: center;
   background: var(--mainDark);
-  box-shadow: 0 0 40px -10px var(--mainAccent);
+  box-shadow: 0 8px 10px 0 var(--mainAccent);
   border-radius: 12px;
   z-index: 999999;
   .row-title {

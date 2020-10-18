@@ -141,7 +141,7 @@ const Form = styled.form`
   height: 500px;
   background: var(--mainDark);
   border-radius: 12px;
-  box-shadow: 0 0 40px -10px var(--mainAccent);
+  box-shadow: 0 8px 10px 0 var(--mainAccent);
   margin: calc(50vh - 220px) auto;
   padding: 20px 30px;
   max-width: calc(100vw - 40px);
@@ -184,7 +184,7 @@ const Form = styled.form`
     padding: 16px 4px 16px 0;
     border-radius: 6px;
     font-size: 13px;
-    box-shadow: 10px 10px 40px -14px var(--mainAccent);
+    box-shadow: 0 8px 10px 0 var(--mainAccent);
   }
   span {
     margin: 0 5px 0 15px;
