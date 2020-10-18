@@ -200,13 +200,19 @@ const Section = styled.section`
       width: 60vw;
       grid-row-gap: 1rem;
       grid-column-gap: 30px;
+      grid-template-columns: 90%;
+      position: relative;
+      left: 5%;
+      right: 5%;
     }
   }
   @media (max-width: 400px) {
     .portfolio-images {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      grid-row-gap: 2rem;
-      grid-column-gap: 50px;
+      width: 90vw;
+      grid-template-columns: 90%;
+      position: relative;
+      left: 5%;
+      right: 5%;
     }
   }
 `;

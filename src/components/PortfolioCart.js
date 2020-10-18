@@ -5,6 +5,7 @@ import styled from "styled-components";
 export default function SinglePortfolio({ portfolios }) {
   //console.log(room) use to see what props we can get!
   const { type, images, logo, slug } = portfolios;
+
   return (
     <Cart>
       <CartContainer>

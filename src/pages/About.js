@@ -125,7 +125,9 @@ export default class About extends Component {
                 className="SkillColumn"
                 onClick={this.changeFrontEnd.bind(this)}
               >
-                <h4 className="skills-btn uppercase">Other Skills</h4>
+                <h4 className="skills-btn uppercase">
+                  Other Skills <i className="fas fa-arrow-left" />
+                </h4>
               </div>
             </div>
             {/*   */}
@@ -263,9 +265,7 @@ const Content = styled.div`
 
   .containerTab {
     width: 80%;
-
     margin: 0 2rem 2rem 2rem;
-    color: white;
   }
 
   /* Clear floats after the columns */
@@ -359,6 +359,9 @@ const Content = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
+    h4 {
+      font-size: 0.7rem;
+    }
     .SkillColumn {
       font-size: 0.6rem;
     }

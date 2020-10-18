@@ -40,7 +40,11 @@ export default class FeaturedPortfolio extends Component {
                 variants={pageVariant}
                 transition={pageTransition}
               >
-                <CloseSection>
+                <CloseSection
+                  onClick={() => {
+                    value.closePortfolioModal();
+                  }}
+                >
                   <Section>
                     <div className="row-title">
                       <Title title="portfolio" />

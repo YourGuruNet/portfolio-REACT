@@ -36,7 +36,7 @@ export default function Home() {
                     "I'm here to create your web world",
                   ]}
                   cursorRenderer={(cursor) => <h3>{cursor}</h3>}
-                  displayTextRenderer={(text) => <h3>{text}</h3>}
+                  displayTextRenderer={(text) => <p>{text}</p>}
                   speed={100}
                   eraseSpeed={50}
                   eraseDelay={700}

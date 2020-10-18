@@ -24,7 +24,11 @@ const BannerContainer = styled.div`
   letter-spacing: var(--mainSpacing);
   font-family: "Bebas Neue", cursive;
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 300;
   }
   .text-typed {
     font-size: 1.2rem;
@@ -41,6 +45,9 @@ const BannerContainer = styled.div`
       font-size: 2rem;
       margin-bottom: 2rem;
     }
+    p {
+      font-size: 2rem;
+    }
   }
   @media screen and (min-width: 992px) {
     .banner {
@@ -48,6 +55,9 @@ const BannerContainer = styled.div`
     }
     h1 {
       font-size: 4rem;
+    }
+    p {
+      font-size: rem;
     }
   }
   .arrow-button {

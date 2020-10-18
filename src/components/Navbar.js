@@ -40,10 +40,10 @@ export default class Navbar extends Component {
                     : "nav-links nav-links-p-close"
                 }
               >
-                <li>
+                <li onClick={this.mobileNavOpen}>
                   <Link to="/">Home</Link>
                 </li>
-                <li>
+                <li onClick={this.mobileNavOpen}>
                   <Link
                     to="#"
                     onClick={() => {
@@ -53,7 +53,7 @@ export default class Navbar extends Component {
                     Portfolio
                   </Link>
                 </li>
-                <li>
+                <li onClick={this.mobileNavOpen}>
                   <Link
                     to="#"
                     onClick={() => {
@@ -63,7 +63,7 @@ export default class Navbar extends Component {
                     Contacts
                   </Link>
                 </li>
-                <li>
+                <li onClick={this.mobileNavOpen}>
                   <Link to="/about">About</Link>
                 </li>
                 <li className="nav-links-p">
