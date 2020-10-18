@@ -167,7 +167,7 @@ h6 {
 }
 @media (max-width: 636px) {
   .btn-cart {
-    padding: 0.6rem 0.7rem;
+    padding: 0.7rem 0.8rem;
     font-size: 0.1.2rem;
     font-weight: 400;
     margin-bottom: 0.7rem;
@@ -175,7 +175,7 @@ h6 {
 }
 @media (max-width: 430px) {
   .btn-cart {
-    padding: 0.4rem 0.5rem;
+    padding: 0.6rem 0.7rem;
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
