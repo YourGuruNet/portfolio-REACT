@@ -113,9 +113,11 @@ h6 {
 /* Button animation*/
 
 .order {
+  max-width: 80%;
   position: relative;
+  left: 10%;
+  right: 10%;
   align-items: center !important;
-  margin: 0 2rem;
   line-height: 75px;
   text-align: center;
   opacity: 1;
