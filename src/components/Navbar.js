@@ -67,7 +67,7 @@ export default class Navbar extends Component {
                   <Link to="/about">About</Link>
                 </li>
                 <li className="nav-links-p">
-                  <p>
+                  <p style={{ textTransform: "none" }}>
                     <span className="info info-hide">
                       <i className="far fa-envelope" title="Email" />{" "}
                       info@yourgurunet.com
@@ -123,13 +123,14 @@ const NavbarComponent = styled.nav`
     overflow: hidden;
     transition: var(--mainTransition);
     list-style-type: none;
+    text-transform: uppercase;
   }
   .show-nav {
-    height: 130px;
+    height: 150px;
   }
   .nav-links a,
   .nav-links-p {
-    margin-top: 0.7rem;
+    margin-top: 1rem;
     display: block;
     text-decoration: none !important;
     padding: 0.5rem 0;

@@ -20,30 +20,27 @@ const BannerContainer = styled.div`
   color: white;
   padding: 2rem 1rem;
   text-align: center;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
-  font-family: "Bebas Neue", cursive;
+  font-family: "Libre Baskerville", serif;
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   p {
-    font-size: 1.5rem;
+    font-size: 0.7rem;
     font-weight: 300;
+    letter-spacing: 1px;
   }
-  .text-typed {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
+
   @media screen and (min-width: 576px) {
     .banner {
       padding: 2rem 3rem;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
     p {
-      font-size: 2rem;
-      font-weight: 300;
+      font-size: 1.5rem;
     }
     -typed {
       font-size: 2rem;
@@ -59,7 +56,6 @@ const BannerContainer = styled.div`
     }
     p {
       font-size: 2rem;
-      font-weight: 300;
     }
   }
   .arrow-button {

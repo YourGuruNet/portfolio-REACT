@@ -61,7 +61,14 @@ export default class FeaturedPortfolio extends Component {
                     </button>
                     <div className="button-row">
                       <Link to="/portfolios/">
-                        <button className="btn-primary">See all</button>
+                        <button
+                          className="btn-primary"
+                          onClick={() => {
+                            value.closePortfolioModal();
+                          }}
+                        >
+                          See all
+                        </button>
                       </Link>
                     </div>
                   </Section>
