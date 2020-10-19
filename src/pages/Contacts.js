@@ -23,6 +23,7 @@ export default class Contacts extends Component {
       primary: true,
     };
   }
+
   changeColor() {
     this.setState({ primary: !this.state.primary });
   }
@@ -30,7 +31,6 @@ export default class Contacts extends Component {
   render() {
     let btn_class = this.state.primary ? "btn-primary" : "btn-done";
     let btn_text = this.state.primary ? "Send" : "Done";
-    let btn_disabled = false;
 
     function sendEmail(e) {
       e.preventDefault();
@@ -84,7 +84,6 @@ export default class Contacts extends Component {
                       value="Send"
                       className={btn_class}
                       onClick={this.changeColor.bind(this)}
-                      disabled={btn_disabled}
                       style={{ marginTop: "2rem" }}
                     >
                       <i className="fas fa-reply-all" /> {btn_text}

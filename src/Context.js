@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import items from "./data";
+//import items from "./data";
+import Client from "./Contentful";
 
 const PortfolioContext = React.createContext();
 class PortfolioProvider extends Component {
@@ -15,18 +16,28 @@ class PortfolioProvider extends Component {
     method: "all",
   };
   //getData
+  getData = async () => {
+    try {
+      let response = await Client.getEntries({
+        content_type: "portfolio",
+      });
+      let portfolios = this.formatData(response.items);
+      let featuredPortfolio = portfolios.filter(
+        (portfolio) => portfolio.featured === true
+      );
+      this.setState({
+        portfolios,
+        featuredPortfolio,
+        sortedPortfolio: portfolios,
+        loading: false,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   componentDidMount() {
-    let portfolios = this.formatData(items);
-    let featuredPortfolio = portfolios.filter(
-      (portfolio) => portfolio.featured === true
-    );
-    this.setState({
-      portfolios,
-      featuredPortfolio,
-      sortedPortfolio: portfolios,
-      loading: false,
-    });
+    this.getData();
   }
   formatData(items) {
     let tempItems = items.map((item) => {

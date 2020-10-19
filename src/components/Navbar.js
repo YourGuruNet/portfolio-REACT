@@ -72,7 +72,7 @@ export default class Navbar extends Component {
                       <i className="far fa-envelope" title="Email" />{" "}
                       info@yourgurunet.com
                     </span>
-                    &nbsp;
+                    &nbsp; &nbsp;
                     <span className="info info-hide">
                       <i className="fas fa-phone-alt" title="Phone" />{" "}
                       +37127150201
@@ -139,7 +139,7 @@ const NavbarComponent = styled.nav`
     text-align: center;
     font-size: 1rem;
     font-weight: 600;
-    letter-spacing: var(--mainSpacing);
+    letter-spacing: 1px;
   }
   .nav-links a:hover {
     color: var(--mainAccent);
