@@ -25,11 +25,11 @@ const BannerContainer = styled.div`
   font-family: "Libre Baskerville", serif;
   h1 {
     font-size: 1.8rem;
+    font-weight: 700;
   }
   p {
     font-size: 0.7rem;
-    font-weight: 300;
-    letter-spacing: 1px;
+    font-weight: 700;
   }
 
   @media screen and (min-width: 576px) {
