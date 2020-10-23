@@ -175,7 +175,7 @@ export default class About extends Component {
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fas fa-terminal" /> Terminal
+                    <i className="fas fa-terminal" /> Command-line
                   </li>
                 </span>
                 <span className="methods-list">

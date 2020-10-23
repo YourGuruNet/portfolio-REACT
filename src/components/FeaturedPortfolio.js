@@ -84,23 +84,21 @@ export default class FeaturedPortfolio extends Component {
 
 const CloseSection = styled.div`
   color: rgba(2, 2, 34, 0.404);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
+  align-items: center;
   z-index: 99999;
 `;
 const Section = styled.div`
-  position: fixed;
-  padding: 0 0;
-  z-index: 2;
-  width: 90%;
-  height: 60%;
-  left: 5%;
-  right: 5%;
   position: absolute;
-  top: 20%;
-  bottom: 5%;
+  padding: 0;
+  z-index: 2;
+  width: 120rem;
+  height: 36rem;
+  top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,6 +106,7 @@ const Section = styled.div`
   box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
   border-radius: 1.2rem;
   z-index: 999999;
+  margin-bottom: 2rem;
   .row-title {
     margin-top: 0.5rem;
     justify-content: center;
@@ -134,61 +133,29 @@ const Section = styled.div`
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 0;
+    bottom: 2rem;
   }
-  @media (max-width: 1111px) {
-    height: auto;
-    width: auto;
-    width: 90%;
-    left: 5%;
-    right: 5%;
-    top: 5%;
-  }
-  @media (max-width: 726px) {
-    height: 100%;
-    width: 44%;
-    left: 28%;
-    right: 28%;
-  }
-  @media (max-width: 643px) {
-    width: 44%;
-    left: 28%;
-    right: 28%;
-    height: 90%;
-  }
-  @media (max-width: 600px) {
-    height: 80%;
+  @media (max-width: 1300px) {
+    width: 100rem;
   }
 
-  @media (max-width: 476px) {
-    width: 80%;
-    left: 10%;
-    right: 10%;
-    height: 110%;
+  @media (max-width: 1112px) {
+    width: 36rem;
+    height: 70rem;
+    top: 5%;
+    bottom: 10%;
   }
-  @media (max-width: 440px) {
-    height: 100%;
-  }
-  @media (max-width: 360px) {
-    width: 90%;
-    left: 5%;
-    right: 5%;
-    height: 90%;
-    .btn-close {
-      font-size: 1.8rem;
-    }
-  }
-  @media (max-width: 330px) {
+  @media (max-width: 385px) {
     width: 98%;
     left: 1%;
     right: 1%;
-    height: 85%;
+    height: 65rem;
+  }
+  @media (max-width: 360px) {
+    height: 60rem;
   }
   @media (max-width: 300px) {
-    width: 100%;
-    left: 0;
-    right: 0;
-    height: 80%;
+    height: 55rem;
   }
 `;
 const ModalContainer = styled.div`
