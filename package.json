@@ -22,12 +22,15 @@
     "styled-components": "^5.2.0",
     "swup": "^2.0.11",
     "typed.js": "^2.0.11"
+
   },
   "scripts": {
+    "clean": "rn -rf build/*",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "copy .\\src\\app.js .\\build\\app.js"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -105,8 +105,8 @@ const Section = styled.div`
   align-items: center;
   justify-content: center;
   background: var(--mainDark);
-  box-shadow: 0 8px 10px 0 var(--mainAccent);
-  border-radius: 12px;
+  box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
+  border-radius: 1.2rem;
   z-index: 999999;
   .row-title {
     margin-top: 0.5rem;
@@ -117,7 +117,7 @@ const Section = styled.div`
 
   .btn-close {
     color: var(--mainText);
-    font-size: 2rem;
+    font-size: 3rem;
     display: block;
     cursor: pointer;
     position: absolute;
@@ -175,7 +175,7 @@ const Section = styled.div`
     right: 5%;
     height: 90%;
     .btn-close {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
   }
   @media (max-width: 330px) {
@@ -215,9 +215,9 @@ const ModalContainer = styled.div`
     width: 80vw;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
     grid-row-gap: 2rem;
-    grid-column-gap: 40px;
+    grid-column-gap: 4rem;
   }
   @media (max-width: 1111px) {
     .featured-rooms-center {
@@ -232,7 +232,7 @@ const ModalContainer = styled.div`
   @media (max-width: 600px) {
     .featured-rooms-center {
       margin-top: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
       grid-column-gap: 0;
     }
   }

@@ -25,7 +25,7 @@ function App() {
           <Route path="/portfolios/" component={Portfolios} />
           <Route path="/portfolio/:slug" component={SinglePortfolio} />
           <Route path="/about" component={About} />
-          <Route component={Error} />
+          <Route path="/" component={Error} />
         </Switch>
       </AnimatePresence>
       <Footer />

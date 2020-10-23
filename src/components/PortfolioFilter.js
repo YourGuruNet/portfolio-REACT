@@ -73,7 +73,7 @@ const Form = styled.form`
   width: 60vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   grid-column-gap: 2rem;
   background: var(--mainText);
   opacity: 0.6;
@@ -87,6 +87,7 @@ const Form = styled.form`
     display: block;
     letter-spacing: var(--mainSpacing);
     margin-bottom: 0.5rem;
+    font-size: 1.5rem;
   }
 
   select {
@@ -95,7 +96,7 @@ const Form = styled.form`
     border: none;
     width: 80%;
     background: transparent;
-    font-size: 1rem;
+    font-size: 1.4rem;
     outline: none;
     cursor: pointer;
     border-bottom: solid 0.05rem var(--mainAccent);
@@ -110,7 +111,7 @@ const Form = styled.form`
   }
   @media screen and (max-width: 850px) {
     .form-group label {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
   @media screen and (max-width: 700px) {
@@ -120,7 +121,7 @@ const Form = styled.form`
   }
   @media screen and (max-width: 300px) {
     .form-group label {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
     }
   }
 `;

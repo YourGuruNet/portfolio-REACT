@@ -72,10 +72,10 @@ export default class PortfolioList extends Component {
 const ListSection = styled.div`
   padding: 2rem 0;
   .portfolio-list {
-    width: 80vw;
+    width: 97vw;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
     grid-row-gap: 2rem;
     grid-column-gap: 2rem;
   }
@@ -86,13 +86,7 @@ const ListSection = styled.div`
   @media screen and (min-width: 776px) {
     .portfolio-list {
       width: 90vw;
-      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-    }
-  }
-  @media screen and (min-width: 992px) {
-    .portfolio-list {
-      width: 95vw;
-      max-width: 1170px;
+      grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
     }
   }
 `;
@@ -100,5 +94,6 @@ const NoResults = styled.div`
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 15rem;
-  margin-top: 4rem;
+  margin-top: 5rem;
+  font-size: 3rem;
 `;

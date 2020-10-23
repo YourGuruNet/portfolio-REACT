@@ -15,7 +15,7 @@ const TitleSection = styled.div`
   margin-bottom: 1rem;
   z-index: 999999;
   h4 {
-    font-size: 2rem;
+    font-size: 3rem;
     letter-spacing: var(--mainSpacing);
     text-transform: capitalize;
     margin-bottom: 1rem;
@@ -23,35 +23,19 @@ const TitleSection = styled.div`
     text-transform: uppercase;
   }
   div {
-    width: 5rem;
-    height: 5px;
+    width: 7rem;
+    height: 0.5rem;
     margin: 0 auto;
     background: var(--mainText);
   }
   @media (max-width: 726px) {
     h4 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
   }
   @media (max-width: 643px) {
     h4 {
-      font-size: 1rem;
-    }
-  }
-  @media (max-width: 476px) {
-    h4 {
-    }
-  }
-  @media (max-width: 360px) {
-    h4 {
-    }
-  }
-  @media (max-width: 330px) {
-    h4 {
-    }
-  }
-  @media (max-width: 300px) {
-    h4 {
+      font-size: 1.2rem;
     }
   }
 `;

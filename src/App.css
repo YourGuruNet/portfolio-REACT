@@ -2,13 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
+  font-size: 62.5%; /* % from default value 16px now the default value is 10px an I can easy work with rems*/
 }
 :root {
   --mainDark: rgb(2, 2, 19);
@@ -16,13 +19,13 @@ html {
   --secondaryText: #63807d;
   --mainAccent: #04d9ff;
   --mainTransition: all 0.3s linear;
-  --mainSpacing: 3px;
-  --lightShadow: 4px 5px 3px 0px #1f79758e;
-  --lightShadowTop: -4px -5px 3px 0px #1f79758e;
-  --darkShadow: 4px 10px 5px 0px #1f7975f3;
+  --mainSpacing: 0.3rem;
+  --lightShadow: 0.4rem 0.5rem 0.3rem 0 #1f79758e;
+  --lightShadowTop: -0.4rem -0.5rem 0.3rem 0 #1f79758e;
+  --darkShadow: 0.4rem 1rem 0.5rem 0 #1f7975f3;
 }
 body {
-  padding-top: 66px;
+  padding-top: 7rem;
   color: var(--mainText);
   background: var(--mainDark);
   font-family: "Roboto", sans-serif;
@@ -31,6 +34,7 @@ body {
   z-index: -1;
 }
 /* Headings*/
+/*
 h1 {
   font-size: 3em;
   line-height: 1;
@@ -59,56 +63,53 @@ h6 {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 1.5em;
-}
+} */
 
 /* Buttons*/
 .btn-done {
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
-  color: rgba(247, 74, 6, 0.89);
-  background: var(--mainDark);
-  padding: 0.8rem 1.2rem;
-  border: 3px solid rgba(247, 74, 6, 0.89);
-  transition: 0.2s;
-  text-transform: uppercase;
-  cursor: pointer;
-  touch-action: manipulation;
+  color: rgb(83, 202, 4);
+  background: transparent;
+  padding: 1.1rem 1.6rem;
+  border: none;
   outline: none;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  pointer-events: none; /* Disable button click*/
 }
-.btn-done:hover {
-  background: var(--mainText);
-  color: rgba(247, 74, 6, 0.89);
-  border-color: rgba(247, 74, 6, 0.89);
-  box-shadow: 0 0 10px rgba(247, 74, 6, 0.89), 0 0 40px rgba(247, 74, 6, 0.89),
-    0 0 80px rgba(247, 74, 6, 0.89);
-}
+
 .btn-primary {
+  transition: var(--mainTransition);
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
   color: var(--mainAccent);
   background: var(--mainDark);
-  padding: 0.8rem 1.2rem;
-  border: 3px solid var(--mainAccent);
+  padding: 1.1rem 1.6rem;
+  border: 0.3rem solid var(--mainAccent);
   transition: 0.2s;
   text-transform: uppercase;
   cursor: pointer;
   touch-action: manipulation;
   outline: none;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 1rem !important;
+  margin: 1rem !important;
 }
 .btn-primary:hover {
+  transform: translateY(-0.3rem);
   background: var(--mainText);
   color: var(--mainAccent);
   border-color: var(--mainAccent);
-  box-shadow: 0 0 10px var(--mainAccent), 0 0 40px var(--mainAccent),
-    0 0 80px var(--mainAccent);
+  box-shadow: 0 0 1rem var(--mainAccent), 0 0 4rem var(--mainAccent),
+    0 0 8rem var(--mainAccent);
+}
+.btn-primary:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0 0.5rem var(--mainAccent), 0 0 3rem var(--mainAccent),
+    0 0 5rem var(--mainAccent);
 }
 /* Button animation*/
 
@@ -118,7 +119,7 @@ h6 {
   left: 10%;
   right: 10%;
   align-items: center !important;
-  line-height: 75px;
+  line-height: 7, 5rem;
   text-align: center;
   opacity: 1;
   border-radius: 50%;
@@ -149,14 +150,14 @@ h6 {
   letter-spacing: var(--mainSpacing);
   color: var(--mainAccent);
   background: var(--mainDark);
-  padding: 0.8rem 1.2rem;
-  border: 3px solid var(--mainAccent);
+  padding: 1.1rem 1.6rem;
+  border: 0.3rem solid var(--mainAccent);
   transition: 0.2s;
   text-transform: uppercase;
   cursor: pointer;
   touch-action: manipulation;
   outline: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -164,20 +165,25 @@ h6 {
   background: var(--mainText);
   color: var(--mainAccent);
   border-color: var(--mainAccent);
-  box-shadow: 0 0 10px var(--mainAccent), 0 0 40px var(--mainAccent),
-    0 0 80px var(--mainAccent);
+  box-shadow: 0 0 1rem var(--mainAccent), 0 0 4rem var(--mainAccent),
+    0 0 8rem var(--mainAccent);
+}
+.btn-cart:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0.5rem var(--mainAccent), 0 0 3rem var(--mainAccent),
+    0 0 5rem var(--mainAccent);
 }
 @media (max-width: 636px) {
   .btn-cart {
-    padding: 0.7rem 0.8rem;
-    font-size: 0.1.2rem;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 0.7rem;
   }
 }
 @media (max-width: 430px) {
   .btn-cart {
-    padding: 0.6rem 0.7rem;
+    padding: 0.8rem 0.9rem;
     font-size: 0.8rem;
     font-weight: 300;
     margin-bottom: 0.5rem;

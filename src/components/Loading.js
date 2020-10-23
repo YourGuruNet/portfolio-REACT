@@ -14,6 +14,6 @@ const LoadingContainer = styled.div`
   text-transform: capitalize;
   text-align: center;
   img {
-    max-width: 15rem;
+    max-width: 30%;
   }
 `;

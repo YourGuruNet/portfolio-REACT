@@ -40,7 +40,7 @@ class Default extends Component {
                 2000,
               ]}
               loop={1}
-              wrapper="h1"
+              wrapper="p"
             />
             <Link to="/" className="btn-primary">
               Back to home

@@ -59,7 +59,7 @@ export default class Footer extends Component {
 }
 const FooterContainer = styled.div`
   background-color: var(--mainDark);
-  padding: 0.8rem 0;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,37 +70,42 @@ const FooterContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-content: center;
-    width: 100%;
-    max-width: 1000px;
+    width: 80vw;
     margin: 0.5rem 0.5rem 0 0.5rem;
   }
   .social-media-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 1000px;
+    width: 80vw;
     margin: 0.5rem 0.5rem 0 0.5rem;
   }
   .website-right {
     color: var(--mainText);
     margin-bottom: 0.4rem;
     text-decoration: none;
+    font-size: 1.2rem;
   }
   .social-ions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 180px;
+    width: 18rem;
   }
+
   .social-icon-link {
-    font-size: 24px;
+    font-size: 2.4rem;
     color: var(--mainText);
     transition: var(--mainTransition);
   }
   .social-icon-link:hover {
+    transform: translateY(-0.3rem);
     color: var(--mainAccent);
   }
+  .social-icon-link:active {
+    transform: translateY(0.3rem);
+  }
+
   @media screen and (max-width: 820px) {
     .footer-link-wrapper {
       flex-direction: column;

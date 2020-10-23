@@ -222,7 +222,7 @@ const Content = styled.div`
   .column {
     float: left;
     width: 50%;
-    padding: 0 10px;
+    padding: 0 1rem;
   }
 
   /* Clear floats after the columns */
@@ -232,7 +232,7 @@ const Content = styled.div`
     clear: both;
   }
   .container {
-    box-shadow: 0 8px 10px 0 var(--mainAccent);
+    box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
     position: relative;
     left: 20%;
     right: 20%;
@@ -253,14 +253,20 @@ const Content = styled.div`
     max-width: 100%;
   }
   p {
+    font-size: 1.6rem;
     text-align: justify;
+    margin-bottom: 1.5rem;
   }
   h3 {
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin: 0.5rem 0 0.5rem 0;
   }
   h6 {
+    font-size: 1.8rem;
     margin-bottom: 0.2rem;
+  }
+  h4 {
+    font-size: 1.5rem;
   }
 
   .containerTab {
@@ -279,9 +285,10 @@ const Content = styled.div`
   }
   .SkillColumn {
     float: left;
-    width: 30%;
-    padding: 0 10px;
+    width: 40%;
+    padding: 0 1rem;
     cursor: pointer;
+    margin-bottom: 0.8rem;
   }
 
   .links {
@@ -293,30 +300,28 @@ const Content = styled.div`
   .methods-list {
     color: var(--mainText);
   }
-  h5 {
-    color: var(--mainText);
-  }
   .methods {
     text-align: center;
     list-style-type: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 0.5fr));
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 0.5fr));
     grid-column-gap: 0.5rem;
     grid-row-gap: 1rem;
     margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
   .methods-list:hover {
     background: var(--mainText);
     color: var(--mainAccent);
-    box-shadow: 0 0 10px var(--mainAccent), 0 0 40px var(--mainAccent),
-      0 0 80px var(--mainAccent);
+    box-shadow: 0 0 1rem var(--mainAccent), 0 0 4rem var(--mainAccent),
+      0 0 8rem var(--mainAccent);
   }
   .skills-btn:hover {
     color: var(--mainAccent);
   }
   .line {
     width: 80%;
-    height: 1px;
+    height: 0.1rem;
     margin: 0 auto;
     background: var(--mainText);
     border: 0;
@@ -326,16 +331,9 @@ const Content = styled.div`
   }
   .school {
     margin-bottom: 2rem;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
+
   @media screen and (max-width: 1200px) {
     .container {
       left: 10%;
@@ -347,6 +345,21 @@ const Content = styled.div`
     .SkillColumn {
       width: 40%;
     }
+    p {
+      font-size: 1.2rem;
+    }
+    h3 {
+      font-size: 1.8rem;
+    }
+    h6 {
+      font-size: 1.1rem;
+    }
+    h4 {
+      font-size: 1.1rem;
+    }
+    .methods {
+      font-size: 1rem;
+    }
   }
   @media screen and (max-width: 700px) {
     .container {
@@ -357,31 +370,30 @@ const Content = styled.div`
     .SkillColumn {
       width: 50%;
     }
+    p {
+      font-size: 1.1rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
   }
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 2rem;
+    }
+  }
+
   @media screen and (max-width: 500px) {
-    h4 {
-      font-size: 0.7rem;
-    }
-    .SkillColumn {
-      font-size: 0.6rem;
-    }
-    .methods-list {
-      grid-column-gap: 0.1rem;
-      grid-row-gap: 0.2rem;
-      font-size: 0.6rem;
-    }
-    .school {
-      margin-bottom: 0.5rem;
-      font-size: 0.6rem;
-    }
     .column {
       padding: 0;
+      margin-bottom: 0.2rem;
     }
-    .row {
-      margin: 0.5rem 0.5rem 0 0.5rem;
-    }
+
     p {
-      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
     }
   }
 `;

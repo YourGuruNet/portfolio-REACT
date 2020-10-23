@@ -18,17 +18,18 @@ const BannerContainer = styled.div`
   display: inline-block;
   background: transparent;
   color: white;
-  padding: 2rem 1rem;
+  padding: 3rem 3rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   font-family: "Libre Baskerville", serif;
   h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
+    padding-bottom: 1rem;
   }
   p {
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 700;
   }
 
@@ -37,10 +38,11 @@ const BannerContainer = styled.div`
       padding: 2rem 3rem;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      padding-bottom: 2rem;
     }
     p {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
     -typed {
       font-size: 2rem;
@@ -49,13 +51,14 @@ const BannerContainer = styled.div`
   }
   @media screen and (min-width: 992px) {
     .banner {
-      padding: 2rem 6rem;
+      padding: 3rem 6rem;
     }
     h1 {
-      font-size: 4rem;
+      font-size: 6rem;
+      padding-bottom: 2rem;
     }
     p {
-      font-size: 2rem;
+      font-size: 3rem;
     }
   }
   .arrow-button {

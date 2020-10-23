@@ -30,7 +30,7 @@ export default class Contacts extends Component {
   changeDisabled() {}
   render() {
     let btn_class = this.state.primary ? "btn-primary" : "btn-done";
-    let btn_text = this.state.primary ? "Send" : "Done";
+    let btn_text = this.state.primary ? "Send" : "Thanks! Message sent..";
 
     function sendEmail(e) {
       e.preventDefault();
@@ -121,7 +121,7 @@ const CloseSection = styled.div`
   z-index: 99999;
   .btn-close {
     color: var(--mainText);
-    font-size: 2rem;
+    font-size: 3rem;
     display: block;
     cursor: pointer;
     position: absolute;
@@ -136,14 +136,14 @@ const CloseSection = styled.div`
   }
 `;
 const Form = styled.form`
-  width: 400px;
-  height: 500px;
+  width: 40rem;
+  height: 50rem;
   background: var(--mainDark);
-  border-radius: 12px;
-  box-shadow: 0 8px 10px 0 var(--mainAccent);
-  margin: calc(50vh - 220px) auto;
-  padding: 20px 30px;
-  max-width: calc(100vw - 40px);
+  border-radius: 1.2rem;
+  box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
+  margin: calc(50vh - 22rem) auto;
+  padding: 2rem 3rem;
+  max-width: calc(100vw - 4rem);
   box-sizing: border-box;
   position: relative;
   z-index: 9999999;
@@ -151,14 +151,14 @@ const Form = styled.form`
   p:before {
     content: attr(type);
     display: block;
-    margin: 28px 0 0;
-    font-size: 14px;
+    margin: 2.8rem 0 0;
+    font-size: 1.4rem;
     color: var(--mainText);
   }
   input {
     color: var(--mainText);
     width: 100%;
-    padding: 10px;
+    padding: 1rem;
     box-sizing: border-box;
     background: none;
     outline: none;
@@ -166,31 +166,31 @@ const Form = styled.form`
     border: 0;
     font-family: "Montserrat", sans-serif;
     transition: all 0.3s;
-    border-bottom: 2px solid var(--mainText);
+    border-bottom: 0.2rem solid var(--mainText);
   }
   input:focus {
     outline: none !important;
-    border-bottom: 2px solid var(--mainText);
+    border-bottom: 0.2rem solid var(--mainText);
   }
   .bottomContainer {
     content: "Hi";
     position: absolute;
-    bottom: -30px;
-    right: -20px;
+    bottom: -3rem;
+    right: -2rem;
     background: var(--mainText);
     color: var(--mainDark);
-    width: 320px;
-    padding: 16px 4px 16px 0;
-    border-radius: 6px;
-    font-size: 13px;
-    box-shadow: 0 8px 10px 0 var(--mainAccent);
+    width: 32rem;
+    padding: 1.6rem 0.4rem 1.6rem 0;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
   }
   span {
-    margin: 0 5px 0 15px;
+    margin: 0 0.5rem 0 1.5rem;
   }
   @media screen and (max-width: 300px) {
     .bottomContainer {
-      width: 200px;
+      width: 20rem;
     }
   }
 `;

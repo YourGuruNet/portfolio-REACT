@@ -92,27 +92,25 @@ const NavbarComponent = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   background-color: var(--mainDark);
   box-shadow: var(--lightShadow);
   z-index: 9999;
 
-  .nav-center {
-    padding: 0.7rem;
-  }
   .nav-header {
+    margin: 0 1rem;
     display: flex;
     justify-content: space-between;
   }
   .nav-btn {
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
     float: right;
     background: transparent;
     border: none;
     cursor: pointer;
     outline: none;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: var(--mainText);
   }
   .nav-icon:hover {
@@ -126,36 +124,40 @@ const NavbarComponent = styled.nav`
     text-transform: uppercase;
   }
   .show-nav {
-    height: 150px;
+    height: 15rem;
   }
   .nav-links a,
   .nav-links-p {
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: block;
     text-decoration: none !important;
     padding: 0.5rem 0;
-    color: var(--mainBlack);
+    color: var(--mainText);
     transition: var(--mainTransition);
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.2rem;
   }
   .nav-links a:hover {
+    transform: translateY(-0.3rem);
     color: var(--mainAccent);
+  }
+  .nav-links a:active {
+    transform: translateY(0.3rem);
   }
   .nav-links-p {
     color: #7e7e7e71;
     position: absolute;
     right: 1rem;
     bottom: 0.4rem;
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
   .nav-links-p-close {
     display: none;
   }
   .nav-center {
-    padding: 0.7rem;
+    padding: 0.8rem;
   }
   .info {
     color: var(--mainText);
@@ -169,9 +171,9 @@ const NavbarComponent = styled.nav`
     .nav-links-p {
       color: #a8a5a571;
       position: absolute;
-      right: 2rem;
-      font-size: 0.7rem;
-      bottom: 2rem;
+      right: 4rem;
+      font-size: 1rem;
+      bottom: 3rem;
     }
     .nav-btn {
       display: none;
@@ -189,7 +191,7 @@ const NavbarComponent = styled.nav`
       margin-left: 2rem;
     }
     .nav-links a {
-      margin: 1.5rem 0 1rem 1rem;
+      margin: 2.5rem 0 1rem 1rem;
       padding: 0.5rem 0;
     }
   }

@@ -48,18 +48,18 @@ const CartContainer = styled.article`
   position: relative;
   img {
     width: 100%;
-    max-height: 180px;
+    max-height: 18rem;
     display: block;
     transition: var(--mainTransition);
   }
   @media screen and (max-width: 776px) {
     img {
       width: 100%;
-      max-height: 200px;
+      max-height: 20rem;
     }
   }
   .logo {
-    max-width: 50px;
+    max-width: 5rem;
   }
   .logo-top {
     position: absolute;
