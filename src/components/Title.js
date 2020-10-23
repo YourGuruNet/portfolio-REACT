@@ -15,7 +15,7 @@ const TitleSection = styled.div`
   margin-bottom: 1rem;
   z-index: 999999;
   h4 {
-    font-size: 3rem;
+    font-size: 3rem !important;
     letter-spacing: var(--mainSpacing);
     text-transform: capitalize;
     margin-bottom: 1rem;
