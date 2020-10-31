@@ -9,7 +9,6 @@ import Contacts from "./pages/Contacts";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FeaturedPortfolio from "./components/FeaturedPortfolio";
-import { AnimatePresence } from "framer-motion";
 import About from "./pages/About";
 
 function App() {
@@ -19,15 +18,13 @@ function App() {
       <FeaturedPortfolio />
       <Contacts />
       <Navbar />
-      <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.pathname}>
-          <Route exact path="/" component={Home} />
-          <Route path="/portfolios/" component={Portfolios} />
-          <Route path="/portfolio/:slug" component={SinglePortfolio} />
-          <Route path="/about" component={About} />
-          <Route path="/" component={Error} />
-        </Switch>
-      </AnimatePresence>
+      <Switch location={location} key={location.pathname}>
+        <Route exact path="/" component={Home} />
+        <Route path="/portfolios/" component={Portfolios} />
+        <Route path="/portfolio/:slug" component={SinglePortfolio} />
+        <Route path="/about" component={About} />
+        <Route path="/" component={Error} />
+      </Switch>
       <Footer />
     </React.Fragment>
   );

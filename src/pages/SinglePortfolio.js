@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { motion } from "framer-motion";
 import { PortfolioContext } from "../Context";
 import { Link } from "react-router-dom";
 import Error from "./Error";
@@ -9,15 +8,7 @@ import defaultBcg from "../images/picture-1.JPG";
 import styled from "styled-components";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
-//Page Transitions
-const pageVariant = {
-  in: { opacity: 1 },
-  out: { opacity: 0 },
-};
-const pageTransition = {
-  duration: 1,
-};
-//End Of page transitions
+import PageTransition from "../components/PageTransition";
 
 export default class SinglePortfolio extends Component {
   constructor(props) {
@@ -38,13 +29,7 @@ export default class SinglePortfolio extends Component {
     const { name, description, github, online, methods, images } = portfolio;
     const [mainImg, ...defaultImg] = images;
     return (
-      <motion.div
-        initial="out"
-        animate="in"
-        exit="out"
-        variants={pageVariant}
-        transition={pageTransition}
-      >
+      <PageTransition>
         <StyledHero img={mainImg || this.state.defaultBcg}>
           <Banner title={name}>
             <div className="order">
@@ -112,7 +97,7 @@ export default class SinglePortfolio extends Component {
             </section>
           </div>
         </Section>
-      </motion.div>
+      </PageTransition>
     );
   }
 }

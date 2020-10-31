@@ -99,7 +99,7 @@ const FooterContainer = styled.div`
     transition: var(--mainTransition);
   }
   .social-icon-link:hover {
-    transform: translateY(-0.3rem);
+    transform: translateY(-0.3rem) scale(1.1);
     color: var(--mainAccent);
   }
   .social-icon-link:active {

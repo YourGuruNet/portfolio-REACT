@@ -141,6 +141,22 @@ body {
   box-shadow: 0 0 0.5rem var(--mainAccent), 0 0 3rem var(--mainAccent),
     0 0 5rem var(--mainAccent);
 }
+
+/* Animated button */
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.animated-button {
+  animation: moveInBottom 0.5s ease-out 0.85s;
+  animation-fill-mode: backwards;
+}
 @media (max-width: 636px) {
   .btn-cart {
     padding: 1.1rem 1.2rem;
@@ -153,5 +169,28 @@ body {
     padding: 0.8rem 0.9rem;
     font-size: 1rem;
     font-weight: 300;
+  }
+}
+
+@keyframes growIn {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(15rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+@keyframes moveFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-15rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

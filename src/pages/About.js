@@ -1,17 +1,9 @@
 import React, { Component } from "react";
-import { motion } from "framer-motion";
 import Title from "../components/Title";
 import styled from "styled-components";
 import image from "../images/profile.jpg";
-//Page Transitions
-const pageVariant = {
-  in: { opacity: 1 },
-  out: { opacity: 0 },
-};
-const pageTransition = {
-  duration: 1,
-};
-//End Of page transitions
+import PageTransition from "../components/PageTransition";
+
 export default class About extends Component {
   constructor() {
     super();
@@ -44,13 +36,7 @@ export default class About extends Component {
       ? "containerTab displayNone"
       : "containerTab";
     return (
-      <motion.div
-        initial="out"
-        animate="in"
-        exit="out"
-        variants={pageVariant}
-        transition={pageTransition}
-      >
+      <PageTransition>
         <Content>
           <Title title="about me" />
           <div className="container">
@@ -104,12 +90,13 @@ export default class About extends Component {
                 </p>
               </div>
               <div className="column">
-                <h6 className="uppercase">Riga coding school</h6>
-                <p>C# Programming language </p>
+                <h6 className="uppercase">10 + hours per day self-learning</h6>
+                <p>Deep programming skill </p>
                 <p className="school">
-                  60 hours, 9 weeks intensive course. C# and .NET programming
-                  environment, OOP, SQL and working with databases, more complex
-                  WEB service development XML, SOAP.
+                  There is no school that teaches everything to you, except your
+                  passion for something. Technology changed every day and you
+                  need to change together with the latest innovations, so learn
+                  something new every day is the best key to success.
                 </p>
               </div>
             </div>
@@ -212,7 +199,7 @@ export default class About extends Component {
             </div>
           </div>
         </Content>
-      </motion.div>
+      </PageTransition>
     );
   }
 }
@@ -300,6 +287,13 @@ const Content = styled.div`
   .methods-list {
     color: var(--mainText);
   }
+  .methods-list:hover {
+    transform: scale(1.2);
+    background: var(--mainText);
+    color: var(--mainAccent);
+    box-shadow: 0 0 1rem var(--mainAccent), 0 0 4rem var(--mainAccent),
+      0 0 8rem var(--mainAccent);
+  }
   .methods {
     text-align: center;
     list-style-type: none;
@@ -310,12 +304,7 @@ const Content = styled.div`
     margin-bottom: 1rem;
     font-size: 1.5rem;
   }
-  .methods-list:hover {
-    background: var(--mainText);
-    color: var(--mainAccent);
-    box-shadow: 0 0 1rem var(--mainAccent), 0 0 4rem var(--mainAccent),
-      0 0 8rem var(--mainAccent);
-  }
+
   .skills-btn:hover {
     color: var(--mainAccent);
   }

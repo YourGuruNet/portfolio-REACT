@@ -1,19 +1,9 @@
 import React, { Component } from "react";
 import { PortfolioConsumer } from "../Context";
-import { motion } from "framer-motion";
 import styled from "styled-components";
 import Title from "../components/Title";
 import emailjs from "emailjs-com";
-
-//Page Transitions
-const pageVariant = {
-  in: { opacity: 1 },
-  out: { opacity: 0 },
-};
-const pageTransition = {
-  duration: 1,
-};
-//End Of page transitions
+import CloseSection from "../components/CloseSection";
 
 export default class Contacts extends Component {
   constructor() {
@@ -56,54 +46,47 @@ export default class Contacts extends Component {
             return null;
           } else {
             return (
-              <motion.div
-                initial="out"
-                animate="in"
-                exit="out"
-                variants={pageVariant}
-                transition={pageTransition}
-              >
+              <React.Fragment>
                 <CloseSection
-                /* onClick={() => {
+                  onClick={() => {
                     value.closeContactModal();
-                  }}*/
-                >
-                  <Form className="contact-form" onSubmit={sendEmail}>
-                    <Title title="Contact Me" />
-                    <p type="Name:">
-                      <input placeholder="Your Name" name="name"></input>
-                    </p>
-                    <p type="Email:">
-                      <input placeholder="Your Email" name="email"></input>
-                    </p>
-                    <p type="Message:">
-                      <input placeholder="Message.." name="message"></input>
-                    </p>
-                    <button
-                      type="submit"
-                      value="Send"
-                      className={btn_class}
-                      onClick={this.changeColor.bind(this)}
-                      style={{ marginTop: "2rem" }}
-                    >
-                      <i className="fas fa-reply-all" /> {btn_text}
-                    </button>
-                    <div className="bottomContainer">
-                      <span className="fa fa-envelope-o"></span>{" "}
-                      info@yourgurunet.com
-                      <span className="fas fa-phone-alt"></span>+371 27150201
-                    </div>
-                    <button
-                      className="btn-close"
-                      onClick={() => {
-                        value.closeContactModal();
-                      }}
-                    >
-                      <i className="fas fa-times-circle" title="Close" />
-                    </button>
-                  </Form>
-                </CloseSection>
-              </motion.div>
+                  }}
+                />
+                <Form className="contact-form" onSubmit={sendEmail}>
+                  <Title title="Contact Me" />
+                  <p type="Name:">
+                    <input placeholder="Your Name" name="name"></input>
+                  </p>
+                  <p type="Email:">
+                    <input placeholder="Your Email" name="email"></input>
+                  </p>
+                  <p type="Message:">
+                    <input placeholder="Message.." name="message"></input>
+                  </p>
+                  <button
+                    type="submit"
+                    value="Send"
+                    className={btn_class}
+                    onClick={this.changeColor.bind(this)}
+                    style={{ marginTop: "2rem" }}
+                  >
+                    <i className="fas fa-reply-all" /> {btn_text}
+                  </button>
+                  <div className="bottomContainer">
+                    <span className="fa fa-envelope-o"></span>{" "}
+                    info@yourgurunet.com
+                    <span className="fas fa-phone-alt"></span>+371 27150201
+                  </div>
+                  <button
+                    className="btn-close"
+                    onClick={() => {
+                      value.closeContactModal();
+                    }}
+                  >
+                    <i className="fas fa-times-circle" title="Close" />
+                  </button>
+                </Form>
+              </React.Fragment>
             );
           }
         }}
@@ -112,13 +95,25 @@ export default class Contacts extends Component {
   }
 }
 
-const CloseSection = styled.div`
-  color: rgba(2, 2, 34, 0.404);
-  width: 100%;
-  height: 100%;
+const Form = styled.form`
   position: absolute;
   top: 0;
-  z-index: 99999;
+  left: 0;
+  right: 0;
+  width: 40rem;
+  height: 50rem;
+  background: var(--mainDark);
+  border-radius: 1.2rem;
+  box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
+  margin: calc(50vh - 22rem) auto;
+  padding: 2rem 3rem;
+  max-width: calc(100vw - 4rem);
+  box-sizing: border-box;
+  z-index: 99;
+  animation-name: growIn;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+
   .btn-close {
     color: var(--mainText);
     font-size: 3rem;
@@ -134,19 +129,6 @@ const CloseSection = styled.div`
   .btn-close:hover {
     color: var(--mainAccent);
   }
-`;
-const Form = styled.form`
-  width: 40rem;
-  height: 50rem;
-  background: var(--mainDark);
-  border-radius: 1.2rem;
-  box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
-  margin: calc(50vh - 22rem) auto;
-  padding: 2rem 3rem;
-  max-width: calc(100vw - 4rem);
-  box-sizing: border-box;
-  position: relative;
-  z-index: 9999999;
 
   p:before {
     content: attr(type);

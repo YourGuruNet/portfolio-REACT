@@ -4,18 +4,8 @@ import { PortfolioConsumer, PortfolioContext } from "../Context";
 import Title from "../components/Title";
 import Loading from "../components/Loading";
 import SinglePortfolio from "./PortfolioCart";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
-//Page Transitions
-const pageVariant = {
-  in: { opacity: 1 },
-  out: { opacity: 0 },
-};
-const pageTransition = {
-  duration: 1.5,
-};
-//End Of page transitions
+import CloseSection from "./CloseSection";
 
 export default class FeaturedPortfolio extends Component {
   static contextType = PortfolioContext;
@@ -33,47 +23,44 @@ export default class FeaturedPortfolio extends Component {
             return null;
           } else {
             return (
-              <motion.div
-                initial="out"
-                animate="in"
-                exit="out"
-                variants={pageVariant}
-                transition={pageTransition}
-              >
-                <CloseSection>
-                  <Section>
-                    <div className="row-title">
-                      <Title title="portfolio" />
+              <React.Fragment>
+                <CloseSection
+                  onClick={() => {
+                    value.closePortfolioModal();
+                  }}
+                />
+                <Section>
+                  <div className="row-title">
+                    <Title title="portfolio" />
+                  </div>
+                  <ModalContainer>
+                    <div className="featured-rooms-center">
+                      {loading ? <Loading /> : portfolio}
                     </div>
-                    <ModalContainer>
-                      <div className="featured-rooms-center">
-                        {loading ? <Loading /> : portfolio}
-                      </div>
-                    </ModalContainer>
+                  </ModalContainer>
 
-                    <button
-                      className="btn-close"
-                      onClick={() => {
-                        value.closePortfolioModal();
-                      }}
-                    >
-                      <i className="fas fa-times-circle" title="Close" />
-                    </button>
-                    <div className="button-row">
-                      <Link to="/portfolios/">
-                        <button
-                          className="btn-primary"
-                          onClick={() => {
-                            value.closePortfolioModal();
-                          }}
-                        >
-                          See all
-                        </button>
-                      </Link>
-                    </div>
-                  </Section>
-                </CloseSection>
-              </motion.div>
+                  <button
+                    className="btn-close"
+                    onClick={() => {
+                      value.closePortfolioModal();
+                    }}
+                  >
+                    <i className="fas fa-times-circle" title="Close" />
+                  </button>
+                  <div className="button-row">
+                    <Link to="/portfolios/">
+                      <button
+                        className="btn-primary"
+                        onClick={() => {
+                          value.closePortfolioModal();
+                        }}
+                      >
+                        See all
+                      </button>
+                    </Link>
+                  </div>
+                </Section>
+              </React.Fragment>
             );
           }
         }}
@@ -82,15 +69,10 @@ export default class FeaturedPortfolio extends Component {
   }
 }
 
-const CloseSection = styled.div`
-  color: rgba(2, 2, 34, 0.404);
-  align-items: center;
-  z-index: 99999;
-`;
 const Section = styled.div`
   position: absolute;
   padding: 0;
-  z-index: 2;
+  z-index: 999;
   width: 120rem;
   height: 36rem;
   top: 15%;
@@ -105,8 +87,10 @@ const Section = styled.div`
   background: var(--mainDark);
   box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
   border-radius: 1.2rem;
-  z-index: 999999;
   margin-bottom: 2rem;
+  animation-name: growIn;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
   .row-title {
     margin-top: 0.5rem;
     justify-content: center;

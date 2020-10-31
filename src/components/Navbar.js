@@ -95,7 +95,7 @@ const NavbarComponent = styled.nav`
   width: 100vw;
   background-color: var(--mainDark);
   box-shadow: var(--lightShadow);
-  z-index: 9999;
+  z-index: 2;
 
   .nav-header {
     margin: 0 1rem;
@@ -140,7 +140,7 @@ const NavbarComponent = styled.nav`
     letter-spacing: 0.2rem;
   }
   .nav-links a:hover {
-    transform: translateY(-0.3rem);
+    transform: translateY(-0.3rem) scale(1.1);
     color: var(--mainAccent);
   }
   .nav-links a:active {
@@ -160,11 +160,13 @@ const NavbarComponent = styled.nav`
     padding: 0.8rem;
   }
   .info {
+    transition: all 0.2s;
     color: var(--mainText);
     cursor: pointer;
   }
   .info:hover {
     color: var(--mainAccent);
+    font-size: 1.3rem;
   }
 
   @media screen and (min-width: 1056px) {

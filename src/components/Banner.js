@@ -24,13 +24,19 @@ const BannerContainer = styled.div`
   letter-spacing: var(--mainSpacing);
   font-family: "Libre Baskerville", serif;
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
     padding-bottom: 1rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
   }
   p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
   }
 
   @media screen and (min-width: 576px) {
@@ -49,6 +55,36 @@ const BannerContainer = styled.div`
       margin-bottom: 2rem;
     }
   }
+  @keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-20rem);
+    }
+    80% {
+      opacity: 0.8;
+      transform: translateX(2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(20rem);
+    }
+    80% {
+      opacity: 0.8;
+      transform: translateX(-2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
   @media screen and (min-width: 992px) {
     .banner {
       padding: 3rem 6rem;

@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^7.2.1",
     "contentful": "^7.14.8",
     "emailjs-com": "^2.6.3",
-    "framer-motion": "^2.7.7",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -22,7 +21,6 @@
     "styled-components": "^5.2.0",
     "swup": "^2.0.11",
     "typed.js": "^2.0.11"
-
   },
   "scripts": {
     "clean": "rn -rf build/*",

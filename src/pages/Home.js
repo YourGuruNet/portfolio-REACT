@@ -4,26 +4,10 @@ import StyledHero from "../components/StyledHero";
 import img1 from "../images/background-home.jpg";
 import ReactTypingEffect from "react-typing-effect";
 import { PortfolioConsumer } from "../Context";
-import { motion } from "framer-motion";
-
-//Page Transitions
-const pageVariant = {
-  in: { opacity: 1 },
-  out: { opacity: 0 },
-};
-const pageTransition = {
-  duration: 1,
-};
-//End Of page transitions
+import PageTransition from "../components/PageTransition";
 export default function Home() {
   return (
-    <motion.div
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={pageVariant}
-      transition={pageTransition}
-    >
+    <PageTransition>
       <PortfolioConsumer>
         {(value) => (
           <StyledHero img={img1}>
@@ -38,13 +22,13 @@ export default function Home() {
                   cursorRenderer={(cursor) => <p>{cursor}</p>}
                   displayTextRenderer={(text) => <p>{text}</p>}
                   speed={100}
-                  eraseSpeed={50}
-                  eraseDelay={700}
-                  typingDelay={1000}
+                  eraseSpeed={40}
+                  eraseDelay={1000}
+                  typingDelay={0}
                 />
               </div>
               <button
-                className="btn-primary"
+                className="btn-primary animated-button"
                 onClick={() => {
                   value.openPortfolioModal();
                 }}
@@ -55,6 +39,6 @@ export default function Home() {
           </StyledHero>
         )}
       </PortfolioConsumer>
-    </motion.div>
+    </PageTransition>
   );
 }
