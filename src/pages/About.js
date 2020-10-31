@@ -44,21 +44,21 @@ export default class About extends Component {
               <div className="card">
                 <h3 className="uppercase">View from the world in my design</h3>
                 <p>
-                  My name is Arvis Iljins and I'm co-founder of Your Guru Net.
-                  My main job is to help shape the idea to the execution, and
-                  taking part in building product. My passion is to live, to
-                  enjoy the life. Most of people know me as professional
-                  athlete, but there are more. I have traveled far away in the
-                  world and saw a lot in it. When I'm working in formation
-                  website I am transferring to you my acquired knowledge. First
-                  one, that exploring starts with you, another, that knowledge
-                  is power, but enthusiasm pulls the switch.
+                  My name is Arvis Iljins and I'm the co-founder of Your Guru
+                  Net. My main job is to help shape the idea of the execution
+                  and taking part in building products. My passion is to live,
+                  to enjoy life. Most people know me as a professional athlete,
+                  but there are more. I have traveled far away in the world and
+                  saw a lot in it. When I'm working on the formation website I
+                  am transferring to you my acquired knowledge. First one, that
+                  exploring starts with you, another, that knowledge is power,
+                  but enthusiasm pulls the switch.
                 </p>
                 <h3 className="uppercase">Imagine and I will create it</h3>
                 <p>
                   Anyone with an organization, a small business, or just a
                   passion needs a website to share it with the world. I can help
-                  you to build amazing designed web pages for your business ore
+                  you to build amazingly designed web pages for your business or
                   just fun and easy blog pages. Tested for making it easy to
                   create full-featured, mobile-compatible sites on a budget and
                   with no coding required.
@@ -70,8 +70,9 @@ export default class About extends Component {
               <div className="card">
                 <img src={image} alt="Arvis Iljins" />
               </div>
+              <hr className="line" />
             </div>
-            <hr className="line" />
+
             <div className="row">
               <h3
                 className="uppercase"
@@ -224,7 +225,7 @@ const Content = styled.div`
     left: 20%;
     right: 20%;
     width: 60%;
-    margin: 2rem 0 2rem 0;
+    margin: 2rem 0 5rem 0;
   }
   .row {
     margin: 2rem 2rem 0 2rem;

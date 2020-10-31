@@ -113,6 +113,7 @@ const NavbarComponent = styled.nav`
     font-size: 2.5rem;
     color: var(--mainText);
   }
+
   .nav-icon:hover {
     color: var(--mainAccent);
   }
@@ -124,11 +125,25 @@ const NavbarComponent = styled.nav`
     text-transform: uppercase;
   }
   .show-nav {
-    height: 15rem;
+    height: 20rem;
+    animation-name: showNavigation;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes showNavigation {
+    0% {
+      opacity: 0;
+      height: 0rem;
+    }
+    100% {
+      opacity: 1;
+      height: 20rem;
+    }
   }
   .nav-links a,
   .nav-links-p {
-    margin-top: 2rem;
+    margin-top: 3rem;
     display: block;
     text-decoration: none !important;
     padding: 0.5rem 0;
@@ -152,6 +167,8 @@ const NavbarComponent = styled.nav`
     right: 1rem;
     bottom: 0.4rem;
     font-size: 1rem;
+  }
+  .close-animation {
   }
   .nav-links-p-close {
     display: none;

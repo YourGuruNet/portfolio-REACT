@@ -18,11 +18,12 @@ html {
   --mainText: #1f7974;
   --secondaryText: #63807d;
   --mainAccent: #04d9ff;
+  --mainGreen: rgb(83, 202, 4);
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.3rem;
-  --lightShadow: 0.4rem 0.5rem 0.3rem 0 #1f79758e;
-  --lightShadowTop: -0.4rem -0.5rem 0.3rem 0 #1f79758e;
-  --darkShadow: 0.4rem 1rem 0.5rem 0 #1f7975f3;
+  --lightShadow: 0.4rem 0.5rem 1rem 0 #1f79758e;
+  --lightShadowTop: -0.4rem -0.5rem 1rem 0 #1f79758e;
+  --darkShadow: 0.4rem 1rem 1rem 0 #1f7975f3;
 }
 body {
   padding-top: 7rem;
@@ -38,7 +39,7 @@ body {
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
-  color: rgb(83, 202, 4);
+  color: var(--mainGreen);
   background: transparent;
   padding: 1.1rem 1.6rem;
   border: none;
@@ -137,7 +138,6 @@ body {
     0 0 8rem var(--mainAccent);
 }
 .btn-cart:active {
-  transform: translateY(-1px);
   box-shadow: 0 0 0.5rem var(--mainAccent), 0 0 3rem var(--mainAccent),
     0 0 5rem var(--mainAccent);
 }

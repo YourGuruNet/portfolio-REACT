@@ -54,15 +54,48 @@ export default class Contacts extends Component {
                 />
                 <Form className="contact-form" onSubmit={sendEmail}>
                   <Title title="Contact Me" />
-                  <p type="Name:">
-                    <input placeholder="Your Name" name="name"></input>
-                  </p>
-                  <p type="Email:">
-                    <input placeholder="Your Email" name="email"></input>
-                  </p>
-                  <p type="Message:">
-                    <input placeholder="Message.." name="message"></input>
-                  </p>
+                  <div class="form__group">
+                    <input
+                      type="text"
+                      class="form__input"
+                      placeholder="Full Name"
+                      id="name"
+                      name="name"
+                      required
+                    />
+                    <label for="name" class="form__label">
+                      Your name
+                    </label>
+                  </div>
+
+                  <div class="form__group">
+                    <input
+                      type="email"
+                      class="form__input"
+                      placeholder="Email address"
+                      id="email"
+                      name="email"
+                      required
+                    />
+                    <label for="email" class="form__label">
+                      Your email address
+                    </label>
+                  </div>
+
+                  <div class="form__group">
+                    <input
+                      type="Message"
+                      class="form__input"
+                      placeholder="Your message.."
+                      id="message"
+                      name="message"
+                      required
+                    />
+                    <label for="email" class="form__label">
+                      Your message
+                    </label>
+                  </div>
+
                   <button
                     type="submit"
                     value="Send"
@@ -98,6 +131,7 @@ export default class Contacts extends Component {
 const Form = styled.form`
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   width: 40rem;
@@ -130,32 +164,7 @@ const Form = styled.form`
     color: var(--mainAccent);
   }
 
-  p:before {
-    content: attr(type);
-    display: block;
-    margin: 2.8rem 0 0;
-    font-size: 1.4rem;
-    color: var(--mainText);
-  }
-  input {
-    color: var(--mainText);
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    background: none;
-    outline: none;
-    resize: none;
-    border: 0;
-    font-family: "Montserrat", sans-serif;
-    transition: all 0.3s;
-    border-bottom: 0.2rem solid var(--mainText);
-  }
-  input:focus {
-    outline: none !important;
-    border-bottom: 0.2rem solid var(--mainText);
-  }
   .bottomContainer {
-    content: "Hi";
     position: absolute;
     bottom: -3rem;
     right: -2rem;
@@ -170,6 +179,50 @@ const Form = styled.form`
   span {
     margin: 0 0.5rem 0 1.5rem;
   }
+  input {
+    margin-left: 5%;
+    font-size: 1.5rem;
+    color: inherit;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.3rem solid var(--mainText);
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
+
+    :focus {
+      outline: none;
+      box-shadow: 0 0.3rem 4rem 0 var(--mainAccent);
+      border-bottom: 0.3rem solid var(--mainGreen);
+    }
+
+    :focus:invalid {
+      border-bottom: 0.3rem solid red;
+    }
+
+    ::-webkit-input-placeholder {
+      color: var(--mainText);
+    }
+  }
+
+  .form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-4rem);
+  }
+
   @media screen and (max-width: 300px) {
     .bottomContainer {
       width: 20rem;
