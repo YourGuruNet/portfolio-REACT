@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 import { PortfolioConsumer } from "../Context";
+import { BiPhone } from "react-icons/bi";
+import { FiMail } from "react-icons/fi";
 
 export default class Navbar extends Component {
   state = {
@@ -24,13 +26,15 @@ export default class Navbar extends Component {
                   className="nav-btn"
                   onClick={this.mobileNavOpen}
                 >
-                  <i
+                  <span
                     className={
                       this.state.isOpen
-                        ? "fas fa-minus-circle nav-icon"
-                        : "fas fa-bars nav-icon"
+                        ? "navigation__icon--close"
+                        : "navigation__icon"
                     }
-                  />
+                  >
+                    &nbsp;
+                  </span>
                 </button>
               </div>
               <ul
@@ -44,14 +48,7 @@ export default class Navbar extends Component {
                   <Link to="/">Home</Link>
                 </li>
                 <li onClick={this.mobileNavOpen}>
-                  <Link
-                    to="#"
-                    onClick={() => {
-                      value.openPortfolioModal();
-                    }}
-                  >
-                    Portfolio
-                  </Link>
+                  <Link to="/portfolios/">Portfolio</Link>
                 </li>
                 <li onClick={this.mobileNavOpen}>
                   <Link
@@ -69,13 +66,11 @@ export default class Navbar extends Component {
                 <li className="nav-links-p">
                   <p style={{ textTransform: "none" }}>
                     <span className="info info-hide">
-                      <i className="far fa-envelope" title="Email" />{" "}
-                      info@yourgurunet.com
+                      <FiMail /> info@yourgurunet.com
                     </span>
                     &nbsp; &nbsp;
                     <span className="info info-hide">
-                      <i className="fas fa-phone-alt" title="Phone" />{" "}
-                      +37127150201
+                      <BiPhone /> +37127150201
                     </span>
                   </p>
                 </li>
@@ -117,6 +112,90 @@ const NavbarComponent = styled.nav`
   .nav-icon:hover {
     color: var(--mainAccent);
   }
+
+  /////////////////
+  .navigation__icon {
+    position: relative;
+    margin-top: 2rem;
+    width: 3rem;
+    height: 0.2rem;
+    background-color: var(--mainText);
+    display: inline-block;
+
+    ::before,
+    ::after {
+      width: 3rem;
+      height: 0.2rem;
+      background-color: var(--mainText);
+      display: inline-block;
+    }
+    ::before,
+    ::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+    ::before {
+      top: -1rem;
+    }
+    ::after {
+      top: 1rem;
+    }
+  }
+
+  .navigation__icon:hover {
+    background-color: var(--mainAccent);
+  }
+  .navigation__icon:hover::before {
+    top: -1.2rem;
+    background-color: var(--mainAccent);
+  }
+
+  .navigation__icon:hover::after {
+    top: 1.2rem;
+    background-color: var(--mainAccent);
+  }
+  //Close
+  .navigation__icon--close {
+    position: relative;
+    margin-top: 2rem;
+    width: 3rem;
+    height: 0.2rem;
+    background-color: transparent;
+    display: inline-block;
+
+    ::before,
+    ::after {
+      width: 3rem;
+      height: 0.2rem;
+      background-color: var(--mainText);
+      display: inline-block;
+    }
+    ::before,
+    ::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+    ::before {
+      transform: rotate(135deg);
+      top: 0rem;
+    }
+    ::after {
+      transform: rotate(-135deg);
+      top: 0rem;
+    }
+  }
+  .navigation__icon--close:hover::before {
+    background-color: var(--mainAccent);
+  }
+
+  .navigation__icon--close:hover::after {
+    background-color: var(--mainAccent);
+  }
+  /////////////////
   .nav-links {
     line-height: 0;
     overflow: hidden;
@@ -168,10 +247,10 @@ const NavbarComponent = styled.nav`
     bottom: 0.4rem;
     font-size: 1rem;
   }
-  .close-animation {
-  }
   .nav-links-p-close {
-    display: none;
+    width: 0;
+    opacity: 0;
+    height: 0rem;
   }
   .nav-center {
     padding: 0.8rem;
@@ -187,12 +266,16 @@ const NavbarComponent = styled.nav`
   }
 
   @media screen and (min-width: 1056px) {
+    .show-nav {
+      animation-name: none;
+    }
     .nav-links-p {
       color: #a8a5a571;
       position: absolute;
       right: 4rem;
       font-size: 1rem;
       bottom: 3rem;
+      opacity: 1;
     }
     .nav-btn {
       display: none;
@@ -208,6 +291,8 @@ const NavbarComponent = styled.nav`
       height: auto;
       display: flex;
       margin-left: 2rem;
+      width: 100%;
+      opacity: 1;
     }
     .nav-links a {
       margin: 2.5rem 0 1rem 1rem;

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithubSquare } from "react-icons/fa";
 export default class Footer extends Component {
   render() {
     return (
@@ -10,7 +13,7 @@ export default class Footer extends Component {
             <small className="website-right">
               <p>
                 Copyright &copy; {new Date().getFullYear()} All Rights Reserved
-                by yourgurunet.com
+                By yourgurunet.com
               </p>
             </small>
             <div className="social-ions">
@@ -21,7 +24,7 @@ export default class Footer extends Component {
                 rel="noopener noreferrer"
                 title="Facebook"
               >
-                <i className="fab fa-facebook-square" />
+                <FaFacebookSquare />
               </a>
               <a
                 className="social-icon-link"
@@ -30,7 +33,7 @@ export default class Footer extends Component {
                 rel="noopener noreferrer"
                 title="Instagram"
               >
-                <i className="fab fa-instagram-square" />
+                <FaInstagramSquare />
               </a>
               <a
                 className="social-icon-link"
@@ -39,7 +42,7 @@ export default class Footer extends Component {
                 rel="noopener noreferrer"
                 title="LinkedIn"
               >
-                <i className="fab fa-linkedin" />
+                <FaLinkedin />
               </a>
               <a
                 className="social-icon-link"
@@ -48,7 +51,7 @@ export default class Footer extends Component {
                 rel="noopener noreferrer"
                 title="Github"
               >
-                <i className="fab fa-github-square" />
+                <FaGithubSquare />
               </a>
             </div>
           </div>

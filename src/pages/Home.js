@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import StyledHero from "../components/StyledHero";
 import img1 from "../images/background-home.jpg";
@@ -27,14 +28,11 @@ export default function Home() {
                   typingDelay={0}
                 />
               </div>
-              <button
-                className="btn-primary animated-button"
-                onClick={() => {
-                  value.openPortfolioModal();
-                }}
-              >
-                Portfolio
-              </button>
+              <Link to="/portfolios/">
+                <button className="btn-primary animated-button">
+                  Portfolio
+                </button>
+              </Link>
             </Banner>
           </StyledHero>
         )}

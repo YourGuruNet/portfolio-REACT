@@ -39,6 +39,7 @@ export default function SinglePortfolio({ portfolios }) {
 const Cart = styled.article`
   box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
+  margin: 1rem;
   :hover {
     box-shadow: var(--darkShadow);
   }
@@ -51,12 +52,6 @@ const CartContainer = styled.article`
     max-height: 18rem;
     display: block;
     transition: var(--mainTransition);
-  }
-  @media screen and (max-width: 776px) {
-    img {
-      width: 100%;
-      max-height: 20rem;
-    }
   }
   .logo {
     max-width: 5rem;

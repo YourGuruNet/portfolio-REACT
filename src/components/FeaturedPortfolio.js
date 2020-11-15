@@ -6,6 +6,7 @@ import Loading from "../components/Loading";
 import SinglePortfolio from "./PortfolioCart";
 import { Link } from "react-router-dom";
 import CloseSection from "./CloseSection";
+import { IoIosCloseCircle } from "react-icons/io";
 
 export default class FeaturedPortfolio extends Component {
   static contextType = PortfolioContext;
@@ -23,7 +24,7 @@ export default class FeaturedPortfolio extends Component {
             return null;
           } else {
             return (
-              <React.Fragment>
+              <Popup>
                 <CloseSection
                   onClick={() => {
                     value.closePortfolioModal();
@@ -45,7 +46,7 @@ export default class FeaturedPortfolio extends Component {
                       value.closePortfolioModal();
                     }}
                   >
-                    <i className="fas fa-times-circle" title="Close" />
+                    <IoIosCloseCircle title="Close" />
                   </button>
                   <div className="button-row">
                     <Link to="/portfolios/">
@@ -60,7 +61,7 @@ export default class FeaturedPortfolio extends Component {
                     </Link>
                   </div>
                 </Section>
-              </React.Fragment>
+              </Popup>
             );
           }
         }}
@@ -68,9 +69,22 @@ export default class FeaturedPortfolio extends Component {
     );
   }
 }
+const Popup = styled.form`
+  z-index: 99999;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  animation-name: growIn;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+`;
 
 const Section = styled.div`
-  position: absolute;
+  position: relative;
   padding: 0;
   z-index: 999;
   width: 120rem;
@@ -81,16 +95,13 @@ const Section = styled.div`
   left: 0;
   right: 0;
   text-align: center;
-  display: flex;
   align-items: center;
   justify-content: center;
   background: var(--mainDark);
   box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
   border-radius: 1.2rem;
   margin-bottom: 2rem;
-  animation-name: growIn;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-in-out;
+
   .row-title {
     margin-top: 0.5rem;
     justify-content: center;
@@ -114,8 +125,6 @@ const Section = styled.div`
     color: var(--mainAccent);
   }
   .button-row {
-    display: flex;
-    justify-content: center;
     position: absolute;
     bottom: 2rem;
   }
@@ -129,17 +138,14 @@ const Section = styled.div`
     top: 5%;
     bottom: 10%;
   }
-  @media (max-width: 385px) {
+  @media (max-width: 700px) {
+    width: 30rem;
+  }
+  @media (max-width: 400px) {
     width: 98%;
+    top: 2%;
     left: 1%;
     right: 1%;
-    height: 65rem;
-  }
-  @media (max-width: 360px) {
-    height: 60rem;
-  }
-  @media (max-width: 300px) {
-    height: 55rem;
   }
 `;
 const ModalContainer = styled.div`

@@ -115,6 +115,7 @@ const Form = styled.form`
     }
   }
   @media screen and (max-width: 700px) {
+    width: 80%;
     .form-group {
       padding-left: 0.5rem;
     }

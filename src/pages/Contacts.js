@@ -4,7 +4,10 @@ import styled from "styled-components";
 import Title from "../components/Title";
 import emailjs from "emailjs-com";
 import CloseSection from "../components/CloseSection";
-
+import { IoIosCloseCircle } from "react-icons/io";
+import { TiArrowBackOutline } from "react-icons/ti";
+import { BiPhone } from "react-icons/bi";
+import { FiMail } from "react-icons/fi";
 export default class Contacts extends Component {
   constructor() {
     super();
@@ -46,7 +49,7 @@ export default class Contacts extends Component {
             return null;
           } else {
             return (
-              <React.Fragment>
+              <Popup>
                 <CloseSection
                   onClick={() => {
                     value.closeContactModal();
@@ -103,12 +106,17 @@ export default class Contacts extends Component {
                     onClick={this.changeColor.bind(this)}
                     style={{ marginTop: "2rem" }}
                   >
-                    <i className="fas fa-reply-all" /> {btn_text}
+                    <TiArrowBackOutline /> {btn_text}
                   </button>
                   <div className="bottomContainer">
-                    <span className="fa fa-envelope-o"></span>{" "}
+                    <span>
+                      <FiMail />
+                    </span>{" "}
                     info@yourgurunet.com
-                    <span className="fas fa-phone-alt"></span>+371 27150201
+                    <span>
+                      <BiPhone />
+                    </span>
+                    +371 27150201
                   </div>
                   <button
                     className="btn-close"
@@ -116,10 +124,10 @@ export default class Contacts extends Component {
                       value.closeContactModal();
                     }}
                   >
-                    <i className="fas fa-times-circle" title="Close" />
+                    <IoIosCloseCircle title="Close" />
                   </button>
                 </Form>
-              </React.Fragment>
+              </Popup>
             );
           }
         }}
@@ -128,12 +136,26 @@ export default class Contacts extends Component {
   }
 }
 
+const Popup = styled.form`
+  z-index: 99999;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  animation-name: growIn;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+`;
+
 const Form = styled.form`
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   width: 40rem;
   height: 50rem;
   background: var(--mainDark);
@@ -144,9 +166,6 @@ const Form = styled.form`
   max-width: calc(100vw - 4rem);
   box-sizing: border-box;
   z-index: 99;
-  animation-name: growIn;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-in-out;
 
   .btn-close {
     color: var(--mainText);

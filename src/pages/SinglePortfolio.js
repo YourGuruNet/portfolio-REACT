@@ -9,6 +9,11 @@ import styled from "styled-components";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import PageTransition from "../components/PageTransition";
+import { FaCodeBranch } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
+import { TiArrowBackOutline } from "react-icons/ti";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 export default class SinglePortfolio extends Component {
   constructor(props) {
@@ -34,7 +39,7 @@ export default class SinglePortfolio extends Component {
           <Banner title={name}>
             <div className="order">
               <a href="#down" className="arrow-button">
-                <i className="fas fa-angle-double-down" />
+                <FaAngleDoubleDown />
               </a>
             </div>
           </Banner>
@@ -64,7 +69,7 @@ export default class SinglePortfolio extends Component {
                   return (
                     <span key={index} className="methods-list">
                       <li key={index}>
-                        <i className="fas fa-code-branch" /> {item}
+                        <FaCodeBranch /> {item}
                       </li>
                     </span>
                   );
@@ -78,7 +83,7 @@ export default class SinglePortfolio extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-github" />
+                <FaGithub />
                 &nbsp;Github
               </a>
               <a
@@ -87,11 +92,11 @@ export default class SinglePortfolio extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fas fa-globe" />
+                <FaGlobe />
                 &nbsp;Online
               </a>
               <Link to="/portfolios/" className="btn-primary">
-                <i className="fas fa-arrow-alt-circle-left" />
+                <TiArrowBackOutline />
                 &nbsp;Back
               </Link>
             </section>
@@ -109,6 +114,7 @@ const Section = styled.section`
     font-size: 1.6rem;
     text-align: justify;
     margin-bottom: 1.5rem;
+    hyphens: auto;
   }
   h3 {
     font-size: 2rem;

@@ -3,6 +3,21 @@ import Title from "../components/Title";
 import styled from "styled-components";
 import image from "../images/profile.jpg";
 import PageTransition from "../components/PageTransition";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
+import { SiJavascript } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+import { FaCodeBranch } from "react-icons/fa";
+import { FaDatabase } from "react-icons/fa";
+import { FaSass } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
+import { BsTerminalFill } from "react-icons/bs";
+import { FaBootstrap } from "react-icons/fa";
+import { SiAdobephotoshop } from "react-icons/si";
+import { ImFileVideo } from "react-icons/im";
+import { FaShopify } from "react-icons/fa";
+import { FaWix } from "react-icons/fa";
+import { ImArrowLeft } from "react-icons/im";
 
 export default class About extends Component {
   constructor() {
@@ -70,9 +85,8 @@ export default class About extends Component {
               <div className="card">
                 <img src={image} alt="Arvis Iljins" />
               </div>
-              <hr className="line" />
             </div>
-
+            <hr className="line" />
             <div className="row">
               <h3
                 className="uppercase"
@@ -114,7 +128,7 @@ export default class About extends Component {
                 onClick={this.changeFrontEnd.bind(this)}
               >
                 <h4 className="skills-btn uppercase">
-                  Other Skills <i className="fas fa-arrow-left" />
+                  Other Skills <ImArrowLeft />
                 </h4>
               </div>
             </div>
@@ -123,52 +137,52 @@ export default class About extends Component {
               <ul className="methods">
                 <span className="methods-list">
                   <li>
-                    <i className="fab fa-html5" /> HTML
+                    <FaHtml5 /> HTML
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fab fa-css3-alt" /> CSS
+                    <FaCss3Alt /> CSS
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fab fa-js-square" /> JavaScript
+                    <SiJavascript /> JavaScript
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fab fa-react" /> React
+                    <FaReact /> React
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fas fa-code-branch" /> C#
+                    <FaCodeBranch /> C#
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fas fa-database" /> SQL
+                    <FaDatabase /> SQL
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fab fa-sass" /> SASS
+                    <FaSass /> SASS
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fab fa-github" /> Git
+                    <FiGithub /> Git
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fas fa-terminal" /> Command-line
+                    <BsTerminalFill /> Command-line
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fab fa-bootstrap" /> Bootstrap
+                    <FaBootstrap /> Bootstrap
                   </li>
                 </span>
               </ul>
@@ -178,22 +192,22 @@ export default class About extends Component {
               <ul className="methods">
                 <span className="methods-list">
                   <li>
-                    <i className="fas fa-camera" /> PhotoShop
+                    <SiAdobephotoshop /> PhotoShop
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fas fa-video" /> Video Editing
+                    <ImFileVideo /> Video Editing
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fab fa-shopify" /> Shopify
+                    <FaShopify /> Shopify
                   </li>
                 </span>
                 <span className="methods-list">
                   <li>
-                    <i className="fab fa-wix" /> WIX
+                    <FaWix /> WIX
                   </li>
                 </span>
               </ul>
@@ -244,6 +258,7 @@ const Content = styled.div`
     font-size: 1.6rem;
     text-align: justify;
     margin-bottom: 1.5rem;
+    hyphens: auto;
   }
   h3 {
     font-size: 2rem;
