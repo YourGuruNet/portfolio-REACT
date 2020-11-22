@@ -13,7 +13,7 @@ export default function SinglePortfolio({ portfolios }) {
         return (
           <Cart>
             <CartContainer>
-              <img src={images[0]} alt="portfolio" />
+              <img className="img" src={images[0]} alt="portfolio" />
               {/*Us || to set default img */}
               <div className="logo-top">
                 <img src={logo} alt="logo" className="logo" />
@@ -47,9 +47,9 @@ const Cart = styled.article`
 
 const CartContainer = styled.article`
   position: relative;
-  img {
+  .img {
     width: 100%;
-    max-height: 18rem;
+    height: 100%;
     display: block;
     transition: var(--mainTransition);
   }
@@ -58,10 +58,11 @@ const CartContainer = styled.article`
   }
   .logo-top {
     position: absolute;
+    min-width: 6rem;
+    min-height: 6rem;
     top: 0;
     right: 0;
     background: black;
-    color: black;
     padding: 0.3rem 0.6rem 0.5rem;
     border-bottom-left-radius: 1rem;
     font-size: 0.5rem;
@@ -82,7 +83,7 @@ const CartContainer = styled.article`
   :hover img {
     opacity: 0.3;
   }
-  :hover .price-top {
+  :hover .logo-top {
     opacity: 0;
   }
   :hover .portfolio-link {
