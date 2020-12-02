@@ -64,7 +64,7 @@ export default class Contacts extends Component {
                 />
                 <Form className='contact-form' onSubmit={sendEmail}>
                   <Title title='Contact Me' />
-                  <div class='form__group'>
+                  <div className='form__group'>
                     <input
                       type='text'
                       className='form__input'
@@ -73,12 +73,12 @@ export default class Contacts extends Component {
                       name='name'
                       required
                     />
-                    <label for='name' class='form__label'>
+                    <label htmlFor='name' className='form__label'>
                       Your name
                     </label>
                   </div>
 
-                  <div class='form__group'>
+                  <div className='form__group'>
                     <input
                       type='email'
                       className='form__input'
@@ -89,12 +89,12 @@ export default class Contacts extends Component {
                       value={this.state.email}
                       onChange={this.handleChange}
                     />
-                    <label for='email' class='form__label'>
+                    <label htmlFor='email' className='form__label'>
                       Your email address
                     </label>
                   </div>
 
-                  <div class='form__group'>
+                  <div className='form__group'>
                     <input
                       type='Message'
                       className='form__input'
@@ -103,7 +103,7 @@ export default class Contacts extends Component {
                       name='message'
                       required
                     />
-                    <label for='email' class='form__label'>
+                    <label htmlFor='email' className='form__label'>
                       Your message
                     </label>
                   </div>
@@ -144,7 +144,7 @@ export default class Contacts extends Component {
   }
 }
 
-const Popup = styled.form`
+const Popup = styled.div`
   z-index: 99999;
   height: 100vh;
   width: 100%;
