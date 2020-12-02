@@ -1,39 +1,45 @@
-import React, { Component } from "react";
-import { PortfolioConsumer } from "../Context";
-import styled from "styled-components";
-import Title from "../components/Title";
-import emailjs from "emailjs-com";
-import CloseSection from "../components/CloseSection";
-import { IoIosCloseCircle } from "react-icons/io";
-import { TiArrowBackOutline } from "react-icons/ti";
-import { BiPhone } from "react-icons/bi";
-import { FiMail } from "react-icons/fi";
+import React, { Component } from 'react';
+import { PortfolioConsumer } from '../Context';
+import styled from 'styled-components';
+import Title from '../components/Title';
+import emailjs from 'emailjs-com';
+import CloseSection from '../components/CloseSection';
+import { IoIosCloseCircle } from 'react-icons/io';
+import { TiArrowBackOutline } from 'react-icons/ti';
+import { BiPhone } from 'react-icons/bi';
+import { FiMail } from 'react-icons/fi';
 export default class Contacts extends Component {
   constructor() {
     super();
-
     this.state = {
       primary: true,
+      email: '',
     };
   }
 
   changeColor() {
     this.setState({ primary: !this.state.primary });
   }
-  changeDisabled() {}
+
+  handleChange = (event) => {
+    this.setState({
+      email: event.target.value,
+    });
+  };
+
   render() {
-    let btn_class = this.state.primary ? "btn-primary" : "btn-done";
-    let btn_text = this.state.primary ? "Send" : "Thanks! Message sent..";
+    let btn_class = this.state.primary ? 'btn-primary' : 'btn-done';
+    let btn_text = this.state.primary ? 'Send' : 'Thanks! Message sent..';
 
     function sendEmail(e) {
       e.preventDefault();
 
       emailjs
         .sendForm(
-          "service_t56qaxo",
-          "template_hiekcmr",
+          'service_t56qaxo',
+          'template_hiekcmr',
           e.target,
-          "user_csSnq7aeEIAr0vHmDGd4k"
+          'user_csSnq7aeEIAr0vHmDGd4k'
         )
         .then(
           (result) => {},
@@ -41,6 +47,7 @@ export default class Contacts extends Component {
         );
       e.target.reset();
     }
+
     return (
       <PortfolioConsumer>
         {(value) => {
@@ -55,63 +62,65 @@ export default class Contacts extends Component {
                     value.closeContactModal();
                   }}
                 />
-                <Form className="contact-form" onSubmit={sendEmail}>
-                  <Title title="Contact Me" />
-                  <div class="form__group">
+                <Form className='contact-form' onSubmit={sendEmail}>
+                  <Title title='Contact Me' />
+                  <div class='form__group'>
                     <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Full Name"
-                      id="name"
-                      name="name"
+                      type='text'
+                      className='form__input'
+                      placeholder='Full Name'
+                      id='name'
+                      name='name'
                       required
                     />
-                    <label for="name" class="form__label">
+                    <label for='name' class='form__label'>
                       Your name
                     </label>
                   </div>
 
-                  <div class="form__group">
+                  <div class='form__group'>
                     <input
-                      type="email"
-                      class="form__input"
-                      placeholder="Email address"
-                      id="email"
-                      name="email"
+                      type='email'
+                      className='form__input'
+                      placeholder='Email address'
+                      id='email'
+                      name='email'
                       required
+                      value={this.state.email}
+                      onChange={this.handleChange}
                     />
-                    <label for="email" class="form__label">
+                    <label for='email' class='form__label'>
                       Your email address
                     </label>
                   </div>
 
-                  <div class="form__group">
+                  <div class='form__group'>
                     <input
-                      type="Message"
-                      class="form__input"
-                      placeholder="Your message.."
-                      id="message"
-                      name="message"
+                      type='Message'
+                      className='form__input'
+                      placeholder='Your message..'
+                      id='message'
+                      name='message'
                       required
                     />
-                    <label for="email" class="form__label">
+                    <label for='email' class='form__label'>
                       Your message
                     </label>
                   </div>
 
                   <button
-                    type="submit"
-                    value="Send"
+                    disabled={!this.state.email}
+                    type='submit'
+                    value='Send'
                     className={btn_class}
                     onClick={this.changeColor.bind(this)}
-                    style={{ marginTop: "2rem" }}
-                  >
+                    style={{ marginTop: '2rem' }}>
                     <TiArrowBackOutline /> {btn_text}
                   </button>
-                  <div className="bottomContainer">
+                  <div className='bottomContainer'>
                     <span>
                       <FiMail />
-                    </span>{" "}
+                    </span>{' '}
                     info@yourgurunet.com
                     <span>
                       <BiPhone />
@@ -119,12 +128,11 @@ export default class Contacts extends Component {
                     +371 27150201
                   </div>
                   <button
-                    className="btn-close"
+                    className='btn-close'
                     onClick={() => {
                       value.closeContactModal();
-                    }}
-                  >
-                    <IoIosCloseCircle title="Close" />
+                    }}>
+                    <IoIosCloseCircle title='Close' />
                   </button>
                 </Form>
               </Popup>
