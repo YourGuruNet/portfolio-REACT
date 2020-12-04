@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter as Router } from "react-router-dom";
-import { PortfolioProvider } from "./Context";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { PortfolioProvider } from './Context';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <PortfolioProvider>
@@ -11,7 +11,8 @@ ReactDOM.render(
       <App />
     </Router>
   </PortfolioProvider>,
-  document.getElementById("root")
+
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 export default function Banner({ title, children, button, span }) {
   return (
     <BannerContainer>
       <h1>
         {title}
-        <span style={{ color: "red" }}>{span}</span>
+        <span style={{ color: 'red' }}>{span}</span>
       </h1>
       {children}
       {button}
@@ -22,7 +22,7 @@ const BannerContainer = styled.div`
   text-align: center;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
-  font-family: "Libre Baskerville", serif;
+  font-family: 'Libre Baskerville', serif;
   h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -102,11 +102,14 @@ const BannerContainer = styled.div`
     color: var(--mainText);
     margin: 1rem;
     animation-duration: 4s;
+    background-color: transparent;
+    border: none;
   }
   .arrow-button:hover {
     color: var(--mainAccent);
-    text-shadow: 0 0 15px var(--mainAccent), 0 0 40px var(--mainAccent),
-      0 0 80px var(--mainAccent);
+  }
+  .arrow-button:focus {
+    outline: none;
   }
   @media (max-width: 726px) {
     .arrow-button {

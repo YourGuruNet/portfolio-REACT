@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import PortfolioCart from "./PortfolioCart";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import PortfolioCart from './PortfolioCart';
 
 export default class PortfolioList extends Component {
   //Load more
@@ -38,7 +38,7 @@ export default class PortfolioList extends Component {
       return (
         <NoResults>
           <h3>
-            <i className="fas fa-search" />
+            <i className='fas fa-search' />
             &nbsp; There are no projects matching your parameters
           </h3>
         </NoResults>
@@ -46,19 +46,18 @@ export default class PortfolioList extends Component {
     }
     return (
       <ListSection>
-        <div className="portfolio-list">
+        <div className='portfolio-list'>
           {this.state.filteredItems.map((portfolios) => {
             return (
               <PortfolioCart key={portfolios.id} portfolios={portfolios} />
             );
           })}
         </div>
-        <div className="row">
+        <div className='row'>
           <button
-            className="btn-primary"
-            onClick={() => this.loadMoreFromList()}
-          >
-            Load More{" "}
+            className='btn-primary'
+            onClick={() => this.loadMoreFromList()}>
+            Load More
           </button>
         </div>
       </ListSection>
