@@ -1,4 +1,4 @@
-import React, { Component, useRef } from 'react';
+import React, { Component } from 'react';
 import { PortfolioContext } from '../Context';
 import { Link } from 'react-router-dom';
 import Error from './Error';
@@ -84,7 +84,8 @@ export default class SinglePortfolio extends Component {
                 href={github}
                 className='btn-primary'
                 target='_blank'
-                rel='noopener noreferrer'>
+                rel='noopener noreferrer'
+              >
                 <FaGithub />
                 &nbsp;Github
               </a>
@@ -92,7 +93,8 @@ export default class SinglePortfolio extends Component {
                 href={online}
                 className='btn-primary'
                 target='_blank'
-                rel='noopener noreferrer'>
+                rel='noopener noreferrer'
+              >
                 <FaGlobe />
                 &nbsp;Online
               </a>

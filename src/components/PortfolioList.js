@@ -56,7 +56,8 @@ export default class PortfolioList extends Component {
         <div className='row'>
           <button
             className='btn-primary'
-            onClick={() => this.loadMoreFromList()}>
+            onClick={() => this.loadMoreFromList()}
+          >
             Load More
           </button>
         </div>
@@ -69,6 +70,7 @@ export default class PortfolioList extends Component {
 
 const ListSection = styled.div`
   padding: 2rem 0;
+
   .portfolio-list {
     width: 97vw;
     margin: 0 auto;
@@ -76,6 +78,7 @@ const ListSection = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
     grid-row-gap: 2rem;
     grid-column-gap: 2rem;
+    justify-items: center;
   }
   .row {
     margin-top: 2rem;

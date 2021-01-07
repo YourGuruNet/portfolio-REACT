@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { PortfolioConsumer } from "../Context";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { PortfolioConsumer } from '../Context';
 
 export default function SinglePortfolio({ portfolios }) {
   //console.log(room) use to see what props we can get!
@@ -13,14 +13,14 @@ export default function SinglePortfolio({ portfolios }) {
         return (
           <Cart>
             <CartContainer>
-              <img className="img" src={images[0]} alt="portfolio" />
+              <img className='img' src={images[0]} alt='portfolio' />
               {/*Us || to set default img */}
-              <div className="logo-top">
-                <img src={logo} alt="logo" className="logo" />
+              <div className='logo-top'>
+                <img src={logo} alt='logo' className='logo' />
               </div>
               <Link
                 to={`/portfolio/${slug}`}
-                className="btn-cart portfolio-link"
+                className='btn-cart portfolio-link'
                 onClick={() => {
                   value.closePortfolioModal();
                 }}
@@ -40,13 +40,18 @@ const Cart = styled.article`
   box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
   margin: 1rem;
+  max-width: 35rem;
   :hover {
     box-shadow: var(--darkShadow);
+    transform: scale(1.1);
   }
 `;
 
 const CartContainer = styled.article`
   position: relative;
+  max-height: 14rem;
+
+  overflow: hidden;
   .img {
     width: 100%;
     height: 100%;
