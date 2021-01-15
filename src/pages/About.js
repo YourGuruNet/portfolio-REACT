@@ -1,23 +1,27 @@
-import React, { Component } from "react";
-import Title from "../components/Title";
-import styled from "styled-components";
-import image from "../images/profile.jpg";
-import PageTransition from "../components/PageTransition";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { FaCodeBranch } from "react-icons/fa";
-import { FaDatabase } from "react-icons/fa";
-import { FaSass } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
-import { BsTerminalFill } from "react-icons/bs";
-import { FaBootstrap } from "react-icons/fa";
-import { SiAdobephotoshop } from "react-icons/si";
-import { ImFileVideo } from "react-icons/im";
-import { FaShopify } from "react-icons/fa";
-import { FaWix } from "react-icons/fa";
-import { ImArrowLeft } from "react-icons/im";
+import React, { Component } from 'react';
+import Title from '../components/Title';
+import styled from 'styled-components';
+import image from '../images/profile.jpg';
+import PageTransition from '../components/PageTransition';
+import { FaHtml5 } from 'react-icons/fa';
+import { FaCss3Alt } from 'react-icons/fa';
+import { SiJavascript } from 'react-icons/si';
+import { FaReact } from 'react-icons/fa';
+import { FaCodeBranch } from 'react-icons/fa';
+import { AiFillApi } from 'react-icons/ai';
+import { FaSass } from 'react-icons/fa';
+import { FiGithub } from 'react-icons/fi';
+import { BsTerminalFill } from 'react-icons/bs';
+import { FaBootstrap } from 'react-icons/fa';
+import { SiAdobephotoshop } from 'react-icons/si';
+import { ImFileVideo } from 'react-icons/im';
+import { FaShopify } from 'react-icons/fa';
+import { FaWix } from 'react-icons/fa';
+import { ImArrowLeft } from 'react-icons/im';
+import { SiFlutter } from 'react-icons/si';
+import { SiFirebase } from 'react-icons/si';
+import { SiStrapi } from 'react-icons/si';
+import { DiBitbucket } from 'react-icons/di';
 
 export default class About extends Component {
   constructor() {
@@ -44,20 +48,20 @@ export default class About extends Component {
 
   render() {
     let programmingSkills = this.state.FrontEnd
-      ? "containerTab displayNone"
-      : "containerTab ";
+      ? 'containerTab displayNone'
+      : 'containerTab ';
 
     let otherSkills = this.state.BackEnd
-      ? "containerTab displayNone"
-      : "containerTab";
+      ? 'containerTab displayNone'
+      : 'containerTab';
     return (
       <PageTransition>
         <Content>
-          <Title title="about me" />
-          <div className="container">
-            <div className="column">
-              <div className="card">
-                <h3 className="uppercase">View from the world in my design</h3>
+          <Title title='about me' />
+          <div className='container'>
+            <div className='column'>
+              <div className='card'>
+                <h3 className='uppercase'>View from the world in my design</h3>
                 <p>
                   My name is Arvis Iljins and I'm the co-founder of Your Guru
                   Net. My main job is to help shape the idea of the execution
@@ -69,7 +73,7 @@ export default class About extends Component {
                   exploring starts with you, another, that knowledge is power,
                   but enthusiasm pulls the switch.
                 </p>
-                <h3 className="uppercase">Imagine and I will create it</h3>
+                <h3 className='uppercase'>Imagine and I will create it</h3>
                 <p>
                   Anyone with an organization, a small business, or just a
                   passion needs a website to share it with the world. I can help
@@ -81,33 +85,33 @@ export default class About extends Component {
               </div>
             </div>
 
-            <div className="column">
-              <div className="card">
-                <img src={image} alt="Arvis Iljins" />
+            <div className='column'>
+              <div className='card'>
+                <img src={image} alt='Arvis Iljins' />
               </div>
             </div>
-            <hr className="line" />
-            <div className="row">
+            <hr className='line' />
+            <div className='row'>
               <h3
-                className="uppercase"
-                style={{ textAlign: "center", marginBottom: "2rem" }}
+                className='uppercase'
+                style={{ textAlign: 'center', marginBottom: '2rem' }}
               >
                 Special Education
               </h3>
-              <div className="column">
-                <h6 className="uppercase">Business high-school Turiba</h6>
+              <div className='column'>
+                <h6 className='uppercase'>Business high-school Turiba</h6>
                 <p>Javascript Programming language </p>
-                <p className="school">
+                <p className='school'>
                   160 hours, 6 month intensive course. JavaScript Fundamentals
                   and basic object-oriented concepts using the latest JavaScript
                   syntax. Basics of jQuery, React and different most popular
                   frameworks
                 </p>
               </div>
-              <div className="column">
-                <h6 className="uppercase">10 + hours per day self-learning</h6>
+              <div className='column'>
+                <h6 className='uppercase'>10 + hours per day self-learning</h6>
                 <p>Deep programming skill </p>
-                <p className="school">
+                <p className='school'>
                   There is no school that teaches everything to you, except your
                   passion for something. Technology changed every day and you
                   need to change together with the latest innovations, so learn
@@ -115,72 +119,92 @@ export default class About extends Component {
                 </p>
               </div>
             </div>
-            <hr className="line" />
-            <div className="row">
+            <hr className='line' />
+            <div className='row'>
               <div
-                className="SkillColumn"
+                className='SkillColumn'
                 onClick={this.changeFrontEnd.bind(this)}
               >
-                <h4 className="skills-btn uppercase">Programming Skills</h4>
+                <h4 className='skills-btn uppercase'>Programming Skills</h4>
               </div>
               <div
-                className="SkillColumn"
+                className='SkillColumn'
                 onClick={this.changeFrontEnd.bind(this)}
               >
-                <h4 className="skills-btn uppercase">
+                <h4 className='skills-btn uppercase'>
                   Other Skills <ImArrowLeft />
                 </h4>
               </div>
             </div>
             {/*   */}
-            <div id="b1" className={programmingSkills}>
-              <ul className="methods">
-                <span className="methods-list">
+            <div id='b1' className={programmingSkills}>
+              <ul className='methods'>
+                <span className='methods-list'>
                   <li>
                     <FaHtml5 /> HTML
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
                     <FaCss3Alt /> CSS
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
                     <SiJavascript /> JavaScript
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
                     <FaReact /> React
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
                     <FaCodeBranch /> C#
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
-                    <FaDatabase /> SQL
+                    <SiFlutter /> Flutter
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
                     <FaSass /> SASS
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
+                  <li>
+                    <SiFirebase /> Firebase
+                  </li>
+                </span>
+                <span className='methods-list'>
+                  <li>
+                    <SiStrapi /> Strapi
+                  </li>
+                </span>
+                <span className='methods-list'>
+                  <li>
+                    <AiFillApi /> API
+                  </li>
+                </span>
+                <span className='methods-list'>
                   <li>
                     <FiGithub /> Git
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
+                  <li>
+                    <DiBitbucket /> Bitbucket
+                  </li>
+                </span>
+                <span className='methods-list'>
                   <li>
                     <BsTerminalFill /> Command-line
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
                     <FaBootstrap /> Bootstrap
                   </li>
@@ -188,24 +212,24 @@ export default class About extends Component {
               </ul>
             </div>
 
-            <div id="b2" className={otherSkills}>
-              <ul className="methods">
-                <span className="methods-list">
+            <div id='b2' className={otherSkills}>
+              <ul className='methods'>
+                <span className='methods-list'>
                   <li>
                     <SiAdobephotoshop /> PhotoShop
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
                     <ImFileVideo /> Video Editing
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
                     <FaShopify /> Shopify
                   </li>
                 </span>
-                <span className="methods-list">
+                <span className='methods-list'>
                   <li>
                     <FaWix /> WIX
                   </li>
@@ -229,7 +253,7 @@ const Content = styled.div`
 
   /* Clear floats after the columns */
   .container:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -279,7 +303,7 @@ const Content = styled.div`
 
   /* Clear floats after the columns */
   .row:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
