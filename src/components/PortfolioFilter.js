@@ -1,8 +1,8 @@
-import React from "react";
-import { useContext } from "react";
-import { PortfolioContext } from "../Context";
-import styled from "styled-components";
-import Title from "./Title";
+import React from 'react';
+import { useContext } from 'react';
+import { PortfolioContext } from '../Context';
+import styled from 'styled-components';
+import Title from './Title';
 
 //get all unique values
 const getUnique = (items, value) => {
@@ -14,9 +14,9 @@ export default function PortfolioFilter({ portfolio }) {
   const { handleChange, type, method } = context;
   //console.log(context);
   // get unique types
-  let types = getUnique(portfolio, "type");
+  let types = getUnique(portfolio, 'type');
   // add all
-  types = ["all", ...types];
+  types = ['all', ...types];
   //map to jsx
   types = types.map((item, index) => {
     return (
@@ -25,9 +25,9 @@ export default function PortfolioFilter({ portfolio }) {
       </option>
     );
   });
-  let methods = getUnique(portfolio, "method");
+  let methods = getUnique(portfolio, 'method');
   // add all
-  methods = ["all", ...methods];
+  methods = ['all', ...methods];
   //map to jsx
   methods = methods.map((item, index) => {
     return (
@@ -38,21 +38,21 @@ export default function PortfolioFilter({ portfolio }) {
   });
   return (
     <FilterContainer>
-      <Title title="latest projects" />
+      <Title title='latest projects' />
       <Form>
         {/*Select type */}
-        <div className="form-group">
-          <label htmlFor="method">Wep page type</label>
-          <select name="type" id="type" value={type} onChange={handleChange}>
+        <div className='form-group'>
+          <label htmlFor='method'>Wep page type</label>
+          <select name='type' id='type' value={type} onChange={handleChange}>
             {types}
           </select>
           {/*End of Select type */}
         </div>
-        <div className="form-group">
-          <label htmlFor="method">Main method used</label>
+        <div className='form-group'>
+          <label htmlFor='method'>Main method used</label>
           <select
-            name="method"
-            id="method"
+            name='method'
+            id='method'
             value={method}
             onChange={handleChange}
           >
@@ -81,7 +81,6 @@ const Form = styled.form`
   box-shadow: var(--lightShadow);
   .form-group {
     text-transform: capitalize;
-    padding-left: 3rem;
   }
   .form-group label {
     display: block;
@@ -94,7 +93,7 @@ const Form = styled.form`
     font-family: Cursive;
     color: var(--mainAccent);
     border: none;
-    width: 80%;
+    width: 100%;
     background: transparent;
     font-size: 1.4rem;
     outline: none;
