@@ -1,6 +1,6 @@
 /* Basics setup*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
 
 *,
 *::after,
@@ -14,22 +14,31 @@ html {
   font-size: 62.5%; /* % from default value 16px now the default value is 10px an I can easy work with rems*/
 }
 :root {
-  --mainDark: rgb(2, 2, 19);
-  --mainText: #1f7974;
-  --secondaryText: #63807d;
-  --mainAccent: #04d9ff;
   --mainGreen: rgb(83, 202, 4);
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.3rem;
-  --lightShadow: 0.4rem 0.5rem 1rem 0 #1f79758e;
-  --lightShadowTop: -0.4rem -0.5rem 1rem 0 #1f79758e;
-  --darkShadow: 0.4rem 1rem 1rem 0 #1f7975f3;
+  --lightShadow: 0.4rem 0.5rem 1rem 0 black;
+  --lightShadowTop: -0.1rem -0.1rem 0.5rem 0 rgba(0, 0, 0, 0.493);
+  --darkShadow: 0.4rem 1rem 1rem 0 black;
+  /* ///////////////////////// */
+  --light-blue: #a2ddf6;
+  --medium-blue: #16aae9;
+  --dark-blue: #0b5575;
+  --mainText: #757575;
+  --main-black: #000;
+  --main-light: #fff;
+  --color-grey-light-1: #f0ecec;
+  --light-blue-cover: rgba(162, 221, 246, 0.5);
+  --medium-blue-cover: #16aae9;
+  --secondary-orange-light: rgb(252, 185, 42);
+  --secondary-orange-dark: rgb(255, 137, 1);
+  --secondary-green-light: rgb(117, 253, 83);
+  --secondary-green-dark: rgb(30, 139, 3);
 }
 body {
-  padding-top: 7rem;
   color: var(--mainText);
   background: var(--mainDark);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.4;
   z-index: -1;
@@ -54,26 +63,26 @@ body {
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
-  color: var(--mainAccent);
+  color: var(--mainText);
   background: var(--mainDark);
-  padding: 1.1rem 1.6rem;
-  border: 0.3rem solid var(--mainAccent);
+  padding: 1.5rem 3rem;
+  border: 0.3rem solid var(--light-blue);
   transition: 0.2s;
   text-transform: uppercase;
   cursor: pointer;
   touch-action: manipulation;
   outline: none;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 700;
   margin: 1rem !important;
+  border-radius: 2rem;
 }
 .btn-primary:hover {
   transform: translateY(-0.3rem);
-  background: var(--mainText);
-  color: var(--mainAccent);
-  border-color: var(--mainAccent);
-  box-shadow: 0 0 1rem var(--mainAccent), 0 0 4rem var(--mainAccent),
-    0 0 8rem var(--mainAccent);
+  color: var(--medium-blue);
+  border-color: var(--medium-blue);
+  box-shadow: 0 0 1rem var(--medium-blue), 0 0 4rem var(--medium-blue),
+    0 0 8rem var(--medium-blue);
 }
 .btn-primary:active {
   transform: translateY(-0.1rem);

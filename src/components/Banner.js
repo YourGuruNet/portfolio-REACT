@@ -104,6 +104,7 @@ const BannerContainer = styled.div`
     animation-duration: 4s;
     background-color: transparent;
     border: none;
+    color: var(--main-light);
   }
   .arrow-button:hover {
     color: var(--mainAccent);

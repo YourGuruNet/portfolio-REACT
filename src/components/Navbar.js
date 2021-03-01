@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
-import { PortfolioConsumer } from "../Context";
-import { BiPhone } from "react-icons/bi";
-import { FiMail } from "react-icons/fi";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import logo from '../images/logo-white.png';
+import { PortfolioConsumer } from '../Context';
+import { BiPhone } from 'react-icons/bi';
+import { FiMail } from 'react-icons/fi';
 
 export default class Navbar extends Component {
   state = {
@@ -16,23 +16,21 @@ export default class Navbar extends Component {
       <PortfolioConsumer>
         {(value) => (
           <NavbarComponent>
-            <div className="nav-center">
-              <div className="nav-header">
-                <Link to="/">
-                  <img src={logo} alt="your-guru-net" />
+            <div className='nav-center'>
+              <div className='nav-header'>
+                <Link to='/'>
+                  <img src={logo} alt='your-guru-net' />
                 </Link>
                 <button
-                  type="button"
-                  className="nav-btn"
-                  onClick={this.mobileNavOpen}
-                >
+                  type='button'
+                  className='nav-btn'
+                  onClick={this.mobileNavOpen}>
                   <span
                     className={
                       this.state.isOpen
-                        ? "navigation__icon--close"
-                        : "navigation__icon"
-                    }
-                  >
+                        ? 'navigation__icon--close'
+                        : 'navigation__icon'
+                    }>
                     &nbsp;
                   </span>
                 </button>
@@ -40,39 +38,26 @@ export default class Navbar extends Component {
               <ul
                 className={
                   this.state.isOpen
-                    ? "nav-links show-nav"
-                    : "nav-links nav-links-p-close"
-                }
-              >
+                    ? 'nav-links show-nav'
+                    : 'nav-links nav-links-p-close'
+                }>
                 <li onClick={this.mobileNavOpen}>
-                  <Link to="/">Home</Link>
+                  <Link to='/'>Home</Link>
                 </li>
                 <li onClick={this.mobileNavOpen}>
-                  <Link to="/portfolios/">Portfolio</Link>
+                  <Link to='/portfolios/'>Portfolio</Link>
                 </li>
                 <li onClick={this.mobileNavOpen}>
                   <Link
-                    to="#"
+                    to='#'
                     onClick={() => {
                       value.openContactModal();
-                    }}
-                  >
+                    }}>
                     Contacts
                   </Link>
                 </li>
                 <li onClick={this.mobileNavOpen}>
-                  <Link to="/about">About</Link>
-                </li>
-                <li className="nav-links-p">
-                  <p style={{ textTransform: "none" }}>
-                    <span className="info info-hide">
-                      <FiMail /> info@yourgurunet.com
-                    </span>
-                    &nbsp; &nbsp;
-                    <span className="info info-hide">
-                      <BiPhone /> +37127150201
-                    </span>
-                  </p>
+                  <Link to='/about'>About</Link>
                 </li>
               </ul>
             </div>
@@ -88,8 +73,7 @@ const NavbarComponent = styled.nav`
   top: 0;
   left: 0;
   width: 100vw;
-  background-color: var(--mainDark);
-  box-shadow: var(--lightShadow);
+  background-color: transparent;
   z-index: 2;
 
   .nav-header {
@@ -110,7 +94,7 @@ const NavbarComponent = styled.nav`
   }
 
   .nav-icon:hover {
-    color: var(--mainAccent);
+    color: var(--main-light);
   }
 
   /////////////////
@@ -119,19 +103,19 @@ const NavbarComponent = styled.nav`
     margin-top: 2rem;
     width: 3rem;
     height: 0.2rem;
-    background-color: var(--mainText);
+    background-color: var(--main-light);
     display: inline-block;
 
     ::before,
     ::after {
       width: 3rem;
       height: 0.2rem;
-      background-color: var(--mainText);
+      background-color: var(--main-light);
       display: inline-block;
     }
     ::before,
     ::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       transition: all 0.2s;
@@ -145,16 +129,16 @@ const NavbarComponent = styled.nav`
   }
 
   .navigation__icon:hover {
-    background-color: var(--mainAccent);
+    background-color: var(--main-light);
   }
   .navigation__icon:hover::before {
     top: -1.2rem;
-    background-color: var(--mainAccent);
+    background-color: var(--main-light);
   }
 
   .navigation__icon:hover::after {
     top: 1.2rem;
-    background-color: var(--mainAccent);
+    background-color: var(--main-light);
   }
   //Close
   .navigation__icon--close {
@@ -174,7 +158,7 @@ const NavbarComponent = styled.nav`
     }
     ::before,
     ::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       transition: all 0.2s;
@@ -202,6 +186,7 @@ const NavbarComponent = styled.nav`
     transition: var(--mainTransition);
     list-style-type: none;
     text-transform: uppercase;
+    color: var(--main-light);
   }
   .show-nav {
     height: 20rem;
@@ -226,7 +211,7 @@ const NavbarComponent = styled.nav`
     display: block;
     text-decoration: none !important;
     padding: 0.5rem 0;
-    color: var(--mainText);
+    color: var(--main-light);
     transition: var(--mainTransition);
     text-align: center;
     font-size: 1.4rem;

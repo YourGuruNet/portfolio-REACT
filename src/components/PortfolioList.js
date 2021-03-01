@@ -21,7 +21,7 @@ export default class PortfolioList extends Component {
   }
 
   loadMoreFromList(index = 0) {
-    const howMuchLoad = 8;
+    const howMuchLoad = 12;
 
     this.setState({
       ...this.state,
@@ -56,8 +56,7 @@ export default class PortfolioList extends Component {
         <div className='row'>
           <button
             className='btn-primary'
-            onClick={() => this.loadMoreFromList()}
-          >
+            onClick={() => this.loadMoreFromList()}>
             Load More
           </button>
         </div>
@@ -69,7 +68,7 @@ export default class PortfolioList extends Component {
 //export default PortfolioList;
 
 const ListSection = styled.div`
-  padding: 2rem 0;
+  padding: 5rem 0;
 
   .portfolio-list {
     width: 97vw;

@@ -94,8 +94,7 @@ export default class About extends Component {
             <div className='row'>
               <h3
                 className='uppercase'
-                style={{ textAlign: 'center', marginBottom: '2rem' }}
-              >
+                style={{ textAlign: 'center', marginBottom: '2rem' }}>
                 Special Education
               </h3>
               <div className='column'>
@@ -123,15 +122,15 @@ export default class About extends Component {
             <div className='row'>
               <div
                 className='SkillColumn'
-                onClick={this.changeFrontEnd.bind(this)}
-              >
-                <h4 className='skills-btn uppercase'>Programming Skills</h4>
+                onClick={this.changeFrontEnd.bind(this)}>
+                <h4 className='skills-btn uppercase sub-heading'>
+                  Programming Skills
+                </h4>
               </div>
               <div
                 className='SkillColumn'
-                onClick={this.changeFrontEnd.bind(this)}
-              >
-                <h4 className='skills-btn uppercase'>
+                onClick={this.changeFrontEnd.bind(this)}>
+                <h4 className='skills-btn uppercase sub-heading'>
                   Other Skills <ImArrowLeft />
                 </h4>
               </div>
@@ -243,7 +242,8 @@ export default class About extends Component {
   }
 }
 const Content = styled.div`
-  margin-top: 3rem;
+  margin: 3rem auto;
+  max-width: 140rem;
 
   .column {
     float: left;
@@ -258,7 +258,7 @@ const Content = styled.div`
     clear: both;
   }
   .container {
-    box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
+    box-shadow: 0 0.8rem 1rem 0 var(--medium-blue);
     position: relative;
     left: 20%;
     right: 20%;
@@ -287,13 +287,16 @@ const Content = styled.div`
   h3 {
     font-size: 2rem;
     margin: 0.5rem 0 0.5rem 0;
+    color: var(--medium-blue);
   }
   h6 {
     font-size: 1.8rem;
     margin-bottom: 0.2rem;
+    color: var(--light-blue);
   }
-  h4 {
+  .sub-heading {
     font-size: 1.5rem;
+    color: var(--light-blue);
   }
 
   .containerTab {

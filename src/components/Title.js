@@ -1,11 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 export default function Title({ title }) {
   return (
     <TitleSection>
       <h4>{title}</h4>
-      <div />
     </TitleSection>
   );
 }
@@ -19,14 +18,8 @@ const TitleSection = styled.div`
     letter-spacing: var(--mainSpacing);
     text-transform: capitalize;
     margin-bottom: 1rem;
-    color: var(--mainText);
+    color: var(--medium-blue);
     text-transform: uppercase;
-  }
-  div {
-    width: 7rem;
-    height: 0.5rem;
-    margin: 0 auto;
-    background: var(--mainText);
   }
   @media (max-width: 726px) {
     h4 {

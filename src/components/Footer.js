@@ -1,56 +1,58 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithubSquare } from "react-icons/fa";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { FaFacebookSquare } from 'react-icons/fa';
+import { FaInstagramSquare } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaGithubSquare } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import logo from '../images/logo-white.png';
 export default class Footer extends Component {
   render() {
     return (
       <FooterContainer>
-        <section className="footer-container">
-          <div className="social-media-wrap">
-            <small className="website-right">
+        <Link to='/'>
+          <img src={logo} alt='your-guru-net' />
+        </Link>
+
+        <section className='footer-container'>
+          <div className='social-media-wrap'>
+            <small className='website-right'>
               <p>
                 Copyright &copy; {new Date().getFullYear()} All Rights Reserved
                 By yourgurunet.com
               </p>
             </small>
-            <div className="social-ions">
+            <div className='social-ions'>
               <a
-                className="social-icon-link"
-                href="https://www.facebook.com/arvis.iljns"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Facebook"
-              >
+                className='social-icon-link'
+                href='https://www.facebook.com/arvis.iljns'
+                target='_blank'
+                rel='noopener noreferrer'
+                title='Facebook'>
                 <FaFacebookSquare />
               </a>
               <a
-                className="social-icon-link"
-                href="https://www.instagram.com/arvis_iljins/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Instagram"
-              >
+                className='social-icon-link'
+                href='https://www.instagram.com/arvis_iljins/'
+                target='_blank'
+                rel='noopener noreferrer'
+                title='Instagram'>
                 <FaInstagramSquare />
               </a>
               <a
-                className="social-icon-link"
-                href="https://www.linkedin.com/in/arvis-iljins-0865081b3/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="LinkedIn"
-              >
+                className='social-icon-link'
+                href='https://www.linkedin.com/in/arvis-iljins-0865081b3/'
+                target='_blank'
+                rel='noopener noreferrer'
+                title='LinkedIn'>
                 <FaLinkedin />
               </a>
               <a
-                className="social-icon-link"
-                href="https://github.com/YourGuruNet"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Github"
-              >
+                className='social-icon-link'
+                href='https://github.com/YourGuruNet'
+                target='_blank'
+                rel='noopener noreferrer'
+                title='Github'>
                 <FaGithubSquare />
               </a>
             </div>
@@ -61,19 +63,22 @@ export default class Footer extends Component {
   }
 }
 const FooterContainer = styled.div`
-  background-color: var(--mainDark);
-  padding: 1rem 0;
+  background: linear-gradient(
+    var(--light-blue-cover),
+    var(--medium-blue-cover)
+  );
+  padding: 10rem 0 4rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: var(--lightShadowTop);
+  clip-path: polygon(0 35%, 100% 0, 100% 100%, 0% 100%);
 
   .footer-container {
     display: flex;
     justify-content: space-between;
     align-content: center;
-    width: 80vw;
+    max-width: 140rem;
     margin: 0.5rem 0.5rem 0 0.5rem;
   }
   .social-media-wrap {
@@ -84,10 +89,10 @@ const FooterContainer = styled.div`
     margin: 0.5rem 0.5rem 0 0.5rem;
   }
   .website-right {
-    color: var(--mainText);
+    color: var(--main-light);
     margin-bottom: 0.4rem;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
   .social-ions {
     display: flex;
@@ -97,8 +102,8 @@ const FooterContainer = styled.div`
   }
 
   .social-icon-link {
-    font-size: 2.4rem;
-    color: var(--mainText);
+    font-size: 3rem;
+    color: var(--main-light);
     transition: var(--mainTransition);
   }
   .social-icon-link:hover {

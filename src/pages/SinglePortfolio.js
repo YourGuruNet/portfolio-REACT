@@ -84,8 +84,7 @@ export default class SinglePortfolio extends Component {
                 href={github}
                 className='btn-primary'
                 target='_blank'
-                rel='noopener noreferrer'
-              >
+                rel='noopener noreferrer'>
                 <FaGithub />
                 &nbsp;Github
               </a>
@@ -93,8 +92,7 @@ export default class SinglePortfolio extends Component {
                 href={online}
                 className='btn-primary'
                 target='_blank'
-                rel='noopener noreferrer'
-              >
+                rel='noopener noreferrer'>
                 <FaGlobe />
                 &nbsp;Online
               </a>
@@ -122,13 +120,15 @@ const Section = styled.section`
   h3 {
     font-size: 2rem;
     margin: 0.5rem 0 0.5rem 0;
+    color: var(--medium-blue);
   }
   h6 {
+    color: var(--medium-blue);
     font-size: 1.8rem;
     margin-bottom: 0.2rem;
   }
   .portfolio-images {
-    width: 80vw;
+    max-width: 80vw;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -141,7 +141,7 @@ const Section = styled.section`
     display: block;
   }
   .portfolio-info {
-    width: 80vw;
+    max-width: 80vw;
     display: grid;
     grid-template-columns: 1fr;
     margin: 2rem auto;
@@ -189,12 +189,6 @@ const Section = styled.section`
     grid-column-gap: 0.5rem;
     grid-row-gap: 1rem;
     font-size: 1.5rem;
-  }
-  .methods-list:hover {
-    background: var(--mainText);
-    color: var(--mainAccent);
-    box-shadow: 0 0 1rem var(--mainAccent), 0 0 4rem var(--mainAccent),
-      0 0 8rem var(--mainAccent);
   }
 
   @media (max-width: 836px) {

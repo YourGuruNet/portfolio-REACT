@@ -54,8 +54,7 @@ export default function PortfolioFilter({ portfolio }) {
             name='method'
             id='method'
             value={method}
-            onChange={handleChange}
-          >
+            onChange={handleChange}>
             {methods}
           </select>
           {/*End of Select type */}
@@ -69,16 +68,17 @@ const FilterContainer = styled.div`
   padding: 3rem 0 1rem 0;
 `;
 const Form = styled.form`
-  color: var(--mainAccent);
-  width: 60vw;
+  color: var(--main-light);
+  width: 50vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   grid-column-gap: 2rem;
-  background: var(--mainText);
+  background-color: var(--medium-blue-cover);
   opacity: 0.6;
-  padding: 0.5rem;
-  box-shadow: var(--lightShadow);
+  padding: 1rem;
+  border-radius: 1rem;
+
   .form-group {
     text-transform: capitalize;
   }
@@ -91,22 +91,22 @@ const Form = styled.form`
 
   select {
     font-family: Cursive;
-    color: var(--mainAccent);
+    color: var(--main-light);
     border: none;
     width: 100%;
     background: transparent;
     font-size: 1.4rem;
     outline: none;
     cursor: pointer;
-    border-bottom: solid 0.05rem var(--mainAccent);
+    border-bottom: solid 0.05rem var(--main-light);
   }
 
   select option {
     background: var(--mainDark);
-    color: var(--mainAccent);
+    color: var(--main-light);
   }
   select option:first-child {
-    color: var(--mainAccent);
+    color: var(--main-light);
   }
   @media screen and (max-width: 850px) {
     .form-group label {
