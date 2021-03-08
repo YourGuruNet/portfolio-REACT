@@ -21,23 +21,29 @@ html {
   --lightShadowTop: -0.1rem -0.1rem 0.5rem 0 rgba(0, 0, 0, 0.493);
   --darkShadow: 0.4rem 1rem 1rem 0 black;
   /* ///////////////////////// */
-  --light-blue: #a2ddf6;
-  --medium-blue: #16aae9;
-  --dark-blue: #0b5575;
+  --light-blue: #7d88a8;
+  --light-blue-2: #51618e;
+  --medium-blue: #2f4073;
+  --dark-blue: #06143d;
+  --dark-blue-2: #152658;
   --mainText: #757575;
   --main-black: #000;
   --main-light: #fff;
   --color-grey-light-1: #f0ecec;
-  --light-blue-cover: rgba(162, 221, 246, 0.5);
-  --medium-blue-cover: #16aae9;
   --secondary-orange-light: rgb(252, 185, 42);
   --secondary-orange-dark: rgb(255, 137, 1);
   --secondary-green-light: rgb(117, 253, 83);
   --secondary-green-dark: rgb(30, 139, 3);
+  --lightGradient: linear-gradient(
+    to left,
+    rgba(47, 64, 115, 0.876),
+    rgba(21, 38, 88, 0.856)
+  );
+  --darkGradient: linear-gradient(to left, rgb(47, 64, 115), rgb(21, 38, 88));
 }
 body {
   color: var(--mainText);
-  background: var(--mainDark);
+  background-color: var(--mainDark);
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.4;

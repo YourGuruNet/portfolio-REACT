@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo-white.png';
@@ -6,95 +5,158 @@ import { PortfolioConsumer } from '../Context';
 import { BiPhone } from 'react-icons/bi';
 import { FiMail } from 'react-icons/fi';
 
-export default class Navbar extends Component {
-  state = {
-    isOpen: false,
-  };
-  mobileNavOpen = () => this.setState({ isOpen: !this.state.isOpen });
-  render() {
-    return (
-      <PortfolioConsumer>
-        {(value) => (
-          <NavbarComponent>
-            <div className='nav-center'>
-              <div className='nav-header'>
-                <Link to='/'>
-                  <img src={logo} alt='your-guru-net' />
+import React, { useState } from 'react';
+
+const Navbar = () => {
+  const [openNav, setOpenNav] = useState(false);
+  const mobileNavOpen = () => setOpenNav((openNav) => !openNav);
+  return (
+    <PortfolioConsumer>
+      {(value) => (
+        <NavbarComponent>
+          <button
+            onClick={() => mobileNavOpen()}
+            className={openNav ? 'navigation__button ' : 'navigation__button'}>
+            <span
+              className={
+                openNav ? 'navigation__icon--close' : 'navigation__icon'
+              }>
+              &nbsp;
+            </span>
+          </button>
+          <div
+            className={
+              openNav
+                ? 'navigation__background background_opens'
+                : 'navigation__background '
+            }>
+            &nbsp;
+          </div>
+          <nav
+            className={
+              openNav ? 'navigation__nav navigation_clicked' : 'navigation__nav'
+            }>
+            <ul className='navigation__list'>
+              <li onClick={() => mobileNavOpen()} className='navigation__item'>
+                <Link className='navigation__link' to='/'>
+                  Home
                 </Link>
-                <button
-                  type='button'
-                  className='nav-btn'
-                  onClick={this.mobileNavOpen}>
-                  <span
-                    className={
-                      this.state.isOpen
-                        ? 'navigation__icon--close'
-                        : 'navigation__icon'
-                    }>
-                    &nbsp;
-                  </span>
-                </button>
-              </div>
-              <ul
-                className={
-                  this.state.isOpen
-                    ? 'nav-links show-nav'
-                    : 'nav-links nav-links-p-close'
-                }>
-                <li onClick={this.mobileNavOpen}>
-                  <Link to='/'>Home</Link>
-                </li>
-                <li onClick={this.mobileNavOpen}>
-                  <Link to='/portfolios/'>Portfolio</Link>
-                </li>
-                <li onClick={this.mobileNavOpen}>
-                  <Link
-                    to='#'
-                    onClick={() => {
-                      value.openContactModal();
-                    }}>
-                    Contacts
-                  </Link>
-                </li>
-                <li onClick={this.mobileNavOpen}>
-                  <Link to='/about'>About</Link>
-                </li>
-              </ul>
-            </div>
-          </NavbarComponent>
-        )}
-      </PortfolioConsumer>
-    );
-  }
-}
+              </li>
+              <li onClick={() => mobileNavOpen()} className='navigation__item'>
+                <Link className='navigation__link' to='/portfolios/'>
+                  Portfolio
+                </Link>
+              </li>
+              <li onClick={() => mobileNavOpen()} className='navigation__item'>
+                <Link
+                  className='navigation__link'
+                  to='#'
+                  onClick={() => {
+                    value.openContactModal();
+                  }}>
+                  Contacts
+                </Link>
+              </li>
+              <li onClick={() => mobileNavOpen()} className='navigation__item'>
+                <Link className='navigation__link' to='/about'>
+                  About
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </NavbarComponent>
+      )}
+    </PortfolioConsumer>
+  );
+};
+
+export default Navbar;
 
 const NavbarComponent = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  background-color: transparent;
-  z-index: 2;
-
-  .nav-header {
-    margin: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  .nav-btn {
-    margin-top: 1rem;
-    margin-right: 2rem;
-    float: right;
-    background: transparent;
+  .navigation__button {
+    background-color: #fff;
+    height: 7rem;
+    width: 7rem;
+    top: 6rem;
+    right: 6rem;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.7);
+    text-align: center;
     border: none;
     cursor: pointer;
     outline: none;
-    font-size: 2.5rem;
-    color: var(--mainText);
   }
 
-  .nav-icon:hover {
-    color: var(--main-light);
+  .navigation__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background: var(--darkGradient);
+    z-index: 1000;
+    transition: transform 0.8s;
+  }
+
+  .navigation__nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1500;
+    width: 0;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+
+  .navigation__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+  }
+
+  .navigation__item {
+    margin: 1rem;
+  }
+
+  .navigation__link:link,
+  .navigation__link:visited {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      #fff 50%
+    );
+    background-size: 230%;
+    transition: all 0.4s;
+  }
+
+  .navigation__link:hover,
+  .navigation__link:active {
+    color: black;
+    background-position: 100%;
+    transform: translateX(1rem);
+  }
+  .background_opens {
+    transform: scale(80);
+  }
+  .navigation_clicked {
+    opacity: 1;
+    width: 100%;
   }
 
   /////////////////
@@ -103,14 +165,13 @@ const NavbarComponent = styled.nav`
     margin-top: 2rem;
     width: 3rem;
     height: 0.2rem;
-    background-color: var(--main-light);
+    background-color: var(--mainText);
     display: inline-block;
-
     ::before,
     ::after {
       width: 3rem;
       height: 0.2rem;
-      background-color: var(--main-light);
+      background-color: var(--mainText);
       display: inline-block;
     }
     ::before,
@@ -127,18 +188,16 @@ const NavbarComponent = styled.nav`
       top: 1rem;
     }
   }
-
   .navigation__icon:hover {
-    background-color: var(--main-light);
+    background-color: var(--medium-blue);
   }
   .navigation__icon:hover::before {
+    background-color: var(--medium-blue);
     top: -1.2rem;
-    background-color: var(--main-light);
   }
-
   .navigation__icon:hover::after {
+    background-color: var(--medium-blue);
     top: 1.2rem;
-    background-color: var(--main-light);
   }
   //Close
   .navigation__icon--close {
@@ -148,7 +207,6 @@ const NavbarComponent = styled.nav`
     height: 0.2rem;
     background-color: transparent;
     display: inline-block;
-
     ::before,
     ::after {
       width: 3rem;
@@ -173,120 +231,23 @@ const NavbarComponent = styled.nav`
     }
   }
   .navigation__icon--close:hover::before {
-    background-color: var(--mainAccent);
+    background-color: var(--medium-blue);
   }
-
   .navigation__icon--close:hover::after {
-    background-color: var(--mainAccent);
+    background-color: var(--medium-blue);
   }
   /////////////////
-  .nav-links {
-    line-height: 0;
-    overflow: hidden;
-    transition: var(--mainTransition);
-    list-style-type: none;
-    text-transform: uppercase;
-    color: var(--main-light);
-  }
-  .show-nav {
-    height: 20rem;
-    animation-name: showNavigation;
-    animation-duration: 0.7s;
-    animation-timing-function: ease-in-out;
+
+  .navigation__button:hover .navigation__icon::before {
+    top: -1rem;
   }
 
-  @keyframes showNavigation {
-    0% {
-      opacity: 0;
-      height: 0rem;
-    }
-    100% {
-      opacity: 1;
-      height: 20rem;
-    }
-  }
-  .nav-links a,
-  .nav-links-p {
-    margin-top: 3rem;
-    display: block;
-    text-decoration: none !important;
-    padding: 0.5rem 0;
-    color: var(--main-light);
-    transition: var(--mainTransition);
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 0.2rem;
-  }
-  .nav-links a:hover {
-    transform: translateY(-0.3rem) scale(1.1);
-    color: var(--mainAccent);
-  }
-  .nav-links a:active {
-    transform: translateY(0.3rem);
-  }
-  .nav-links-p {
-    color: #7e7e7e71;
-    position: absolute;
-    right: 1rem;
-    bottom: 0.4rem;
-    font-size: 1rem;
-  }
-  .nav-links-p-close {
-    width: 0;
-    opacity: 0;
-    height: 0rem;
-  }
-  .nav-center {
-    padding: 0.8rem;
-  }
-  .info {
-    transition: all 0.2s;
-    color: var(--mainText);
-    cursor: pointer;
-  }
-  .info:hover {
-    color: var(--mainAccent);
-    font-size: 1.3rem;
+  .navigation__button:hover .navigation__icon::after {
+    top: 1rem;
   }
 
-  @media screen and (min-width: 1056px) {
-    .show-nav {
-      animation-name: none;
-    }
-    .nav-links-p {
-      color: #a8a5a571;
-      position: absolute;
-      right: 4rem;
-      font-size: 1rem;
-      bottom: 3rem;
-      opacity: 1;
-    }
-    .nav-btn {
-      display: none;
-    }
-    .nav-center {
-      max-width: 80%;
-      margin: 0 auto;
-      display: flex;
-      padding: 0.7rem;
-      padding-left: 0rem;
-    }
-    .nav-links {
-      height: auto;
-      display: flex;
-      margin-left: 2rem;
-      width: 100%;
-      opacity: 1;
-    }
-    .nav-links a {
-      margin: 2.5rem 0 1rem 1rem;
-      padding: 0.5rem 0;
-    }
-  }
-  @media screen and (max-width: 339px) {
-    .info-hide {
-      display: none;
-    }
+  /* .navigation__checkbox:checked + .navigation__button .navigation__icon { */
+  .transparent {
+    background-color: transparent;
   }
 `;

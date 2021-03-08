@@ -1,23 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Banner from "../components/Banner";
-import StyledHero from "../components/StyledHero";
-import img1 from "../images/background-home.jpg";
-import ReactTypingEffect from "react-typing-effect";
-import { PortfolioConsumer } from "../Context";
-import PageTransition from "../components/PageTransition";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Banner from '../components/Banner';
+import StyledHero from '../components/StyledHero';
+import img1 from '../images/background-home.jpg';
+import ReactTypingEffect from 'react-typing-effect';
+import { PortfolioConsumer } from '../Context';
+import PageTransition from '../components/PageTransition';
+import Features from '../components/Features';
 export default function Home() {
   return (
     <PageTransition>
       <PortfolioConsumer>
         {(value) => (
           <StyledHero img={img1}>
-            <Banner title="My name is Arvis iljins">
-              <div style={{ minHeight: "5rem" }}>
+            <Banner title='My name is Arvis iljins'>
+              <div style={{ minHeight: '5rem' }}>
                 <ReactTypingEffect
                   text={[
                     "I'm Latvian Web Developer",
-                    "Working as a Freelancer",
+                    'Working as a Freelancer',
                     "I'm here to create your web world",
                   ]}
                   cursorRenderer={(cursor) => <p>{cursor}</p>}
@@ -28,8 +29,8 @@ export default function Home() {
                   typingDelay={0}
                 />
               </div>
-              <Link to="/portfolios/">
-                <button className="btn-primary animated-button">
+              <Link to='/portfolios/'>
+                <button className='btn-primary animated-button'>
                   Portfolio
                 </button>
               </Link>
@@ -37,6 +38,7 @@ export default function Home() {
           </StyledHero>
         )}
       </PortfolioConsumer>
+      <Features />
     </PageTransition>
   );
 }

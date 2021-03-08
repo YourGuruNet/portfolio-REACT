@@ -68,14 +68,13 @@ const FilterContainer = styled.div`
   padding: 3rem 0 1rem 0;
 `;
 const Form = styled.form`
+  background: var(--darkGradient);
   color: var(--main-light);
   width: 50vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   grid-column-gap: 2rem;
-  background-color: var(--medium-blue-cover);
-  opacity: 0.6;
   padding: 1rem;
   border-radius: 1rem;
 

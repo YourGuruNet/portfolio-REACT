@@ -69,6 +69,7 @@ export default class PortfolioList extends Component {
 
 const ListSection = styled.div`
   padding: 5rem 0;
+  padding-bottom: 15rem;
 
   .portfolio-list {
     width: 97vw;

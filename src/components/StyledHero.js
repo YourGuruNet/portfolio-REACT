@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledHero = styled.header`
   height: 95vh;
-  background: linear-gradient(var(--medium-blue-cover), var(--light-blue-cover)),
+  background: var(--lightGradient),
     url(${(props) => props.img}) bottom/cover no-repeat;
   display: flex;
   align-items: center;

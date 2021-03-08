@@ -242,6 +242,7 @@ export default class About extends Component {
   }
 }
 const Content = styled.div`
+  padding-bottom: 7rem;
   margin: 3rem auto;
   max-width: 140rem;
 
@@ -330,13 +331,7 @@ const Content = styled.div`
   .methods-list {
     color: var(--mainText);
   }
-  .methods-list:hover {
-    transform: scale(1.2);
-    background: var(--mainText);
-    color: var(--mainAccent);
-    box-shadow: 0 0 1rem var(--mainAccent), 0 0 4rem var(--mainAccent),
-      0 0 8rem var(--mainAccent);
-  }
+
   .methods {
     text-align: center;
     list-style-type: none;

@@ -110,7 +110,7 @@ export default class SinglePortfolio extends Component {
 
 const Section = styled.section`
   padding: 2rem 0 0 0;
-
+  padding-bottom: 15rem;
   p {
     font-size: 1.6rem;
     text-align: justify;

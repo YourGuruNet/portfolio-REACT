@@ -13,7 +13,6 @@ export default class Footer extends Component {
         <Link to='/'>
           <img src={logo} alt='your-guru-net' />
         </Link>
-
         <section className='footer-container'>
           <div className='social-media-wrap'>
             <small className='website-right'>
@@ -63,10 +62,8 @@ export default class Footer extends Component {
   }
 }
 const FooterContainer = styled.div`
-  background: linear-gradient(
-    var(--light-blue-cover),
-    var(--medium-blue-cover)
-  );
+  margin-top: -15rem;
+  background: var(--darkGradient);
   padding: 10rem 0 4rem 0;
   display: flex;
   flex-direction: column;
@@ -93,12 +90,16 @@ const FooterContainer = styled.div`
     margin-bottom: 0.4rem;
     text-decoration: none;
     font-size: 1.7rem;
+    border-top: solid 0.01rem var(--main-light);
+    padding: 1.5rem;
   }
   .social-ions {
+    border-top: solid 0.01rem var(--main-light);
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 18rem;
+    width: 22rem;
   }
 
   .social-icon-link {
