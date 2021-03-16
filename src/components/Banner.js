@@ -99,7 +99,6 @@ const BannerContainer = styled.div`
   }
   .arrow-button {
     font-size: 10rem;
-    color: var(--mainText);
     margin: 1rem;
     animation-duration: 4s;
     background-color: transparent;
@@ -107,7 +106,7 @@ const BannerContainer = styled.div`
     color: var(--main-light);
   }
   .arrow-button:hover {
-    color: var(--mainAccent);
+    color: var(--light-blue);
   }
   .arrow-button:focus {
     outline: none;

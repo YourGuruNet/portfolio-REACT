@@ -64,7 +64,7 @@ export default class Footer extends Component {
 const FooterContainer = styled.div`
   margin-top: -15rem;
   background: var(--darkGradient);
-  padding: 10rem 0 4rem 0;
+  padding: 14rem 0 4rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,7 +89,7 @@ const FooterContainer = styled.div`
     color: var(--main-light);
     margin-bottom: 0.4rem;
     text-decoration: none;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     border-top: solid 0.01rem var(--main-light);
     padding: 1.5rem;
   }
@@ -109,7 +109,7 @@ const FooterContainer = styled.div`
   }
   .social-icon-link:hover {
     transform: translateY(-0.3rem) scale(1.1);
-    color: var(--mainAccent);
+    color: var(--light-blue-2);
   }
   .social-icon-link:active {
     transform: translateY(0.3rem);

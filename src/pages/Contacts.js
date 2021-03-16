@@ -16,7 +16,6 @@ export default class Contacts extends Component {
       email: '',
     };
   }
-
   changeColor() {
     this.setState({ primary: !this.state.primary });
   }
@@ -28,7 +27,7 @@ export default class Contacts extends Component {
   };
 
   render() {
-    let btn_class = this.state.primary ? 'btn-primary' : 'btn-done';
+    let btn_class = this.state.primary ? 'btn-primary white' : 'btn-done';
     let btn_text = this.state.primary ? 'Send' : 'Thanks! Message sent..';
 
     function sendEmail(e) {
@@ -166,9 +165,9 @@ const Form = styled.form`
   bottom: 0;
   width: 40rem;
   height: 50rem;
-  background: var(--mainDark);
+  background: var(--lightGradient);
   border-radius: 1.2rem;
-  box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
+  box-shadow: 0 0.8rem 1rem 0 var(--light-blue-2);
   margin: calc(50vh - 22rem) auto;
   padding: 2rem 3rem;
   max-width: calc(100vw - 4rem);
@@ -176,7 +175,7 @@ const Form = styled.form`
   z-index: 99;
 
   .btn-close {
-    color: var(--mainText);
+    color: var(--main-light);
     font-size: 3rem;
     display: block;
     cursor: pointer;
@@ -188,20 +187,20 @@ const Form = styled.form`
     background-color: transparent;
   }
   .btn-close:hover {
-    color: var(--mainAccent);
+    color: var(--light-blue-2);
   }
 
   .bottomContainer {
     position: absolute;
     bottom: -3rem;
     right: -2rem;
-    background: var(--mainText);
-    color: var(--mainDark);
+    background: var(--darkGradient);
+    color: var(--main-light);
     width: 32rem;
     padding: 1.6rem 0.4rem 1.6rem 0;
     border-radius: 0.6rem;
     font-size: 1.3rem;
-    box-shadow: 0 0.8rem 1rem 0 var(--mainAccent);
+    box-shadow: 0 0.8rem 1rem 0 var(--light-blue-2);
   }
   span {
     margin: 0 0.5rem 0 1.5rem;
@@ -209,20 +208,20 @@ const Form = styled.form`
   input {
     margin-left: 5%;
     font-size: 1.5rem;
-    color: inherit;
+    color: var(--main-light);
     font-family: inherit;
     padding: 1.5rem 2rem;
     border-radius: 0.2rem;
     background-color: transparent;
     border: none;
-    border-bottom: 0.3rem solid var(--mainText);
+    border-bottom: 0.3rem solid var(--main-light);
     width: 90%;
     display: block;
     transition: all 0.3s;
 
     :focus {
       outline: none;
-      box-shadow: 0 0.3rem 4rem 0 var(--mainAccent);
+      box-shadow: 0 0.3rem 4rem 0 var(--light-blue-2);
       border-bottom: 0.3rem solid var(--mainGreen);
     }
 
@@ -231,7 +230,7 @@ const Form = styled.form`
     }
 
     ::-webkit-input-placeholder {
-      color: var(--mainText);
+      color: var(--main-light);
     }
   }
 
@@ -242,6 +241,7 @@ const Form = styled.form`
     margin-top: 0.7rem;
     display: block;
     transition: all 0.3s;
+    color: var(--main-light);
   }
 
   .form__input:placeholder-shown + .form__label {

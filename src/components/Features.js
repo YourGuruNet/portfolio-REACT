@@ -2,66 +2,106 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from './Title';
 import { FaCheck } from 'react-icons/fa';
-
+import image1 from '../images/app.jpg';
+import image2 from '../images/app2.jpg';
+import image3 from '../images/app3.jpg';
+import { PortfolioConsumer } from '../Context';
 const offers = [
   {
     title: 'Mobile applications',
+    about: [
+      "Latest technology's",
+      'Flutter and React Native',
+      'Android and iOS',
+      'Problem fixes',
+      'Full app',
+    ],
+    price: '25 euros/h',
+    message: 'Starting from',
   },
   {
     title: 'Web application',
+    about: [
+      "Latest technology's",
+      'React, .net, SASS',
+      'Mobile responsive',
+      'Blog pages',
+      'Online stores',
+    ],
+    price: '20 euros/h',
+    message: 'Starting from',
   },
   {
     title: 'Web Hosting',
+    about: [
+      "Best solution's",
+      'Server setups',
+      'Domain hosting',
+      'Make your page live',
+      'Help in any situation',
+    ],
+    price: '20 euros/h',
+    message: 'Starting from',
   },
 ];
 
 const Features = () => {
   return (
-    <Section>
-      <Title title='We can help you if you search for' />
-      <div className='row'>
-        {offers.map((item, index) => {
-          return (
-            <div className='col-1-of-3' key={index}>
-              <div className='card'>
-                <div className='card__side card__side--front'>
-                  <div
-                    className={`card__picture card__picture--${index}`}></div>
-                  <h4 className='card__heading'>
-                    <span
-                      className={`card__heading--span card__heading--span--${index}`}>
-                      {item.title}
-                    </span>
-                  </h4>
-                  <div className='card__details'>
-                    <ul>
-                      <li>
-                        <span>
-                          <FaCheck />
+    <PortfolioConsumer>
+      {(value) => (
+        <Section>
+          <Title title='I can help you if you search for' />
+          <div className='row'>
+            {offers.map((item, index) => {
+              return (
+                <div className='col-1-of-3' key={index}>
+                  <div className='card'>
+                    <div className='card__side card__side--front'>
+                      <div
+                        className={`card__picture card__picture--${index}`}></div>
+                      <h4 className='card__heading'>
+                        <span
+                          className={`card__heading--span card__heading--span--${index}`}>
+                          {item.title}
                         </span>
-                        CHekmark
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className={`card__side card__side--back card__side--back--${index}`}>
-                  <div className='card__cta'>
-                    <div className='card__price--box'>
-                      <p className='card__price--only'>Today Only</p>
-                      <p className='card__price--value'> $ 259.49</p>
+                      </h4>
+                      <div className='card__details'>
+                        <ul>
+                          {item.about.map((item, id) => (
+                            <li>
+                              <span style={{ paddingRight: '1rem' }}>
+                                <FaCheck />
+                              </span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <a href='#popup' className='btn btn--white'>
-                      Book Now
-                    </a>
+                    <div
+                      className={`card__side card__side--back card__side--back--${index}`}>
+                      <div className='card__cta'>
+                        <div className='card__price--box'>
+                          <p className='card__price--only'>{item.message}</p>
+                          <p className='card__price--value'> {item.price}</p>
+                        </div>
+                        <button
+                          className='feature_button'
+                          onClick={() => {
+                            value.openContactModal();
+                          }}>
+                          Contact me
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </Section>
+              );
+            })}
+          </div>
+        </Section>
+      )}
+    </PortfolioConsumer>
   );
 };
 
@@ -80,7 +120,16 @@ const Section = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
     grid-gap: 5rem;
   }
-  .col-1-of-3 {
+  @media screen and (max-width: 450px) {
+    padding-top: 30rem;
+    .row {
+      grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .row {
+      grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    }
   }
   .card {
     perspective: 150rem;
@@ -111,7 +160,7 @@ const Section = styled.div`
     transform: rotateY(180deg);
   }
   .card__side--back--0 {
-    background-image: linear-gradient(to right bottom, #fcb92a, #ff8901);
+    background: linear-gradient(to right bottom, #fcb92a, #ff8901);
   }
   .card__side--back--1 {
     background-image: linear-gradient(to right bottom, #a2ddf6, #16aae9);
@@ -140,16 +189,16 @@ const Section = styled.div`
     clip-path: polygon(100% 0, 100% 77%, 75% 100%, 40% 88%, 0 100%, 0 0);
   }
   .card__picture--0 {
-    background-image: linear-gradient(to right bottom, #fcb92a, #ff8901),
-      url(../img/tour-1.jpg);
+    background: linear-gradient(to right bottom, #fcb92a, #ff8901),
+      url(${image1}) center/cover no-repeat;
   }
   .card__picture--1 {
-    background-image: linear-gradient(to right bottom, #a2ddf6, #16aae9),
-      url(../img/tour-2.jpg);
+    background: linear-gradient(to right bottom, #a2ddf6, #16aae9),
+      url(${image2}) center/cover no-repeat;
   }
   .card__picture--2 {
-    background-image: linear-gradient(to right bottom, #75fd53, #1e8b03),
-      url(../img/tour-3.jpg);
+    background: linear-gradient(to right bottom, #75fd53, #1e8b03),
+      url(${image3}) center/cover no-repeat;
   }
   .card__heading {
     text-transform: uppercase;
@@ -233,9 +282,10 @@ const Section = styled.div`
   .card__price--box {
     margin-top: 2rem;
     text-align: center;
-    color: #fff;
+    color: var(--main-light);
   }
   .card__price--only {
+    padding-top: 2rem;
     text-transform: uppercase;
     font-size: 2.8rem;
     font-weight: 300;
@@ -243,6 +293,36 @@ const Section = styled.div`
   .card__price--value {
     font-size: 5rem;
     font-weight: 100;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .feature_button {
+    color: var(--main-light);
+    transition: var(--mainTransition);
+    background-color: transparent;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: var(--mainSpacing);
+    padding: 1rem 2rem;
+    border: 0.3rem solid var(--main-light);
+    transition: 0.2s;
+    text-transform: uppercase;
+    cursor: pointer;
+    touch-action: manipulation;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 2rem;
+  }
+  .feature_button:hover {
+    background: var(--main-light);
+    color: var(--light-blue);
+    border-color: var(--light-blue);
+    box-shadow: 0 0 1rem var(--light-blue), 0 0 4rem var(--light-blue),
+      0 0 8rem var(--light-blue);
+  }
+  .feature_button:active {
+    box-shadow: 0 0 0.5rem var(--light-blue), 0 0 3rem var(--light-blue),
+      0 0 5rem var(--light-blue);
   }
 `;

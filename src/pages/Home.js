@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../components/Banner';
 import StyledHero from '../components/StyledHero';
@@ -8,6 +8,9 @@ import { PortfolioConsumer } from '../Context';
 import PageTransition from '../components/PageTransition';
 import Features from '../components/Features';
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <PageTransition>
       <PortfolioConsumer>
@@ -30,7 +33,7 @@ export default function Home() {
                 />
               </div>
               <Link to='/portfolios/'>
-                <button className='btn-primary animated-button'>
+                <button className='btn-primary animated-button white'>
                   Portfolio
                 </button>
               </Link>

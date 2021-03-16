@@ -18,13 +18,25 @@ import { FaAngleDoubleDown } from 'react-icons/fa';
 export default class SinglePortfolio extends Component {
   constructor(props) {
     super(props);
-    //console.log(this.props); //using to see what props we can get
     this.myRef = React.createRef();
     this.state = {
       slug: this.props.match.params.slug,
       defaultBcg,
     };
   }
+
+  componentDidMount = () => this.handleScroll();
+
+  componentDidUpdate = () => this.handleScroll();
+
+  handleScroll = () => {
+    const { index, selected } = this.props;
+    if (index === selected) {
+      setTimeout(() => {
+        this.myRef.current.scrollIntoView({ behavior: 'smooth' });
+      }, 1000);
+    }
+  };
   static contextType = PortfolioContext;
   scrollToRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
   render() {

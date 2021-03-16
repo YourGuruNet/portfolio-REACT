@@ -36,7 +36,7 @@ const TitleSection = styled.div`
   }
   @media (max-width: 643px) {
     .title {
-      font-size: 1.2rem;
+      font-size: 2.2rem;
     }
   }
 `;

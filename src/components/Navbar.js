@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import logo from '../images/logo-white.png';
 import { PortfolioConsumer } from '../Context';
-import { BiPhone } from 'react-icons/bi';
-import { FiMail } from 'react-icons/fi';
 
 import React, { useState } from 'react';
 
@@ -34,7 +31,9 @@ const Navbar = () => {
           </div>
           <nav
             className={
-              openNav ? 'navigation__nav navigation_clicked' : 'navigation__nav'
+              openNav
+                ? 'navigation__nav navigation_clicked'
+                : 'navigation__nav hide'
             }>
             <ul className='navigation__list'>
               <li onClick={() => mobileNavOpen()} className='navigation__item'>
@@ -111,6 +110,10 @@ const NavbarComponent = styled.nav`
     width: 0;
     opacity: 0;
     transition: all 0.8s;
+  }
+
+  .hide {
+    pointer-events: none; /* Disable button click*/
   }
 
   .navigation__list {
@@ -249,5 +252,17 @@ const NavbarComponent = styled.nav`
   /* .navigation__checkbox:checked + .navigation__button .navigation__icon { */
   .transparent {
     background-color: transparent;
+  }
+
+  @media (max-width: 643px) {
+    .navigation__background {
+      position: fixed;
+      top: 2.5rem;
+      right: 2.5rem;
+    }
+    .navigation__button {
+      top: 2.2rem;
+      right: 2.2rem;
+    }
   }
 `;

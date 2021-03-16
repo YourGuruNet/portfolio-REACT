@@ -26,13 +26,26 @@ import { DiBitbucket } from 'react-icons/di';
 export default class About extends Component {
   constructor() {
     super();
-
+    this.childDiv = React.createRef();
     this.state = {
       FrontEnd: false,
       BackEnd: true,
     };
     this.handleClick = this.handleClick.bind(this);
   }
+
+  componentDidMount = () => this.handleScroll();
+
+  componentDidUpdate = () => this.handleScroll();
+
+  handleScroll = () => {
+    const { index, selected } = this.props;
+    if (index === selected) {
+      setTimeout(() => {
+        this.childDiv.current.scrollIntoView({ behavior: 'smooth' });
+      }, 1000);
+    }
+  };
   changeFrontEnd() {
     this.setState({
       FrontEnd: !this.state.FrontEnd,
