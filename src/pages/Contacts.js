@@ -62,7 +62,7 @@ export default class Contacts extends Component {
                   }}
                 />
                 <Form className='contact-form' onSubmit={sendEmail}>
-                  <Title title='Contact Me' />
+                  <Title title='Contact Me' white />
                   <div className='form__group'>
                     <input
                       type='text'
@@ -94,7 +94,7 @@ export default class Contacts extends Component {
                   </div>
 
                   <div className='form__group'>
-                    <input
+                    <textarea
                       type='Message'
                       className='form__input'
                       placeholder='Your message..'
@@ -185,9 +185,10 @@ const Form = styled.form`
     outline: none;
     border: none;
     background-color: transparent;
+    transition: all 0.2s;
   }
   .btn-close:hover {
-    color: var(--light-blue-2);
+    transform: scale(1.2);
   }
 
   .bottomContainer {
@@ -205,7 +206,8 @@ const Form = styled.form`
   span {
     margin: 0 0.5rem 0 1.5rem;
   }
-  input {
+  input,
+  textarea {
     margin-left: 5%;
     font-size: 1.5rem;
     color: var(--main-light);

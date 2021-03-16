@@ -15,7 +15,6 @@ function App() {
   return (
     <React.Fragment>
       <HashRouter exact>
-        <FeaturedPortfolio />
         <Contacts />
         <Navbar />
         <Switch>

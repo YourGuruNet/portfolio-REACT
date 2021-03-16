@@ -26,7 +26,6 @@ import { DiBitbucket } from 'react-icons/di';
 export default class About extends Component {
   constructor() {
     super();
-    this.childDiv = React.createRef();
     this.state = {
       FrontEnd: false,
       BackEnd: true,
@@ -34,18 +33,9 @@ export default class About extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount = () => this.handleScroll();
-
-  componentDidUpdate = () => this.handleScroll();
-
-  handleScroll = () => {
-    const { index, selected } = this.props;
-    if (index === selected) {
-      setTimeout(() => {
-        this.childDiv.current.scrollIntoView({ behavior: 'smooth' });
-      }, 1000);
-    }
-  };
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   changeFrontEnd() {
     this.setState({
       FrontEnd: !this.state.FrontEnd,
@@ -58,7 +48,6 @@ export default class About extends Component {
       FrontEnd: false,
     }));
   }
-
   render() {
     let programmingSkills = this.state.FrontEnd
       ? 'containerTab displayNone'

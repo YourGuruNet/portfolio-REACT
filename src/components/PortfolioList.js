@@ -70,7 +70,7 @@ export default class PortfolioList extends Component {
 const ListSection = styled.div`
   padding: 5rem 0;
   padding-bottom: 15rem;
-
+  min-height: 64vh;
   .portfolio-list {
     width: 97vw;
     margin: 0 auto;

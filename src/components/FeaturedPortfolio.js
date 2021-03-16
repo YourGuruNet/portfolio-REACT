@@ -1,12 +1,10 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { PortfolioConsumer, PortfolioContext } from "../Context";
-import Title from "../components/Title";
-import Loading from "../components/Loading";
-import SinglePortfolio from "./PortfolioCart";
-import { Link } from "react-router-dom";
-import CloseSection from "./CloseSection";
-import { IoIosCloseCircle } from "react-icons/io";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { PortfolioConsumer, PortfolioContext } from '../Context';
+import Title from '../components/Title';
+import Loading from '../components/Loading';
+import SinglePortfolio from './PortfolioCart';
+import { Link } from 'react-router-dom';
 
 export default class FeaturedPortfolio extends Component {
   static contextType = PortfolioContext;
@@ -20,80 +18,36 @@ export default class FeaturedPortfolio extends Component {
       <PortfolioConsumer>
         {(value) => {
           const { modalPortfolioOpen } = value;
-          if (!modalPortfolioOpen) {
-            return null;
-          } else {
-            return (
-              <Popup>
-                <CloseSection
-                  onClick={() => {
-                    value.closePortfolioModal();
-                  }}
-                />
-                <Section>
-                  <div className="row-title">
-                    <Title title="portfolio" />
-                  </div>
-                  <ModalContainer>
-                    <div className="featured-rooms-center">
-                      {loading ? <Loading /> : portfolio}
-                    </div>
-                  </ModalContainer>
 
-                  <button
-                    className="btn-close"
-                    onClick={() => {
-                      value.closePortfolioModal();
-                    }}
-                  >
-                    <IoIosCloseCircle title="Close" />
-                  </button>
-                  <div className="button-row">
-                    <Link to="/portfolios/">
-                      <button
-                        className="btn-primary"
-                        onClick={() => {
-                          value.closePortfolioModal();
-                        }}
-                      >
-                        See all
-                      </button>
-                    </Link>
-                  </div>
-                </Section>
-              </Popup>
-            );
-          }
+          return (
+            <Section>
+              <div className='row-title'>
+                <Title title='portfolio' />
+              </div>
+              <ModalContainer>
+                <div className='featured-rooms-center'>
+                  {loading ? <Loading /> : portfolio}
+                </div>
+              </ModalContainer>
+              <div className='button-row'>
+                <Link to='/portfolios/'>See all</Link>
+              </div>
+            </Section>
+          );
         }}
       </PortfolioConsumer>
     );
   }
 }
-const Popup = styled.form`
-  z-index: 99999;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  animation-name: growIn;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-in-out;
-`;
 
 const Section = styled.div`
-  position: relative;
   padding: 0;
   z-index: 999;
   width: 120rem;
   height: 36rem;
-  top: 15%;
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  left: 0;
-  right: 0;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -154,11 +108,6 @@ const ModalContainer = styled.div`
   padding: 0 0;
   z-index: 9999;
   width: 90%;
-  left: 5%;
-  right: 5%;
-  position: absolute;
-  top: 5%;
-  bottom: 10%;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -25,18 +25,9 @@ export default class SinglePortfolio extends Component {
     };
   }
 
-  componentDidMount = () => this.handleScroll();
-
-  componentDidUpdate = () => this.handleScroll();
-
-  handleScroll = () => {
-    const { index, selected } = this.props;
-    if (index === selected) {
-      setTimeout(() => {
-        this.myRef.current.scrollIntoView({ behavior: 'smooth' });
-      }, 1000);
-    }
-  };
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   static contextType = PortfolioContext;
   scrollToRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
   render() {
@@ -151,6 +142,7 @@ const Section = styled.section`
     width: 100%;
     max-height: 20rem;
     display: block;
+    object-fit: cover;
   }
   .portfolio-info {
     max-width: 80vw;

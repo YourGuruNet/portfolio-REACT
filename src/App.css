@@ -39,6 +39,11 @@ html {
     var(--light-blue-2),
     rgba(21, 38, 88, 0.856)
   );
+  --White-Gradient: linear-gradient(
+    to left,
+    var(--light-blue-2),
+    var(--main-light)
+  );
   --darkGradient: linear-gradient(
     to left,
     var(--light-blue-2),
