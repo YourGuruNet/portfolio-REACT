@@ -8,6 +8,7 @@ import { PortfolioConsumer } from '../Context';
 import PageTransition from '../components/PageTransition';
 import Features from '../components/Features';
 import FeaturedPortfolio from '../components/FeaturedPortfolio';
+import Solutions from '../components/Solutions';
 export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,6 +45,7 @@ export default function Home() {
       </PortfolioConsumer>
       <Features />
       <FeaturedPortfolio />
+      <Solutions />
     </PageTransition>
   );
 }

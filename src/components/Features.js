@@ -109,7 +109,7 @@ export default Features;
 
 const Section = styled.div`
   background-color: var(--color-grey-light-1);
-  padding: 25rem 0;
+  padding: 30rem 0;
   margin-top: -28rem;
   font-weight: 700;
   @media screen and (max-width: 950px) {

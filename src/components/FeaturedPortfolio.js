@@ -35,14 +35,12 @@ const Section = styled.div`
   z-index: 999;
 
   margin-top: -25rem;
-  padding-top: 18rem;
-  height: 70rem;
+  padding-top: 20rem;
+  height: 85rem;
   display: block;
-  clip-path: polygon(0 35%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
   background: var(--darkGradient);
   @media screen and (max-width: 950px) {
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-    margin-top: -25rem;
     padding-top: 15rem;
     height: 90rem;
   }
