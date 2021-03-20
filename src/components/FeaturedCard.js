@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { PortfolioConsumer } from '../Context';
 
-export default function SinglePortfolio({ portfolios }) {
+export default function FeaturedCard({ portfolios }) {
   //console.log(room) use to see what props we can get!
   const { type, images, logo, slug } = portfolios;
 
@@ -20,10 +20,7 @@ export default function SinglePortfolio({ portfolios }) {
               </div>
               <Link
                 to={`/portfolio/${slug}`}
-                className='btn-cart portfolio-link'
-                onClick={() => {
-                  value.closePortfolioModal();
-                }}>
+                className='btn-cart portfolio-link'>
                 {/* root is our path to exact portfolio wee click */}
                 {type}
               </Link>
@@ -39,17 +36,22 @@ const Cart = styled.article`
   box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
   margin: 1rem;
-  max-width: 35rem;
+  max-width: 45rem;
   :hover {
     box-shadow: var(--darkShadow);
     transform: scale(1.1);
+  }
+  @media screen and (max-width: 1200px) {
+    max-width: 35rem;
   }
 `;
 
 const CartContainer = styled.article`
   position: relative;
-  max-height: 14rem;
-
+  max-height: 18rem;
+  @media screen and (max-width: 1200px) {
+    max-height: 14rem;
+  }
   overflow: hidden;
   .img {
     width: 100%;

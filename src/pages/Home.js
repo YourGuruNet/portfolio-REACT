@@ -43,7 +43,7 @@ export default function Home() {
         )}
       </PortfolioConsumer>
       <Features />
-      {/* <FeaturedPortfolio /> */}
+      <FeaturedPortfolio />
     </PageTransition>
   );
 }

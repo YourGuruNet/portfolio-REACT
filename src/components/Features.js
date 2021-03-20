@@ -112,6 +112,11 @@ const Section = styled.div`
   padding: 25rem 0;
   margin-top: -28rem;
   font-weight: 700;
+  @media screen and (max-width: 950px) {
+    margin-top: -20rem;
+    padding-top: 20rem;
+    padding-bottom: 26rem;
+  }
   .row {
     max-width: 114rem;
     margin: 0 auto;
@@ -121,7 +126,6 @@ const Section = styled.div`
     grid-gap: 5rem;
   }
   @media screen and (max-width: 450px) {
-    padding-top: 30rem;
     .row {
       grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
     }

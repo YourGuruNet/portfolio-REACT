@@ -9,6 +9,9 @@ const StyledHero = styled.header`
   justify-content: center;
   background-attachment: fixed;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+  @media screen and (max-width: 950px) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  }
 `;
 
 export default StyledHero;

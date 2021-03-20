@@ -8,7 +8,6 @@ import SinglePortfolio from './pages/SinglePortfolio';
 import Contacts from './pages/Contacts';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import FeaturedPortfolio from './components/FeaturedPortfolio';
 import About from './pages/About';
 
 function App() {
