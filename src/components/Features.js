@@ -10,7 +10,7 @@ const offers = [
   {
     title: 'Mobile applications',
     about: [
-      "Latest technology's",
+      'Cross-Platforms',
       'Flutter and React Native',
       'Android and iOS',
       'Technological consulting',

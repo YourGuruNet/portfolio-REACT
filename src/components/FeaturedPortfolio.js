@@ -42,7 +42,13 @@ const Section = styled.div`
   background: var(--darkGradient);
   @media screen and (max-width: 950px) {
     padding-top: 15rem;
-    height: 90rem;
+    height: 95rem;
+  }
+  @media screen and (max-width: 500px) {
+    height: 100rem;
+  }
+  @media screen and (max-width: 350px) {
+    height: 105rem;
   }
   .row-title {
     margin-top: 0.5rem;

@@ -1,61 +1,64 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MdCloudDone } from 'react-icons/md';
+import { MdHearing } from 'react-icons/md';
+import { BiCodeBlock } from 'react-icons/bi';
+import { BsQuestionDiamond } from 'react-icons/bs';
+import { MdHighQuality } from 'react-icons/md';
+import { CgNotes } from 'react-icons/cg';
+import { GiSunglasses } from 'react-icons/gi';
+
+const features = [
+  {
+    title: 'Why us?',
+    description:
+      'An individual approach is chosen for each client and project, consultations and close communication are provided during the implementation of his project',
+    icon: <BsQuestionDiamond />,
+  },
+  {
+    title: 'Compatibility',
+    description:
+      'Our works are compatible and dynamic and can be connected to other systems',
+    icon: <BiCodeBlock />,
+  },
+  {
+    title: 'Guaranteed quality',
+    description:
+      'We provide a guarantee for the developed code, as well as for the entire period of customer service and cooperation',
+    icon: <MdHighQuality />,
+  },
+  {
+    title: 'Work planning',
+    description:
+      'Our work processes are flexible and adaptive. We adapt, evolve and respond to the needs of our customers',
+    icon: <CgNotes />,
+  },
+  {
+    title: 'We can adapt',
+    description:
+      'We are able to adapt to different situations that are faced during the project development process',
+    icon: <MdHearing />,
+  },
+  {
+    title: 'Openness and transparency',
+    description:
+      'During development, the client has the opportunity to view the progress of the work and the developed code',
+    icon: <GiSunglasses />,
+  },
+];
+
 const Solutions = () => {
   return (
     <Section>
       <div className='wrapper'>
-        <div class='feature'>
-          <MdCloudDone />
-          <h4 class='heading-4'>Latest car models</h4>
-          <p class='feature__text'>
-            Pretty much every company is offering either a brand new or
-            moderately refreshed vehicle for 2020. That means modern car buyers
-            have no shortage of options to choose from when looking for their
-            next car.
-          </p>
-        </div>
-        <div class='feature'>
-          <MdCloudDone />
-          <h4 class='heading-4'>Best price guaranteed</h4>
-          <p class='feature__text'>
-            Our Best Price Guarantee means that you can be sure of booking at
-            the best rate. If you find a lower price elsewhere within 24 hours
-            of booking, we will match the lower rate.
-          </p>
-        </div>
-        <div class='feature'>
-          <MdCloudDone />
-          <h4 class='heading-4'>GPS included</h4>
-          <p class='feature__text'>
-            Car Hire with GPS included in numerous destinations. Driving through
-            a new town can be challenging if you don't have the right help.
-          </p>
-        </div>
-        <div class='feature'>
-          <MdCloudDone />
-          <h4 class='heading-4'>Airport pickup</h4>
-          <p class='feature__text'>
-            Worldwide airport transfer from the airport to your hotel. Book your
-            airport transportation with the professional.
-          </p>
-        </div>
-        <div class='feature'>
-          <MdCloudDone />
-          <h4 class='heading-4'>Full gas tank included</h4>
-          <p class='feature__text'>
-            Offers drivers the choice of three gas tank sizes so they can choose
-            the one that works best for their lifestyle. .
-          </p>
-        </div>
-        <div class='feature'>
-          <MdCloudDone />
-          <h4 class='heading-4'>Day 7 for free</h4>
-          <p class='feature__text'>
-            Every seventh day is free so you can fully enjoy your adventure.
-            Don't worry about extra charges or other hidden hooks.
-          </p>
-        </div>
+        {features.map((item, id) => {
+          return (
+            <div class='feature' key={id}>
+              <span className='ikon'>{item.icon}</span>
+              <h4 class='heading-4'>{item.title}</h4>
+              <p class='feature__text'>{item.description}</p>
+            </div>
+          );
+        })}
       </div>
     </Section>
   );
@@ -66,17 +69,16 @@ export default Solutions;
 const Section = styled.section`
   clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
   background-color: var(--color-grey-light-1);
-  padding-top: 20rem;
+  padding: 20rem 0;
   margin-top: -14rem;
-  height: 70rem;
 
   .wrapper {
+    padding: 1.5rem;
     max-width: 140rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     grid-gap: 2rem;
-    align-items: start;
   }
   .heading-4 {
     font-size: 2rem;
@@ -84,19 +86,42 @@ const Section = styled.section`
     font-weight: 600;
     text-transform: uppercase;
     color: #4f628e;
+    align-self: center;
+  }
+  .ikon {
+    font-size: 5rem;
+    font-weight: 600;
+    color: #4f628e;
+    align-self: center;
+    padding-right: 1rem;
   }
   .feature {
     display: grid;
     grid-template-columns: min-content 1fr;
-    grid-gap: 1.5rem;
   }
-  .feature__icon {
-    font-size: 3rem;
-    color: #4f628e;
-  }
+
   .feature__text {
     font-size: 1.8rem;
     text-align: center;
     grid-column: 1 /-1;
+  }
+  @media screen and (max-width: 950px) {
+    margin-top: -20rem;
+  }
+  @media screen and (max-width: 500px) {
+    margin-top: -22rem;
+  }
+  @media screen and (max-width: 350px) {
+    margin-top: -24rem;
+  }
+  @media screen and (max-width: 400px) {
+    .wrapper {
+      padding: 1.5rem;
+      max-width: 140rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      grid-gap: 2rem;
+    }
   }
 `;

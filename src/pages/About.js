@@ -7,7 +7,7 @@ import { FaHtml5 } from 'react-icons/fa';
 import { FaCss3Alt } from 'react-icons/fa';
 import { SiJavascript } from 'react-icons/si';
 import { FaReact } from 'react-icons/fa';
-import { FaCodeBranch } from 'react-icons/fa';
+import { SiCsharp } from 'react-icons/si';
 import { AiFillApi } from 'react-icons/ai';
 import { FaSass } from 'react-icons/fa';
 import { FiGithub } from 'react-icons/fi';
@@ -22,6 +22,7 @@ import { SiFlutter } from 'react-icons/si';
 import { SiFirebase } from 'react-icons/si';
 import { SiStrapi } from 'react-icons/si';
 import { DiBitbucket } from 'react-icons/di';
+import { BsCodeSlash } from 'react-icons/bs';
 
 export default class About extends Component {
   constructor() {
@@ -162,7 +163,12 @@ export default class About extends Component {
                 </span>
                 <span className='methods-list'>
                   <li>
-                    <FaCodeBranch /> C#
+                    <SiCsharp /> C#
+                  </li>
+                </span>
+                <span className='methods-list'>
+                  <li>
+                    <BsCodeSlash /> .Net
                   </li>
                 </span>
                 <span className='methods-list'>
