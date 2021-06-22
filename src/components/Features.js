@@ -1,47 +1,47 @@
-import React from 'react';
-import styled from 'styled-components';
-import Title from './Title';
-import { FaCheck } from 'react-icons/fa';
-import image1 from '../images/app.jpg';
-import image2 from '../images/app2.jpg';
-import image3 from '../images/app3.jpg';
-import { PortfolioConsumer } from '../Context';
+import React from "react";
+import styled from "styled-components";
+import Title from "./Title";
+import { FaCheck } from "react-icons/fa";
+import image1 from "../images/app.jpg";
+import image2 from "../images/app2.jpg";
+import image3 from "../images/app3.jpg";
+import { PortfolioConsumer } from "../Context";
 const offers = [
   {
-    title: 'Mobile applications',
+    title: "Mobile applications",
     about: [
-      'Cross-Platforms',
-      'Flutter and React Native',
-      'Android and iOS',
-      'Technological consulting',
-      'Development strategy',
+      "Cross-Platforms",
+      "Flutter and React Native",
+      "Android and iOS",
+      "Technological consulting",
+      "Development strategy",
     ],
-    price: '30 euros/h',
-    message: 'Starting from',
+    price: "25 euros/h",
+    message: "Starting from",
   },
   {
-    title: 'Web application',
+    title: "Web application",
     about: [
-      "Latest technology's",
-      'React, JavaScript, SASS, CSS',
-      'Mobile responsive',
-      'Launch control',
-      'Quality assurance',
+      "Latest technologies",
+      "React, JavaScript, SASS, CSS",
+      "Mobile responsive",
+      "Launch control",
+      "Quality assurance",
     ],
-    price: '25 euros/h',
-    message: 'Starting from',
+    price: "20 euros/h",
+    message: "Starting from",
   },
   {
-    title: 'Back-End Development',
+    title: "Back-End Development",
     about: [
       "Best solution's",
-      'C#, .NET, Firebase',
-      'Server setups',
-      'API, other back end processes',
-      'Core application logic',
+      "C#, .NET, Firebase, SQL",
+      "Server setups",
+      "API, other back end processes",
+      "Core application logic",
     ],
-    price: '35 euros/h',
-    message: 'Starting from',
+    price: "25 euros/h",
+    message: "Starting from",
   },
 ];
 
@@ -50,26 +50,26 @@ const Features = () => {
     <PortfolioConsumer>
       {(value) => (
         <Section>
-          <Title title='I can help you if you search for' />
-          <div className='row'>
+          <Title title="I can help you if you search for" />
+          <div className="row">
             {offers.map((item, index) => {
               return (
-                <div className='col-1-of-3' key={index}>
-                  <div className='card'>
-                    <div className='card__side card__side--front'>
+                <div className="col-1-of-3" key={index}>
+                  <div className="card">
+                    <div className="card__side card__side--front">
                       <div
                         className={`card__picture card__picture--${index}`}></div>
-                      <h4 className='card__heading'>
+                      <h4 className="card__heading">
                         <span
                           className={`card__heading--span card__heading--span--${index}`}>
                           {item.title}
                         </span>
                       </h4>
-                      <div className='card__details'>
+                      <div className="card__details">
                         <ul>
                           {item.about.map((item, id) => (
                             <li>
-                              <span style={{ paddingRight: '1rem' }}>
+                              <span style={{ paddingRight: "1rem" }}>
                                 <FaCheck />
                               </span>
                               {item}
@@ -80,13 +80,13 @@ const Features = () => {
                     </div>
                     <div
                       className={`card__side card__side--back card__side--back--${index}`}>
-                      <div className='card__cta'>
-                        <div className='card__price--box'>
-                          <p className='card__price--only'>{item.message}</p>
-                          <p className='card__price--value'> {item.price}</p>
+                      <div className="card__cta">
+                        <div className="card__price--box">
+                          <p className="card__price--only">{item.message}</p>
+                          <p className="card__price--value"> {item.price}</p>
                         </div>
                         <button
-                          className='feature_button'
+                          className="feature_button"
                           onClick={() => {
                             value.openContactModal();
                           }}>

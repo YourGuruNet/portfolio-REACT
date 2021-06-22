@@ -1,8 +1,13 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { PortfolioConsumer } from '../Context';
-
-import React, { useState } from 'react';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { PortfolioConsumer } from "../Context";
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaLinkedin,
+  FaGithubSquare,
+} from "react-icons/fa";
+import React, { useState } from "react";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -13,10 +18,10 @@ const Navbar = () => {
         <NavbarComponent>
           <button
             onClick={() => mobileNavOpen()}
-            className={openNav ? 'navigation__button ' : 'navigation__button'}>
+            className={openNav ? "navigation__button " : "navigation__button"}>
             <span
               className={
-                openNav ? 'navigation__icon--close' : 'navigation__icon'
+                openNav ? "navigation__icon--close" : "navigation__icon"
               }>
               &nbsp;
             </span>
@@ -24,43 +29,78 @@ const Navbar = () => {
           <div
             className={
               openNav
-                ? 'navigation__background background_opens'
-                : 'navigation__background '
+                ? "navigation__background background_opens"
+                : "navigation__background "
             }>
             &nbsp;
           </div>
           <nav
             className={
               openNav
-                ? 'navigation__nav navigation_clicked'
-                : 'navigation__nav hide'
+                ? "navigation__nav navigation_clicked"
+                : "navigation__nav hide"
             }>
-            <ul className='navigation__list'>
-              <li onClick={() => mobileNavOpen()} className='navigation__item'>
-                <Link className='navigation__link' to='/'>
+            <ul className="navigation__list">
+              <li onClick={() => mobileNavOpen()} className="navigation__item">
+                <Link className="navigation__link" to="/">
                   Home
                 </Link>
               </li>
-              <li onClick={() => mobileNavOpen()} className='navigation__item'>
-                <Link className='navigation__link' to='/portfolios/'>
+              <li onClick={() => mobileNavOpen()} className="navigation__item">
+                <Link className="navigation__link" to="/portfolios/">
                   Portfolio
                 </Link>
               </li>
-              <li onClick={() => mobileNavOpen()} className='navigation__item'>
+              <li onClick={() => mobileNavOpen()} className="navigation__item">
                 <Link
-                  className='navigation__link'
-                  to='#'
+                  className="navigation__link"
+                  to="#"
                   onClick={() => {
                     value.openContactModal();
                   }}>
                   Contacts
                 </Link>
               </li>
-              <li onClick={() => mobileNavOpen()} className='navigation__item'>
-                <Link className='navigation__link' to='/about'>
+              <li onClick={() => mobileNavOpen()} className="navigation__item">
+                <Link className="navigation__link" to="/about">
                   About
                 </Link>
               </li>
+              <p className="social-title">Find me:</p>
+              <div className="social-ions">
+                <a
+                  className="social-icon-link"
+                  href="https://www.facebook.com/arvis.iljns"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Facebook">
+                  <FaFacebookSquare />
+                </a>
+                <a
+                  className="social-icon-link"
+                  href="https://www.instagram.com/arvis_iljins/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Instagram">
+                  <FaInstagramSquare />
+                </a>
+                <a
+                  className="social-icon-link"
+                  href="https://www.linkedin.com/in/arvis-iljins-0865081b3/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="LinkedIn">
+                  <FaLinkedin />
+                </a>
+                <a
+                  className="social-icon-link"
+                  href="https://github.com/YourGuruNet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Github">
+                  <FaGithubSquare />
+                </a>
+              </div>
             </ul>
           </nav>
         </NavbarComponent>
@@ -179,7 +219,7 @@ const NavbarComponent = styled.nav`
     }
     ::before,
     ::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       transition: all 0.2s;
@@ -219,7 +259,7 @@ const NavbarComponent = styled.nav`
     }
     ::before,
     ::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       transition: all 0.2s;
@@ -264,5 +304,30 @@ const NavbarComponent = styled.nav`
       top: 2.2rem;
       right: 2.2rem;
     }
+  }
+
+  .social-icon-link {
+    padding-left: 2rem;
+    font-size: 3rem;
+    color: var(--main-light);
+    transition: var(--mainTransition);
+  }
+  .social-icon-link:first-child {
+    padding-left: 0;
+  }
+  .social-icon-link:hover {
+    transform: translateY(-0.3rem) scale(1.1);
+    color: var(--light-blue-2);
+  }
+  .social-icon-link:active {
+    transform: translateY(0.3rem);
+  }
+  .social-title {
+    margin-top: 3rem;
+    text-align: left;
+    padding-left: 2rem;
+    font-size: 1rem;
+    color: var(--main-light);
+    transition: var(--mainTransition);
   }
 `;

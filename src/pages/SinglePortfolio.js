@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import { PortfolioContext } from '../Context';
-import { Link } from 'react-router-dom';
-import Error from './Error';
-import Banner from '../components/Banner';
-import StyledHero from '../components/StyledHero';
-import defaultBcg from '../images/picture-1.JPG';
-import styled from 'styled-components';
-import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css';
-import PageTransition from '../components/PageTransition';
-import { FaCodeBranch } from 'react-icons/fa';
-import { FaGithub } from 'react-icons/fa';
-import { FaGlobe } from 'react-icons/fa';
-import { TiArrowBackOutline } from 'react-icons/ti';
-import { FaAngleDoubleDown } from 'react-icons/fa';
+import React, { Component } from "react";
+import { PortfolioContext } from "../Context";
+import { Link } from "react-router-dom";
+import Error from "./Error";
+import Banner from "../components/Banner";
+import StyledHero from "../components/StyledHero";
+import defaultBcg from "../images/picture-1.JPG";
+import styled from "styled-components";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+import PageTransition from "../components/PageTransition";
+import { FaCodeBranch } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
+import { TiArrowBackOutline } from "react-icons/ti";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 export default class SinglePortfolio extends Component {
   constructor(props) {
@@ -43,37 +43,37 @@ export default class SinglePortfolio extends Component {
       <PageTransition>
         <StyledHero img={mainImg || this.state.defaultBcg}>
           <Banner title={name}>
-            <div className='order'>
-              <button onClick={this.scrollToRef} className='arrow-button'>
+            <div className="order">
+              <button onClick={this.scrollToRef} className="arrow-button">
                 <FaAngleDoubleDown />
               </button>
             </div>
           </Banner>
         </StyledHero>
         <Section>
-          <div className='portfolio-images' ref={this.myRef}>
+          <div className="portfolio-images" ref={this.myRef}>
             <Zoom>
-              <img src={defaultImg[0]} alt={name} width='100%' />
+              <img src={defaultImg[0]} alt={name} width="100%" />
             </Zoom>
             <Zoom>
-              <img src={defaultImg[1]} alt={name} width='100%' />
+              <img src={defaultImg[1]} alt={name} width="100%" />
             </Zoom>
             <Zoom>
-              <img src={defaultImg[2]} alt={name} width='100%' />
+              <img src={defaultImg[2]} alt={name} width="100%" />
             </Zoom>
           </div>
 
-          <div className='portfolio-info'>
+          <div className="portfolio-info">
             <article>
               <h3>Project description:</h3>
               <p>{description}</p>
             </article>
-            <section className='methods-used'>
+            <section className="methods-used">
               <h6>used methods:</h6>
-              <ul className='methods'>
+              <ul className="methods">
                 {methods.map((item, index) => {
                   return (
-                    <span key={index} className='methods-list'>
+                    <span key={index} className="methods-list">
                       <li key={index}>
                         <FaCodeBranch /> {item}
                       </li>
@@ -82,24 +82,28 @@ export default class SinglePortfolio extends Component {
                 })}
               </ul>
             </section>
-            <section className='links'>
-              <a
-                href={github}
-                className='btn-primary'
-                target='_blank'
-                rel='noopener noreferrer'>
-                <FaGithub />
-                &nbsp;Github
-              </a>
-              <a
-                href={online}
-                className='btn-primary'
-                target='_blank'
-                rel='noopener noreferrer'>
-                <FaGlobe />
-                &nbsp;Online
-              </a>
-              <Link to='/portfolios/' className='btn-primary'>
+            <section className="links">
+              {github && (
+                <a
+                  href={github}
+                  className="btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <FaGithub />
+                  &nbsp;Github
+                </a>
+              )}
+              {online && (
+                <a
+                  href={online}
+                  className="btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <FaGlobe />
+                  &nbsp;Online
+                </a>
+              )}
+              <Link to="/portfolios/" className="btn-primary">
                 <TiArrowBackOutline />
                 &nbsp;Back
               </Link>

@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export default function Title({ title, white }) {
   return (
     <TitleSection>
-      <h4 className={white ? 'title white_title' : 'title'}>{title}</h4>
+      <h4 className={white ? "title white_title" : "title"}>{title}</h4>
     </TitleSection>
   );
 }
@@ -33,15 +33,5 @@ const TitleSection = styled.div`
     background: var(--White-Gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-  @media (max-width: 726px) {
-    .title {
-      font-size: 1.8rem;
-    }
-  }
-  @media (max-width: 643px) {
-    .title {
-      font-size: 2.2rem;
-    }
   }
 `;

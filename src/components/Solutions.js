@@ -1,47 +1,47 @@
-import React from 'react';
-import styled from 'styled-components';
-import { MdHearing } from 'react-icons/md';
-import { BiCodeBlock } from 'react-icons/bi';
-import { BsQuestionDiamond } from 'react-icons/bs';
-import { MdHighQuality } from 'react-icons/md';
-import { CgNotes } from 'react-icons/cg';
-import { GiSunglasses } from 'react-icons/gi';
+import React from "react";
+import styled from "styled-components";
+import { MdHearing } from "react-icons/md";
+import { BiCodeBlock } from "react-icons/bi";
+import { BsQuestionDiamond } from "react-icons/bs";
+import { MdHighQuality } from "react-icons/md";
+import { CgNotes } from "react-icons/cg";
+import { GiSunglasses } from "react-icons/gi";
 
 const features = [
   {
-    title: 'Why us?',
+    title: "Why me?",
     description:
-      'An individual approach is chosen for each client and project, consultations and close communication are provided during the implementation of his project',
+      "An individual approach is chosen for each client and project, consultations and close communication are provided during the implementation of his project",
     icon: <BsQuestionDiamond />,
   },
   {
-    title: 'Compatibility',
+    title: "Compatibility",
     description:
-      'Our works are compatible and dynamic and can be connected to other systems',
+      "My works are compatible and dynamic and can be connected to other systems",
     icon: <BiCodeBlock />,
   },
   {
-    title: 'Guaranteed quality',
+    title: "Guaranteed quality",
     description:
-      'We provide a guarantee for the developed code, as well as for the entire period of customer service and cooperation',
+      "I provide a guarantee for the developed code, as well as for the entire period of customer service and cooperation",
     icon: <MdHighQuality />,
   },
   {
-    title: 'Work planning',
+    title: "Work planning",
     description:
-      'Our work processes are flexible and adaptive. We adapt, evolve and respond to the needs of our customers',
+      "My work processes are flexible and adaptive. I adapt, evolve and respond to the needs of my customers",
     icon: <CgNotes />,
   },
   {
-    title: 'We can adapt',
+    title: "I can adapt",
     description:
-      'We are able to adapt to different situations that are faced during the project development process',
+      "I Am able to adapt to different situations that are faced during the project development process",
     icon: <MdHearing />,
   },
   {
-    title: 'Openness and transparency',
+    title: "Openness and transparency",
     description:
-      'During development, the client has the opportunity to view the progress of the work and the developed code',
+      "During development, the client has the opportunity to view the progress of the work and the developed code",
     icon: <GiSunglasses />,
   },
 ];
@@ -49,13 +49,13 @@ const features = [
 const Solutions = () => {
   return (
     <Section>
-      <div className='wrapper'>
+      <div className="wrapper">
         {features.map((item, id) => {
           return (
-            <div class='feature' key={id}>
-              <span className='ikon'>{item.icon}</span>
-              <h4 class='heading-4'>{item.title}</h4>
-              <p class='feature__text'>{item.description}</p>
+            <div class="feature" key={id}>
+              <span className="ikon">{item.icon}</span>
+              <h4 class="heading-4">{item.title}</h4>
+              <p class="feature__text">{item.description}</p>
             </div>
           );
         })}
@@ -82,7 +82,7 @@ const Section = styled.section`
   }
   .heading-4 {
     font-size: 2rem;
-    font-family: 'Teko', sans-serif;
+    font-family: "Teko", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     color: #4f628e;

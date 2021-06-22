@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Banner from '../components/Banner';
-import StyledHero from '../components/StyledHero';
-import img1 from '../images/background-home.jpg';
-import ReactTypingEffect from 'react-typing-effect';
-import { PortfolioConsumer } from '../Context';
-import PageTransition from '../components/PageTransition';
-import Features from '../components/Features';
-import FeaturedPortfolio from '../components/FeaturedPortfolio';
-import Solutions from '../components/Solutions';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Banner from "../components/Banner";
+import StyledHero from "../components/StyledHero";
+import img1 from "../images/background-home.jpg";
+import ReactTypingEffect from "react-typing-effect";
+import { PortfolioConsumer } from "../Context";
+import PageTransition from "../components/PageTransition";
+import Features from "../components/Features";
+import FeaturedPortfolio from "../components/FeaturedPortfolio";
+import Solutions from "../components/Solutions";
 export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,12 +18,12 @@ export default function Home() {
       <PortfolioConsumer>
         {(value) => (
           <StyledHero img={img1}>
-            <Banner title='My name is Arvis iljins'>
-              <div style={{ minHeight: '5rem' }}>
+            <Banner title="My name is Arvis Iljins">
+              <div style={{ minHeight: "5rem" }}>
                 <ReactTypingEffect
                   text={[
                     "I'm Latvian Web Developer",
-                    'Working as a Freelancer',
+                    "Working as a Freelancer",
                     "I'm here to create your web world",
                   ]}
                   cursorRenderer={(cursor) => <p>{cursor}</p>}
@@ -34,8 +34,8 @@ export default function Home() {
                   typingDelay={0}
                 />
               </div>
-              <Link to='/portfolios/'>
-                <button className='btn-primary animated-button white'>
+              <Link to="/portfolios/">
+                <button className="btn-primary animated-button white">
                   Portfolio
                 </button>
               </Link>

@@ -1,44 +1,34 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import PortfolioCart from './PortfolioCart';
+import React, { Component } from "react";
+import styled from "styled-components";
+import PortfolioCart from "./PortfolioCart";
 
 export default class PortfolioList extends Component {
   //Load more
   state = {
-    allPortfolioList: [],
     filteredItems: [],
-    loadMoreIndex: 1,
+    visible: 6,
   };
 
   componentDidMount() {
-    this.loadMoreFromList(1);
-  }
-
-  componentDidUpdate(nextProps) {
-    if (this.props.portfolio !== nextProps.portfolio) {
-      this.loadMoreFromList(1);
-    }
-  }
-
-  loadMoreFromList(index = 0) {
-    const howMuchLoad = 12;
-
+    this.loadMore = this.loadMore.bind(this);
     this.setState({
-      ...this.state,
-      filteredItems: this.props.portfolio.slice(
-        0,
-        howMuchLoad * (index === 1 ? 1 : this.state.loadMoreIndex)
-      ),
-      loadMoreIndex: index === 1 ? 1 : this.state.loadMoreIndex + 1,
+      filteredItems: this.props.portfolio,
     });
   }
+
+  loadMore() {
+    this.setState((prev) => {
+      return { visible: prev.visible + 3 };
+    });
+  }
+
   //Load more end
   render() {
     if (this.state.filteredItems.length === 0) {
       return (
         <NoResults>
           <h3>
-            <i className='fas fa-search' />
+            <i className="fas fa-search" />
             &nbsp; There are no projects matching your parameters
           </h3>
         </NoResults>
@@ -46,17 +36,17 @@ export default class PortfolioList extends Component {
     }
     return (
       <ListSection>
-        <div className='portfolio-list'>
-          {this.state.filteredItems.map((portfolios) => {
-            return (
-              <PortfolioCart key={portfolios.id} portfolios={portfolios} />
-            );
-          })}
+        <div className="portfolio-list">
+          {this.state.filteredItems
+            .slice(0, this.state.visible)
+            .map((portfolios) => {
+              return (
+                <PortfolioCart key={portfolios.id} portfolios={portfolios} />
+              );
+            })}
         </div>
-        <div className='row'>
-          <button
-            className='btn-primary'
-            onClick={() => this.loadMoreFromList()}>
+        <div className="row">
+          <button className="btn-primary" onClick={() => this.loadMore()}>
             Load More
           </button>
         </div>
