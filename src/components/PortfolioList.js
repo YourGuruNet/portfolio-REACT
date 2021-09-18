@@ -63,6 +63,7 @@ const ListSection = styled.div`
   min-height: 64vh;
   .portfolio-list {
     width: 97vw;
+    max-width: 110rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
