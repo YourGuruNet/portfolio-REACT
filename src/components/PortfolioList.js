@@ -16,6 +16,14 @@ export default class PortfolioList extends Component {
     });
   }
 
+  componentDidUpdate() {
+    this.loadMore = this.loadMore.bind(this);
+    if(this.state.filteredItems !== this.props.portfolio)
+    this.setState({
+      filteredItems: this.props.portfolio,
+    });
+  }
+
   loadMore() {
     this.setState((prev) => {
       return { visible: prev.visible + 3 };
