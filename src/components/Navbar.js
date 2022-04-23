@@ -242,7 +242,7 @@ const NavbarComponent = styled.nav`
     background-color: var(--medium-blue);
     top: 1.2rem;
   }
-  //Close
+  
   .navigation__icon--close {
     position: relative;
     margin-top: 2rem;
