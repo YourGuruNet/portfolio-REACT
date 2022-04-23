@@ -279,7 +279,6 @@ const NavbarComponent = styled.nav`
   .navigation__icon--close:hover::after {
     background-color: var(--medium-blue);
   }
-  /////////////////
 
   .navigation__button:hover .navigation__icon::before {
     top: -1rem;
