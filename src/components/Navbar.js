@@ -202,7 +202,7 @@ const NavbarComponent = styled.nav`
     width: 100%;
   }
 
-  /////////////////
+
   .navigation__icon {
     position: relative;
     margin-top: 2rem;
