@@ -13,11 +13,6 @@ import { FaSass } from 'react-icons/fa';
 import { FiGithub } from 'react-icons/fi';
 import { BsTerminalFill } from 'react-icons/bs';
 import { FaBootstrap } from 'react-icons/fa';
-import { SiAdobephotoshop } from 'react-icons/si';
-import { ImFileVideo } from 'react-icons/im';
-import { FaShopify } from 'react-icons/fa';
-import { FaWix } from 'react-icons/fa';
-import { ImArrowLeft } from 'react-icons/im';
 import { SiFlutter } from 'react-icons/si';
 import { SiFirebase } from 'react-icons/si';
 import { SiStrapi } from 'react-icons/si';
@@ -54,9 +49,6 @@ export default class About extends Component {
       ? 'containerTab displayNone'
       : 'containerTab ';
 
-    let otherSkills = this.state.BackEnd
-      ? 'containerTab displayNone'
-      : 'containerTab';
     return (
       <PageTransition>
         <Content>
@@ -117,16 +109,9 @@ export default class About extends Component {
             <div className='row'>
               <div
                 className='SkillColumn'
-                onClick={this.changeFrontEnd.bind(this)}>
+               >
                 <h4 className='skills-btn uppercase sub-heading'>
                   Programming Skills
-                </h4>
-              </div>
-              <div
-                className='SkillColumn'
-                onClick={this.changeFrontEnd.bind(this)}>
-                <h4 className='skills-btn uppercase sub-heading'>
-                  Other Skills <ImArrowLeft />
                 </h4>
               </div>
             </div>
@@ -206,31 +191,6 @@ export default class About extends Component {
                 <span className='methods-list'>
                   <li>
                     <FaBootstrap /> Bootstrap
-                  </li>
-                </span>
-              </ul>
-            </div>
-
-            <div id='b2' className={otherSkills}>
-              <ul className='methods'>
-                <span className='methods-list'>
-                  <li>
-                    <SiAdobephotoshop /> PhotoShop
-                  </li>
-                </span>
-                <span className='methods-list'>
-                  <li>
-                    <ImFileVideo /> Video Editing
-                  </li>
-                </span>
-                <span className='methods-list'>
-                  <li>
-                    <FaShopify /> Shopify
-                  </li>
-                </span>
-                <span className='methods-list'>
-                  <li>
-                    <FaWix /> WIX
                   </li>
                 </span>
               </ul>
