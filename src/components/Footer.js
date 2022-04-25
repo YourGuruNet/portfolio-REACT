@@ -18,7 +18,7 @@ export default class Footer extends Component {
             <small className='website-right'>
               <p>
                 Copyright &copy; {new Date().getFullYear()} All Rights Reserved
-                By yourgurunet.com
+                By arvis-iljins.com
               </p>
             </small>
             <div className='social-ions'>

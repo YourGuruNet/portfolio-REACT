@@ -10,7 +10,7 @@ class Default extends Component {
     console.log(this.props);
     return (
       <StyledHero img={err}>
-        <Banner title='www.yourgurunet.com' span='/...'>
+        <Banner title='www.arvis-iljins.com' span='/...'>
           <Typical
             className='text-typed'
             steps={[

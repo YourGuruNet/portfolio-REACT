@@ -120,7 +120,7 @@ export default class Contacts extends Component {
                     <span>
                       <FiMail />
                     </span>{' '}
-                    info@yourgurunet.com
+                    arvis.iljins.mail@gmail.com.com
                     <span>
                       <BiPhone />
                     </span>
