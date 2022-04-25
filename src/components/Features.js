@@ -69,7 +69,7 @@ const Features = () => {
                         <ul>
                           {item.about.map((item, id) => (
                             <li>
-                              <span style={{ paddingRight: "1rem" }}>
+                              <span style={{ paddingLeft: "1rem" }}>
                                 <FaCheck />
                               </span>
                               {item}

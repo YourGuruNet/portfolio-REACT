@@ -120,7 +120,7 @@ export default class Contacts extends Component {
                     <span>
                       <FiMail />
                     </span>{' '}
-                    arvis.iljins.mail@gmail.com.com
+                    arvis.iljins.mail@gmail.com
                     <span>
                       <BiPhone />
                     </span>
@@ -200,7 +200,7 @@ const Form = styled.form`
     width: 32rem;
     padding: 1.6rem 0.4rem 1.6rem 0;
     border-radius: 0.6rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     box-shadow: 0 0.8rem 1rem 0 var(--light-blue-2);
   }
   span {

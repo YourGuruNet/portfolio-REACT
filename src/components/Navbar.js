@@ -66,7 +66,7 @@ const Navbar = () => {
                   About
                 </Link>
               </li>
-              <p className="social-title">Find me:</p>
+            
               <div className="social-ions">
                 <a
                   className="social-icon-link"

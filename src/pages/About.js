@@ -66,15 +66,7 @@ export default class About extends Component {
               <div className='card'>
                 <h3 className='uppercase'>View from the world in my design</h3>
                 <p>
-                  My name is Arvis Iljins and I'm the co-founder of Your Guru
-                  Net. My main job is to help shape the idea of the execution
-                  and taking part in building products. My passion is to live,
-                  to enjoy life. Most people know me as a professional athlete,
-                  but there are more. I have traveled far away in the world and
-                  saw a lot in it. When I'm working on the formation website I
-                  am transferring to you my acquired knowledge. First one, that
-                  exploring starts with you, another, that knowledge is power,
-                  but enthusiasm pulls the switch.
+                First, of all, exploring starts with you, second, knowledge is power, but enthusiasm pulls the switch. I have experience in website development using HTML, CSS, SCSS, JavaScript, React, C#, .NET, SQL, and also mobile cross-platform development with Flutter and React Native. Mentioned tools and languages are the ones I have used in real-world projects working with clients.
                 </p>
                 <h3 className='uppercase'>Imagine and I will create it</h3>
                 <p>
