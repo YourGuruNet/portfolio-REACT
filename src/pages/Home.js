@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from 'styled-components';
 import websiteSvg from "../svg/website.svg";
 import Roll from 'react-reveal/Roll';
-// import Slider from "../components/Slider";
+import WebSlider from "../components/WebSlider/WebSlider";
 
 export default function Home() {
   useEffect(() => {
@@ -22,6 +22,7 @@ export default function Home() {
             </TextContainer>
           </Roll>
           </HeroWrapper>
+          <WebSlider />
     </>
   );
 }
@@ -32,7 +33,6 @@ const HeroWrapper = styled.header`
   font-family: 'Akshar', sans-serif;
   height: 90vh;
   max-width: 180rem;
-  background: var(--main-light);
   display: flex;
   align-items: center;
   justify-content: center;

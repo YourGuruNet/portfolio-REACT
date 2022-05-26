@@ -12,7 +12,6 @@ html {
   font-size: 62.5%; /* % from default value 16px now the default value is 10px an I can easy work with rem*/
 }
 :root {
-  --mainGreen: rgb(83, 202, 4);
   --mainTransition: all 0.3s linear;
   --navTransaction: top 0.4s ease-out;
   --mainSpacing: 0.3rem;
