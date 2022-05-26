@@ -1,9 +1,7 @@
 /* Basics setup*/
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
 *,
 *::after,
 *::before {
@@ -13,25 +11,33 @@
 }
 html {
   scroll-behavior: smooth;
-  font-size: 62.5%; /* % from default value 16px now the default value is 10px an I can easy work with rems*/
+  font-size: 62.5%; /* % from default value 16px now the default value is 10px an I can easy work with rem*/
 }
 :root {
   --mainGreen: rgb(83, 202, 4);
   --mainTransition: all 0.3s linear;
+  --navTransaction: top 0.4s ease-out;
   --mainSpacing: 0.3rem;
   --lightShadow: 0.4rem 0.5rem 1rem 0 black;
   --lightShadowTop: -0.1rem -0.1rem 0.5rem 0 rgba(0, 0, 0, 0.493);
   --darkShadow: 0.4rem 1rem 1rem 0 black;
+ 
   /* ///////////////////////// */
+  --mainAccent: #63AAFF;
+  --color-grey-light-1: #cbcbcb;
+  --mainText: #333232;
+
+
+
   --light-blue: #7d88a8;
   --light-blue-2: #51618e;
   --medium-blue: #2f4073;
   --dark-blue: #06143d;
   --dark-blue-2: #152658;
-  --mainText: #757575;
+ 
   --main-black: #000;
   --main-light: #fff;
-  --color-grey-light-1: #f0ecec;
+ 
   --secondary-orange-light: rgb(252, 185, 42);
   --secondary-orange-dark: rgb(255, 137, 1);
   --secondary-green-light: rgb(117, 253, 83);
@@ -59,168 +65,7 @@ body {
   font-weight: 400;
   line-height: 1.4;
   z-index: -1;
-}
-/* Buttons*/
-.btn-done {
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  color: var(--mainGreen);
-  background: transparent;
-  padding: 1.1rem 1.6rem;
-  border: none;
-  outline: none;
-  font-size: 1.6rem;
-  font-weight: 400;
-  pointer-events: none; /* Disable button click*/
-}
-
-.btn-primary {
-  transition: var(--mainTransition);
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  color: var(--mainText);
-  padding: 1.5rem 3rem;
-  border: 0.3rem solid var(--light-blue);
-  transition: 0.2s;
-  text-transform: uppercase;
-  cursor: pointer;
-  touch-action: manipulation;
-  outline: none;
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 1rem !important;
-  border-radius: 2rem;
-}
-.btn-primary:hover {
-  transform: translateY(-0.3rem);
-  color: var(--light-blue-2);
-  border-color: var(--light-blue-2);
-  box-shadow: 0 0 1rem var(--light-blue-2), 0 0 4rem var(--light-blue-2),
-    0 0 8rem var(--light-blue-2);
-}
-.btn-primary:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0 0.5rem var(--medium-blue), 0 0 3rem var(--medium-blue),
-    0 0 5rem var(--medium-blue);
-}
-
-.white {
-  background-color: var(--main-light);
-  color: var(--light-blue);
-}
-/* Button animation*/
-
-.order {
-  max-width: 80%;
-  position: relative;
-  left: 10%;
-  right: 10%;
-  align-items: center !important;
-  line-height: 7, 5rem;
-  text-align: center;
-  opacity: 1;
-  border-radius: 50%;
-  -webkit-animation: bounce 0.3s infinite alternate;
-  -moz-animation: bounce 0.3s infinite alternate;
-  animation: bounce 0.3s infinite alternate;
-}
-
-@-webkit-keyframes bounce {
-  to {
-    -webkit-transform: scale(1.2);
-  }
-}
-@-moz-keyframes bounce {
-  to {
-    -moz-transform: scale(1.2);
-  }
-}
-@keyframes bounce {
-  to {
-    transform: scale(1.2);
-  }
-}
-/* Button for carts*/
-.btn-cart {
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  color: var(--light-blue);
-  background: var(--main-light);
-  padding: 1.1rem 1.6rem;
-  border: 0.3rem solid var(--light-blue);
-  transition: 0.2s;
-  text-transform: uppercase;
-  cursor: pointer;
-  touch-action: manipulation;
-  outline: none;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-.btn-cart:hover {
-  background: var(--main-light);
-  color: var(--light-blue);
-  border-color: var(--light-blue);
-  box-shadow: 0 0 1rem var(--light-blue), 0 0 4rem var(--light-blue),
-    0 0 8rem var(--light-blue);
-}
-.btn-cart:active {
-  box-shadow: 0 0 0.5rem var(--light-blue), 0 0 3rem var(--light-blue),
-    0 0 5rem var(--light-blue);
-}
-
-/* Animated button */
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(5rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-.animated-button {
-  animation: moveInBottom 0.5s ease-out 0.85s;
-  animation-fill-mode: backwards;
-}
-@media (max-width: 636px) {
-  .btn-cart {
-    padding: 1.1rem 1.2rem;
-    font-size: 1.2rem;
-    font-weight: 400;
-  }
-}
-@media (max-width: 330px) {
-  .btn-cart {
-    padding: 0.8rem 0.9rem;
-    font-size: 1rem;
-    font-weight: 300;
-  }
-}
-
-@keyframes growIn {
-  0% {
-    opacity: 0;
-    transform: scale(0) translateY(15rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-@keyframes moveFromTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-15rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  margin: 0 auto;
+  max-width: 180rem;
+    letter-spacing: 2px;
 }

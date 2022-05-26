@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Title from '../components/Title';
 import styled from 'styled-components';
-import image from '../images/profile.jpg';
-import PageTransition from '../components/PageTransition';
+// import image from '../images/profile.jpg';
 import { FaHtml5 } from 'react-icons/fa';
 import { FaCss3Alt } from 'react-icons/fa';
 import { SiJavascript } from 'react-icons/si';
@@ -50,7 +49,7 @@ export default class About extends Component {
       : 'containerTab ';
 
     return (
-      <PageTransition>
+      <>
         <Content>
           <Title title='about me' />
           <div className='container'>
@@ -74,7 +73,7 @@ export default class About extends Component {
 
             <div className='column'>
               <div className='card'>
-                <img src={image} alt='Arvis Iljins' />
+                {/* <img src={image} alt='Arvis Iljins' /> */}
               </div>
             </div>
             <hr className='line' />
@@ -197,7 +196,7 @@ export default class About extends Component {
             </div>
           </div>
         </Content>
-      </PageTransition>
+      </>
     );
   }
 }
