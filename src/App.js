@@ -9,7 +9,7 @@ import About from './pages/About';
 function App() {
   return (
     <React.Fragment>
-      <HashRouter exact>
+      <HashRouter exact> 
         <Navbar />
         <Switch>
           <Route exact path='/'>

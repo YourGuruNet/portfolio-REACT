@@ -37,26 +37,6 @@ html {
  
   --main-black: #000;
   --main-light: #fff;
- 
-  --secondary-orange-light: rgb(252, 185, 42);
-  --secondary-orange-dark: rgb(255, 137, 1);
-  --secondary-green-light: rgb(117, 253, 83);
-  --secondary-green-dark: rgb(30, 139, 3);
-  --lightGradient: linear-gradient(
-    to left,
-    var(--light-blue-2),
-    rgba(21, 38, 88, 0.856)
-  );
-  --White-Gradient: linear-gradient(
-    to left,
-    var(--light-blue-2),
-    var(--main-light)
-  );
-  --darkGradient: linear-gradient(
-    to left,
-    var(--light-blue-2),
-    rgb(21, 38, 88)
-  );
 }
 body {
   color: var(--mainText);

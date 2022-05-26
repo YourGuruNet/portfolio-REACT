@@ -22,7 +22,6 @@ export default function Home() {
             </TextContainer>
           </Roll>
           </HeroWrapper>
-          {/* <Slider /> */}
     </>
   );
 }
@@ -31,7 +30,7 @@ export default function Home() {
 
 const HeroWrapper = styled.header`
   font-family: 'Akshar', sans-serif;
-  height: 80vh;
+  height: 90vh;
   max-width: 180rem;
   background: var(--main-light);
   display: flex;
