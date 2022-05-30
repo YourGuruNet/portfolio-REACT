@@ -85,7 +85,7 @@ const Slider = () => {
   return (
     <SliderWrapper>
       <Slide slide={slides[selectedSlide]} removeSlide={removeSlide} nextImage={nextImage} prevImage={prevImage}/>
-      <ButtonRow><Button  onClick={() => prevImage()} >Previous</Button><Button  onClick={() => nextImage()}>Next</Button></ButtonRow>
+      <ButtonRow><Button onClick={() => prevImage()} >Previous</Button><Button  onClick={() => nextImage()}>Next</Button></ButtonRow>
     </SliderWrapper>
   )
 }
@@ -161,7 +161,10 @@ const ButtonRow = styled.div`
   flex-direction: row;
   margin-bottom: 2rem;
   @media screen and (max-width: 1100px) {
+    position: relative;
     margin-top: 6rem;
     margin-bottom: 0rem;
+    bottom: auto;
+    right: auto;
   }
 `;

@@ -57,6 +57,7 @@ const SlideWrapper = styled.div`
   }
 
   @media screen and (max-width: 1100px) {
+    min-height: 70vh;
     justify-content: flex-start;
     margin: 5rem 0rem  0rem 0rem;
     padding: 0;
@@ -158,7 +159,7 @@ const BigImage = styled.img`
 max-height: 40rem;
 height: 100%;
 @media screen and (max-width: 1100px) {
-
+  width: 100%;
   margin-left: 3rem;
   }
 `;
@@ -176,6 +177,12 @@ ${(props) =>
 @media screen and (max-width: 1100px) {
   width: 100%;
   margin-left: -2rem;
+
+  ${(props) =>
+    (props.isMobile &&
+      css`
+       margin-left: 0;
+`)}
 }
 `;
 
