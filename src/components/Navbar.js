@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled, {css} from 'styled-components';
 import Slide from 'react-reveal/Slide';
+import { useHistory } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  let history = useHistory();
+  const {scrollsToWork} = props;
     const [show, setShow] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -26,10 +29,21 @@ const Navbar = () => {
       }
     }, [lastScrollY]);
 
+    const goToLink = (link) => {
+      const currentUrl = window.location.href;
+      const lastItem = currentUrl.substring(currentUrl.lastIndexOf('/'))
+      if(link === lastItem)
+      {
+        window.scrollTo(0, 0);
+      } else {
+        history.push(link);
+      }
+    }
+
     const navItems = [
-      {title: "Home", link: "/"},
-      {title: "Work", link: "/"},
-      {title: "About", link: "/about"}
+      {title: "Home", onClick: () => goToLink("/")},
+      {title: "Work", onClick: () => scrollsToWork()},
+      {title: "About", onClick: () => goToLink("/about")}
     ]
 
   return (
@@ -39,7 +53,7 @@ const Navbar = () => {
             <Navigation>
             {
               navItems.map((item) => {
-                return <NavItem key={item.title}>{item.title}</NavItem>
+                return <NavItem key={item.title} onClick={item.onClick}>{item.title}</NavItem>
               })
             }
             </Navigation>
@@ -61,7 +75,7 @@ const NavWrapper = styled.nav`
   justify-content: space-between;
   flex-direction: row;
   padding: 1rem 10rem;
-
+  z-index: 9999;
   color: var(--mainText);
   ${(props) =>
     (props.show &&

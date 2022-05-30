@@ -46,3 +46,7 @@ body {
   max-width: 180rem;
     letter-spacing: 2px;
 }
+
+.position-fix{
+  margin-bottom: -2rem;
+}
