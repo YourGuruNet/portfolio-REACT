@@ -151,7 +151,7 @@ const Button = styled.a`
 
 const ButtonRow = styled.div`
   position: absolute;
-  bottom: 3rem;
+  bottom: 0;
   right: 15.5rem;
   width: 100%;
   max-width: 20rem;
