@@ -56,8 +56,10 @@ const HeroWrapper = styled.header`
   }
 
   @media screen and (max-width: 600px) {
-    margin: 5rem 2rem  5rem 2rem;
+    margin: 5rem 0;
+    padding: 2rem;
     padding-bottom: 9rem;
+  
   }
 `;
 
@@ -80,6 +82,7 @@ h3 {
  margin-bottom: 2rem;
 }
 @media screen and (max-width: 600px) {
+  width: 100%;
   padding-bottom: 5rem;
   h1 {
   font-size: 7rem;
