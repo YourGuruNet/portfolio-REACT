@@ -50,7 +50,6 @@ export const Slide = ({slide, removeSlide}) => {
 const SlideWrapper = styled.div`
   max-width: 180rem;
   margin: 10rem auto;
-  padding: 0 10rem;
 
   @media screen and (min-width: 1100px) {
     height: 70vh;

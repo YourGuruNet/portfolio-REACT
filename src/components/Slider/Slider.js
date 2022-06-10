@@ -100,6 +100,8 @@ const SliderWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   border-bottom: 0.01rem solid var(--mainAccent);
+  margin: 0 10rem;
+
   @media screen and (max-width: 1100px) {
     margin: 0 2rem;
     margin-bottom: 7rem;
@@ -151,8 +153,8 @@ const Button = styled.a`
 
 const ButtonRow = styled.div`
   position: absolute;
-  bottom: 0;
-  right: 15.5rem;
+  bottom: 5rem;
+  right: 0;
   width: 100%;
   max-width: 20rem;
   display: flex;

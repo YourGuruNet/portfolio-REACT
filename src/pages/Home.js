@@ -4,6 +4,7 @@ import websiteSvg from "../svg/website.svg";
 import Roll from 'react-reveal/Roll';
 import Slider from "../components/Slider/Slider";
 import Navbar from "../components/Navbar"
+import About from "./About";
 
 export default function Home() {
   useEffect(() => {
@@ -11,10 +12,12 @@ export default function Home() {
   }, []);
   
   const sliderRef = useRef(null)
+  const aboutRef = useRef(null)
   const scrollsToWork = () => sliderRef.current?.scrollIntoView({ behavior: 'smooth' });
-  
+  const scrollsToAbout = () => aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
   return (
-    <><Navbar scrollsToWork={scrollsToWork}/>
+    <>
+    <Navbar scrollsToWork={scrollsToWork} scrollsToAbout={scrollsToAbout}/>
           <HeroWrapper>
           <Roll left><Image src={websiteSvg} alt="Arvis iljins"/></Roll>
           <Roll right>
@@ -28,6 +31,8 @@ export default function Home() {
           </HeroWrapper>
           <div className="position-fix" ref={sliderRef}/>
           <Slider/>
+          <div className="position-fix" ref={aboutRef}/>
+          <About />
     </>
   );
 }

@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const Navbar = (props) => {
   let history = useHistory();
-  const {scrollsToWork} = props;
+  const {scrollsToWork, scrollsToAbout} = props;
     const [show, setShow] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -43,7 +43,7 @@ const Navbar = (props) => {
     const navItems = [
       {title: "Home", onClick: () => goToLink("/")},
       {title: "Work", onClick: () => scrollsToWork()},
-      {title: "About", onClick: () => goToLink("/about")}
+      {title: "About", onClick: () => scrollsToAbout()}
     ]
 
   return (
@@ -67,6 +67,7 @@ export default Navbar;
 
 const NavWrapper = styled.nav`
   font-family: 'Akshar', sans-serif;
+  text-transform: uppercase;
   max-width: 180rem;
   width: 100%;
   background: var(--main-light);
